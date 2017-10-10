@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9BAEE17-7928-4E6A-B761-3072B96444AB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zjy.Common</RootNamespace>
+    <AssemblyName>zjy.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\Lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Captcha.cs" />
+    <Compile Include="CsvHelper.cs" />
+    <Compile Include="ExcelHelper.cs" />
+    <Compile Include="FTPClient.cs" />
+    <Compile Include="FTPHelper.cs" />
+    <Compile Include="FTPOperater.cs" />
+    <Compile Include="HTMLHelper.cs" />
+    <Compile Include="ConvertJson.cs" />
+    <Compile Include="JsHelper.cs" />
+    <Compile Include="LZWDecoder.cs" />
+    <Compile Include="PDFOperation.cs" />
+    <Compile Include="PSD2swfHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionHelper.cs" />
+    <Compile Include="XMLProcess.cs" />
+    <Compile Include="CNDate.cs" />
+    <Compile Include="SegList.cs" />
+    <Compile Include="Encrypt.cs" />
+    <Compile Include="SharpZip.cs" />
+    <Compile Include="PinYin.cs" />
+    <Compile Include="ImageUpload.cs" />
+    <Compile Include="ImageDown.cs" />
+    <Compile Include="ImageClass.cs" />
+    <Compile Include="SerializeHelper.cs" />
+    <Compile Include="FileUp.cs" />
+    <Compile Include="FileDown.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="BarCodeToHTML.cs" />
+    <Compile Include="EcanConvertToCh.cs" />
+    <Compile Include="CookiesHelper.cs" />
+    <Compile Include="VideoConvert.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SmtpServerHelper.cs" />
+    <Compile Include="GridViewHelper.cs" />
+    <Compile Include="YZMHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

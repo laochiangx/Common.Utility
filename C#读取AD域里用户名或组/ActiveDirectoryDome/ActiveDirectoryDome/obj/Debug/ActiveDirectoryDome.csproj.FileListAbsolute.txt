@@ -1,0 +1,15 @@
+C:\Users\LDD\Desktop\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.exe
+C:\Users\LDD\Desktop\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.pdb
+C:\Users\LDD\Desktop\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\LDD\Desktop\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.exe
+C:\Users\LDD\Desktop\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.pdb
+C:\Documents and Settings\Administrator\桌面\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.exe
+C:\Documents and Settings\Administrator\桌面\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.pdb
+C:\Documents and Settings\Administrator\桌面\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.exe
+C:\Documents and Settings\Administrator\桌面\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.pdb
+C:\Documents and Settings\Administrator\桌面\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.exe
+C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ActiveDirectoryDome.pdb
+C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.exe
+C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome\bin\Debug\ActiveDirectoryDome.pdb
+C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome\obj\Debug\ResolveAssemblyReference.cache

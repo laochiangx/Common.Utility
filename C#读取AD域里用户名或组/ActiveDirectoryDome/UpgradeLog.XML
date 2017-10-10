@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ActiveDirectoryDome">
+</Property><Property Name="解决方案文件" Value="C:\Users\QiuJiaLong\Desktop\C#读取AD域里用户名或组\C#读取AD域里用户名或组\dome\ActiveDirectoryDome\ActiveDirectoryDome.sln">
+</Property><Property Name="Date" Value="2012年2月9日">
+</Property><Property Name="Time" Value="17:27">
+</Property></Properties><Event ErrorLevel="0" Project="ActiveDirectoryDome" Source="ActiveDirectoryDome\ActiveDirectoryDome.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="ActiveDirectoryDome" Source="ActiveDirectoryDome\ActiveDirectoryDome.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ActiveDirectoryDome.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="ActiveDirectoryDome.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="ActiveDirectoryDome" Source="ActiveDirectoryDome\ActiveDirectoryDome.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>
