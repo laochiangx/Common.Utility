@@ -1,0 +1,2996 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>System.Web.Http.OData</name>
+  </assembly>
+  <members>
+    <member name="T:System.Net.Http.ODataHttpRequestMessageExtensions">
+      <summary> 为 <see cref="T:System.Net.Http.HttpRequestMessage" /> 类提供扩展方法。</summary>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.CreateODataErrorResponse(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode,Microsoft.Data.OData.ODataError)">
+      <summary> 帮助器方法，用于执行内容协商，并创建一个 <see cref="T:System.Net.Http.HttpResponseMessage" />，表示将 oDataError 包装为内容的 &lt;see cref="T:System.Net.Http.ObjectContent`1" /&gt; 的实例存在的错误。如果找不到格式化程序，则此方法将返回状态为“406 NotAcceptable”的响应。</summary>
+      <returns>一个用于包装 oDataError 的错误响应，状态代码为 statusCode。</returns>
+      <param name="request">请求。</param>
+      <param name="statusCode">所创建的响应的状态代码。</param>
+      <param name="oDataError">要包装的 OData 错误。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetEdmModel(System.Net.Http.HttpRequestMessage)">
+      <summary> 检索与请求关联的 EDM 模型。</summary>
+      <returns>与此请求关联的 EDM 模型，如果没有此类模型，则为 null。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetInlineCount(System.Net.Http.HttpRequestMessage)">
+      <summary> 获取要在 OData 响应中使用的内联计数。</summary>
+      <returns>要发回的内联计数，如果未设置此类计数，则为 null。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetNextPageLink(System.Net.Http.HttpRequestMessage)">
+      <summary> 获取要在 OData 响应中使用的下一页链接。</summary>
+      <returns>要发回的下一页链接，如果未设置此类链接，则为 null。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetODataPath(System.Net.Http.HttpRequestMessage)">
+      <summary> 获取请求的 OData 路径。</summary>
+      <returns>请求的 OData 路径</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetODataPathHandler(System.Net.Http.HttpRequestMessage)">
+      <summary> 获取要用于生成链接的 <see cref="T:System.Web.Http.OData.Routing.IODataPathHandler" />。</summary>
+      <returns>要用于生成链接的 <see cref="T:System.Web.Http.OData.Routing.IODataPathHandler" />。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetODataRouteName(System.Net.Http.HttpRequestMessage)">
+      <summary> 检索要用于生成 OData 链接的路由名称。</summary>
+      <returns>要用于生成与此请求关联的 OData 链接的路由名称，如果没有此类名称，则为 null。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.GetODataRoutingConventions(System.Net.Http.HttpRequestMessage)">
+      <summary> 获取要用于控制器和操作选择的 OData 路由约定。</summary>
+      <returns>要用于与此请求关联的控制器和操作选择的 OData 路由约定，如果没有任何此类路由约定，则为 null。</returns>
+      <param name="request">请求。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetEdmModel(System.Net.Http.HttpRequestMessage,Microsoft.Data.Edm.IEdmModel)">
+      <summary> 将给定的 EDM 模型与请求关联。</summary>
+      <param name="request">请求。</param>
+      <param name="model">要与请求关联的 EDM 模型。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetInlineCount(System.Net.Http.HttpRequestMessage,System.Int64)">
+      <summary> 设置要在 OData 响应中使用的内联计数。</summary>
+      <param name="request">请求。</param>
+      <param name="inlineCount">要发回到客户端的内联计数。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetNextPageLink(System.Net.Http.HttpRequestMessage,System.Uri)">
+      <summary> 设置要在 OData 响应中使用的下一页链接。</summary>
+      <param name="request">请求。</param>
+      <param name="nextPageLink">要发回到客户端的下一页链接。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetODataPath(System.Net.Http.HttpRequestMessage,System.Web.Http.OData.Routing.ODataPath)">
+      <summary> 设置请求的 OData 路径。</summary>
+      <param name="request">请求。</param>
+      <param name="odataPath">请求的 OData 路径。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetODataPathHandler(System.Net.Http.HttpRequestMessage,System.Web.Http.OData.Routing.IODataPathHandler)">
+      <summary> 设置要用于生成链接的 <see cref="T:System.Web.Http.OData.Routing.IODataPathHandler" />。</summary>
+      <param name="request">请求。</param>
+      <param name="pathHandler">要用于生成链接的 <see cref="T:System.Web.Http.OData.Routing.IODataPathHandler" />。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetODataRouteName(System.Net.Http.HttpRequestMessage,System.String)">
+      <summary> 设置要用于生成 OData 链接的给定路由名称。</summary>
+      <param name="request">请求。</param>
+      <param name="routeName">要用于生成 OData 链接的路由名称。</param>
+    </member>
+    <member name="M:System.Net.Http.ODataHttpRequestMessageExtensions.SetODataRoutingConventions(System.Net.Http.HttpRequestMessage,System.Collections.Generic.IEnumerable{System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention})">
+      <summary> 设置要用于控制器和操作选择的 OData 路由约定。</summary>
+      <param name="request">请求。</param>
+      <param name="routingConventions">要用于控制器和操作选择的 OData 路由约定。</param>
+    </member>
+    <member name="T:System.Web.Http.ODataHttpConfigurationExtensions"></member>
+    <member name="M:System.Web.Http.ODataHttpConfigurationExtensions.EnableQuerySupport(System.Web.Http.HttpConfiguration)">
+      <summary>针对返回类型为 <see cref="T:System.Linq.IQueryable" /> 或 <see cref="T:System.Linq.IQueryable`1" /> 的操作启用查询支持。若要避免处理意外查询或恶意查询，请使用 <see cref="T:System.Web.Http.QueryableAttribute" /> 上的验证设置以验证传入查询。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkId=279712。</summary>
+      <param name="configuration">服务器配置。</param>
+    </member>
+    <member name="M:System.Web.Http.ODataHttpConfigurationExtensions.EnableQuerySupport(System.Web.Http.HttpConfiguration,System.Web.Http.Filters.IActionFilter)">
+      <summary>针对返回类型为 <see cref="T:System.Linq.IQueryable" /> 或 <see cref="T:System.Linq.IQueryable`1" /> 的操作启用查询支持。. 若要避免处理意外查询或恶意查询，请使用 <see cref="T:System.Web.Http.QueryableAttribute" /> 上的验证设置以验证传入查询。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkId=279712。</summary>
+      <param name="configuration">服务器配置。</param>
+      <param name="queryFilter">执行查询的操作筛选器。</param>
+    </member>
+    <member name="T:System.Web.Http.ODataHttpErrorExtensions">
+      <summary>为 <see cref="T:System.Web.Http.HttpError" /> 类提供扩展方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.ODataHttpErrorExtensions.ToODataError(System.Web.Http.HttpError)">
+      <summary>将 <paramref name="httpError" /> 转换为 <see cref="T:Microsoft.Data.OData.ODataError" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.OData.ODataError" />。</returns>
+      <param name="httpError">要转换的 <see cref="T:System.Web.Http.HttpError" /> 实例。</param>
+    </member>
+    <member name="T:System.Web.Http.ODataHttpRouteCollectionExtensions">
+      <summary>为 <see cref="T:System.Web.Http.HttpRouteCollection" /> 类提供扩展方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.ODataHttpRouteCollectionExtensions.MapODataRoute(System.Web.Http.HttpRouteCollection,System.String,System.String,Microsoft.Data.Edm.IEdmModel)">
+      <summary>映射没有路由前缀且使用默认 OData 路由名称的指定 OData 路由。</summary>
+      <param name="routes">应用程序的路由的集合。</param>
+      <param name="routeName">要映射的路由的名称。</param>
+      <param name="routePrefix">要添加到 OData 路由的路径模板的前缀。</param>
+      <param name="model">用于分析 OData 路径的 EDM 模型。</param>
+    </member>
+    <member name="M:System.Web.Http.ODataHttpRouteCollectionExtensions.MapODataRoute(System.Web.Http.HttpRouteCollection,System.String,System.String,Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.IODataPathHandler,System.Collections.Generic.IEnumerable{System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention})">
+      <param name="routes">应用程序的路由的集合。</param>
+      <param name="routeName">要映射的路由的名称。</param>
+      <param name="routePrefix">要添加到 OData 路由的路径模板的前缀。</param>
+      <param name="model">用于分析 OData 路径的 EDM 模型。</param>
+      <param name="pathHandler">用于分析 OData 路径的 <see cref="T:System.Web.Http.OData.Routing.IODataPathHandler" />。</param>
+      <param name="routingConventions">要用于控制器和操作选择的 OData 路由约定。</param>
+    </member>
+    <member name="T:System.Web.Http.ODataMediaTypeFormatterCollectionExtensions">
+      <summary>为 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterCollection" /> 类提供扩展方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.ODataMediaTypeFormatterCollectionExtensions.AddRange(System.Net.Http.Formatting.MediaTypeFormatterCollection,System.Collections.Generic.IEnumerable{System.Net.Http.Formatting.MediaTypeFormatter})">
+      <summary>向 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterCollection" /> 的末尾添加指定集合中的元素。</summary>
+      <param name="collection">要将项添加到的集合。</param>
+      <param name="items">应添加到 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterCollection" /> 末尾的项。项集合本身不能为 null，但可以包含作为 null 的元素。</param>
+    </member>
+    <member name="M:System.Web.Http.ODataMediaTypeFormatterCollectionExtensions.InsertRange(System.Net.Http.Formatting.MediaTypeFormatterCollection,System.Int32,System.Collections.Generic.IEnumerable{System.Net.Http.Formatting.MediaTypeFormatter})">
+      <summary>  将集合中的元素插入指定索引处的 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterCollection" /> 中。</summary>
+      <param name="collection">要将项添加到的集合。</param>
+      <param name="index">从零开始的索引，应在此索引处插入新元素。</param>
+      <param name="items">应添加到 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatterCollection" /> 末尾的项。项集合本身不能为 null，但可以包含作为 null 的元素。</param>
+    </member>
+    <member name="T:System.Web.Http.ODataUrlHelperExtensions">
+      <summary>为 <see cref="T:System.Web.Http.Routing.UrlHelper" /> 类提供扩展方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.ODataUrlHelperExtensions.ODataLink(System.Web.Http.Routing.UrlHelper,System.Collections.Generic.IList{System.Web.Http.OData.Routing.ODataPathSegment})">
+      <summary>生成 OData 链接。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+      <param name="urlHelper">URL 帮助器。</param>
+      <param name="segments">OData 路径段。</param>
+    </member>
+    <member name="M:System.Web.Http.ODataUrlHelperExtensions.ODataLink(System.Web.Http.Routing.UrlHelper,System.String,System.Web.Http.OData.Routing.IODataPathHandler,System.Collections.Generic.IList{System.Web.Http.OData.Routing.ODataPathSegment})">
+      <summary>使用请求的 OData 路由名称和路径处理程序生成 OData 链接。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+      <param name="urlHelper">URL 帮助器。</param>
+      <param name="routeName">OData 路由的名称。</param>
+      <param name="pathHandler">用于生成链接的路径处理程序。</param>
+      <param name="segments">OData 路径段。</param>
+    </member>
+    <member name="M:System.Web.Http.ODataUrlHelperExtensions.ODataLink(System.Web.Http.Routing.UrlHelper,System.Web.Http.OData.Routing.ODataPathSegment[])">
+      <summary>生成 OData 链接。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+      <param name="urlHelper">URL 帮助器。</param>
+      <param name="segments">OData 路径段。</param>
+    </member>
+    <member name="T:System.Web.Http.QueryableAttribute">
+      <summary>此类定义一个属性，可将该属性应用到某个操作，以启用使用 OData 查询语法的查询。若要避免处理意外查询或恶意查询，请使用 <see cref="T:System.Web.Http.QueryableAttribute" /> 上的验证设置以验证传入查询。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkId=279712。</summary>
+    </member>
+    <member name="M:System.Web.Http.QueryableAttribute.#ctor">
+      <summary>使控制器操作可以支持 OData 查询参数。</summary>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.AllowedArithmeticOperators">
+      <summary>获取或设置一个枚举，该枚举表示允许的算术运算符（包括“add”、“sub”、“mul”、“div”、“mod”）的列表。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.AllowedArithmeticOperators" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.AllowedFunctions">
+      <summary>获取或设置一个枚举，该枚举表示允许在 $filter 查询中使用的函数的列表。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.AllowedFunctions" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.AllowedLogicalOperators">
+      <summary>获取或设置一个枚举，该枚举表示允许的逻辑运算符（包括“eq”、“ne”、“gt”、“ge”、“lt”、“le”、“and”、“or”、“not”）的列表。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.AllowedLogicalOperators" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.AllowedOrderByProperties">
+      <summary>获取或设置一个字符串，该字符串包含属性名称的逗号分隔列表。只能按此列表中定义的那些属性对可查询结果进行排序。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.AllowedQueryOptions">
+      <summary>获取或设置允许在查询内部使用的查询参数。默认值为所有查询选项，包括 $filter、$skip、$top、$orderby、$expand、$select、$inlineCount、$format 和 $skipToken。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.AllowedQueryOptions" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.QueryableAttribute.ApplyQuery(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQueryOptions)">
+      <summary>基于来自 URI 的传入请求和查询设置将查询应用到给定的 IQueryable。</summary>
+      <returns>返回 <see cref="T:System.Linq.IQueryable" />。</returns>
+      <param name="queryable">来自响应消息的原始可查询实例。</param>
+      <param name="queryOptions">基于传入请求构造的 &lt;see cref="T:System.Web.Http.OData.Query.ODataQueryOptions"/&gt; 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.EnableConstantParameterization">
+      <summary>获取或设置一个值，该值指示是否应对常量进行参数化。常量参数化可提升 Entity Framework 的性能。</summary>
+      <returns>默认值为 true。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.EnsureStableOrdering">
+      <summary>获取或设置一个值，该值指示查询撰写是否应在必要时更改原始查询，以确保稳定的排序顺序。</summary>
+      <returns>true 值表示应在必要时修改原始查询，以保证稳定的排序顺序。false 值表示可以将排序顺序视为稳定，而无需修改查询。确保稳定排序顺序的查询提供程序应将此值设置为 false。默认值为 true。</returns>
+    </member>
+    <member name="M:System.Web.Http.QueryableAttribute.GetModel(System.Type,System.Net.Http.HttpRequestMessage,System.Web.Http.Controllers.HttpActionDescriptor)">
+      <summary>获取给定类型和请求的 EDM 模型。</summary>
+      <returns>给定类型和请求的 EDM 模型。</returns>
+      <param name="elementClrType">要检索其模型的 CLR 类型。</param>
+      <param name="request">要检索其模型的请求消息。</param>
+      <param name="actionDescriptor">正在查询的操作的操作描述符。</param>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.HandleNullPropagation">
+      <summary>获取或设置一个值，该值指示在查询撰写期间应如何处理 null 传播。</summary>
+      <returns>默认值为 <see cref="F:System.Web.Http.OData.Query.HandleNullPropagationOption.Default" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.MaxAnyAllExpressionDepth">
+      <summary>获取或设置嵌套在查询内部的 Any 或 All 元素的最大深度。</summary>
+      <returns>嵌套在查询内部的 Any 或 All 元素的最大深度。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.MaxNodeCount">
+      <summary>获取或设置 $filter 语法树中的最大节点数。</summary>
+      <returns>  默认值为 100。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.MaxSkip">
+      <summary>获取或设置客户端可以请求的最大 $skip 值。</summary>
+      <returns>返回 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.MaxTop">
+      <summary>获取或设置客户端可以请求的最大 $top 值。</summary>
+      <returns>返回 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.QueryableAttribute.OnActionExecuted(System.Web.Http.Filters.HttpActionExecutedContext)">
+      <summary>在执行操作后执行查询撰写。它首先会尝试从返回的响应消息中检索 IQueryable。然后，基于 QueryableAttribute 上的验证设置，从 URI 验证查询。最后，将适当地应用查询，并在响应消息中重置查询。</summary>
+      <param name="actionExecutedContext">与此操作相关的上下文，包括响应消息、请求消息和 HttpConfiguration 等。</param>
+    </member>
+    <member name="P:System.Web.Http.QueryableAttribute.PageSize">
+      <summary>获取或设置要发回到客户端的最大查询结果数。</summary>
+      <returns>  要发回到客户端的最大查询结果数。</returns>
+    </member>
+    <member name="M:System.Web.Http.QueryableAttribute.ValidateQuery(System.Net.Http.HttpRequestMessage,System.Web.Http.OData.Query.ODataQueryOptions)">
+      <summary>验证传入请求中的 OData 查询。</summary>
+      <param name="request">传入的请求。</param>
+      <param name="queryOptions">基于传入请求构造的 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions" /> 实例。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.AsyncEntitySetController`2">
+      <summary>为公开 OData 实体集的控制器提供一个方便的起点。这是 <see cref="T:System.Web.Http.OData.AsyncEntitySetController" /> 的同步版本。</summary>
+      <typeparam name="TEntity">与所公开实体集的实体类型关联的类型。</typeparam>
+      <typeparam name="TKey">与所公开实体集实体类型的实体键关联的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.AsyncEntitySetController`2" /> 的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.CreateEntityAsync(`0)">
+      <summary>应重写此方法，以在实体集中创建新实体。</summary>
+      <returns>创建的实体。</returns>
+      <param name="entity">要添加到实体集的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.CreateLink(`1,System.String,System.Uri)">
+      <summary>应重写此方法，以处理尝试在两个实体之间创建链接的 POST 和 PUT 请求。</summary>
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task" />。</returns>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+      <param name="link">要链接的实体的 URI。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Delete(`1)">
+      <summary>应重写此方法，以处理用于从实体集中删除现有实体的 DELETE 请求。</summary>
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task" />。</returns>
+      <param name="key">要删除的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.DeleteLink(`1,System.String,System.String)">
+      <summary>应重写此方法，以处理尝试破坏两个实体之间的关系的 DELETE 请求。</summary>
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task" />。</returns>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="relatedKey">相关实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.DeleteLink(`1,System.String,System.Uri)">
+      <summary>  应重写此方法，以处理尝试破坏两个实体之间的关系的 DELETE 请求。</summary>
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task" />。</returns>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+      <param name="link">要从导航属性中删除的实体的 URI。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Get">
+      <summary>应重写此方法，以处理尝试从实体集中检索实体的 GET 请求。</summary>
+      <returns>实体集中的匹配实体。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Get(`1)">
+      <summary>处理尝试从实体集中根据键检索单个实体的 GET 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要检索的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.GetEntityByKeyAsync(`1)">
+      <summary>  应重写此方法，以从实体集中根据键检索实体。</summary>
+      <returns>检索的实体；如果在实体集中找不到具有指定实体键的实体，则为 null。</returns>
+      <param name="key">要检索的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.GetKey(`0)">
+      <summary>应重写此方法，以获取指定实体的实体键。</summary>
+      <returns>实体键值。</returns>
+      <param name="entity">实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.HandleUnmappedRequest(System.Web.Http.OData.Routing.ODataPath)">
+      <summary>   应重写此方法，以处理所有未映射的 OData 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="odataPath">请求的 OData 路径。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.AsyncEntitySetController`2.ODataPath">
+      <summary>获取当前请求的 OData 路径。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Routing.ODataPath" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Patch(`1,System.Web.Http.OData.Delta{`0})">
+      <summary>处理 PATCH 和 MERGE 请求，以部分更新实体集中的单个实体。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="patch">表示部分更新的修补程序。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.PatchEntityAsync(`1,System.Web.Http.OData.Delta{`0})">
+      <summary>   应重写此方法，以将部分更新应用到实体集中的现有实体。</summary>
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="patch">表示部分更新的修补程序。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Post(`0)">
+      <summary>处理用于在实体集中创建新实体的 POST 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="entity">要插入到实体集中的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.Put(`1,`0)">
+      <summary>  处理尝试替换实体集中的单个实体的 PUT 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要替换的实体的实体键。</param>
+      <param name="update">更新的实体。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.AsyncEntitySetController`2.QueryOptions">
+      <summary>获取当前请求的 OData 查询选项。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.AsyncEntitySetController`2.UpdateEntityAsync(`1,`0)">
+      <summary>应重写此方法，以更新实体集中的现有实体。</summary>
+      <returns>更新的实体。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="update">更新的实体。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.ClrTypeAnnotation">
+      <summary>Represents a mapping from an <see cref="T:Microsoft.Data.Edm.IEdmType" /> to a CLR type.</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ClrTypeAnnotation.#ctor(System.Type)">
+      <summary>Initializes a new instance of <see cref="T:System.Web.Http.OData.ClrTypeAnnotation" /> class.</summary>
+      <param name="clrType">The backing CLR type for the EDM type.</param>
+    </member>
+    <member name="P:System.Web.Http.OData.ClrTypeAnnotation.ClrType">
+      <summary>The backing CLR type for the EDM type.</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Delta`1">
+      <summary>一个类，用于跟踪特定 <paramref name="TEntityType" /> 的更改（即增量）。</summary>
+      <typeparam name="TEntityType">TEntityType 是此增量要跟踪其更改的实体的基类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Delta`1" /> 的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.#ctor(System.Type)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Delta`1" /> 的新实例。</summary>
+      <param name="entityType">要跟踪其更改的派生实体类型。<paramref name="entityType" /> 应可分配到 <paramref name="TEntityType" /> 的实例。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.Clear">
+      <summary>清除增量并重置基础实体。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.CopyChangedValues(`0)">
+      <summary>将更改的属性值从基础实体（可通过 <see cref="M:System.Web.Http.OData.Delta`1.GetEntity" /> 访问）复制到 <paramref name="original" /> 实体。</summary>
+      <param name="original">要更新的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.CopyUnchangedValues(`0)">
+      <summary>将未更改的属性值从基础实体（可通过 <see cref="M:System.Web.Http.OData.Delta`1.GetEntity" /> 访问）复制到 <paramref name="original" /> 实体。</summary>
+      <param name="original">要更新的实体。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Delta`1.EntityType">
+      <summary>  跟踪其更改的实体的实际类型。</summary>
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.GetChangedPropertyNames">
+      <summary>返回已通过此增量修改为属性名称枚举的属性。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.GetEntity">
+      <summary>返回 <see cref="P:System.Web.Http.OData.Delta`1.EntityType" /> 实例，用于保留此增量正在跟踪的所有更改（以及原始值）。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.GetUnchangedPropertyNames">
+      <summary>  返回尚未通过此增量修改为属性名称枚举的属性。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.Patch(`0)">
+      <summary>使用此增量跟踪的更改覆盖 <paramref name="original" /> 实体。</summary>
+      <param name="original">要更新的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.Put(`0)">
+      <summary>使用此增量中存储的值覆盖 <paramref name="original" /> 实体。</summary>
+      <param name="original">要更新的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.TryGetMember(System.Dynamic.GetMemberBinder,System.Object@)">
+      <summary>重写 DynamicObject TryGetMember 方法，以便只能获取 <see cref="P:System.Web.Http.OData.Delta`1.EntityType" /> 的属性。</summary>
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.TryGetPropertyType(System.String,System.Type@)">
+      <summary>尝试从基础实体获取名为 <paramref name="name" /> 的属性的 <see cref="T:System.Type" />。</summary>
+      <returns>如果找到了该属性，则为 true；否则为 false。</returns>
+      <param name="name">属性的名称。</param>
+      <param name="type">属性的类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.TryGetPropertyValue(System.String,System.Object@)">
+      <summary>尝试从基础实体获取名为 <paramref name="name" /> 的属性的值。</summary>
+      <returns>如果找到了该属性，则为 true。</returns>
+      <param name="name">属性的名称。</param>
+      <param name="value">属性的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.TrySetMember(System.Dynamic.SetMemberBinder,System.Object)">
+      <summary>重写 DynamicObject TrySetMember 方法，以便只能设置 <see cref="P:System.Web.Http.OData.Delta`1.EntityType" /> 的属性。</summary>
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Delta`1.TrySetPropertyValue(System.String,System.Object)">
+      <summary>  尝试将名为 <paramref name="name" /> 的属性设置为指定的 <paramref name="value" />。</summary>
+      <returns>如果成功，则为 true；否则为 false。</returns>
+      <param name="name">属性的名称。</param>
+      <param name="value">属性的新值。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.EntityInstanceContext">
+      <summary>
+        <see cref="T:System.Web.Http.OData.EntityInstanceContext`1" /> 的实例将被传递到自助链接（<see cref="M:EntitySetConfiguration.HasIdLink" />、<see cref="M:EntitySetConfiguration.HasEditLink" />、<see cref="M:EntitySetConfiguration.HasReadLink" />）和导航链接（<see cref="M:EntitySetConfiguration.HasNavigationPropertyLink" />、<see cref="M:EntitySetConfiguration.HasNavigationPropertiesLink" />）生成器，并可供链接生成器用来生成链接。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.EntityInstanceContext.#ctor"></member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.EdmModel">
+      <summary>获取 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.EntityInstance">
+      <summary>获取此实体实例的值。</summary>
+      <returns>返回 <see cref="T:System.Object" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.EntitySet">
+      <summary>获取此实例所属的 <see cref="T:Microsoft.Data.Edm.IEdmEntitySet" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmEntitySet" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.EntityType">
+      <summary>获取此实体实例的 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.Request">
+      <returns>返回 <see cref="T:System.Net.Http.HttpRequestMessage" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.SkipExpensiveAvailabilityChecks">
+      <summary>获取是否应执行 ActionAvailabilityChecks。这用于告知格式化程序，在包含某个操作的链接之前是否要检查该操作的可用性。如果在源中，我们会跳过此检查。</summary>
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext.Url">
+      <returns>返回 <see cref="T:System.Web.Http.Routing.UrlHelper" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.EntityInstanceContext`1">
+      <summary>
+        <see cref="T:System.Web.Http.OData.EntityInstanceContext`1" /> 的实例将被传递到自助链接（<see cref="M:EntitySetConfiguration.HasIdLink" />、<see cref="M:EntitySetConfiguration.HasEditLink" />、<see cref="M:EntitySetConfiguration.HasReadLink" />）和导航链接（<see cref="M:EntitySetConfiguration.HasNavigationPropertyLink" />、<see cref="M:EntitySetConfiguration.HasNavigationPropertiesLink" />）生成器，并可供链接生成器用来生成链接。</summary>
+      <typeparam name="TEntityType">实体类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.EntityInstanceContext`1.#ctor"></member>
+    <member name="P:System.Web.Http.OData.EntityInstanceContext`1.EntityInstance"></member>
+    <member name="T:System.Web.Http.OData.EntitySetController`2">
+      <summary>为公开 OData 实体集的控制器提供一个方便的起点。这是 <see cref="T:System.Web.Http.OData.AsyncEntitySetController`2" /> 的同步版本。</summary>
+      <typeparam name="TEntity">与所公开实体集的实体类型关联的类型。</typeparam>
+      <typeparam name="TKey">与所公开实体集实体类型的实体键关联的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.#ctor"></member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.CreateEntity(`0)">
+      <summary>  应重写此方法，以在实体集中创建新实体。</summary>
+      <returns>创建的实体。</returns>
+      <param name="entity">要添加到实体集的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.CreateLink(`1,System.String,System.Uri)">
+      <summary>应重写此方法，以处理尝试在两个实体之间创建链接的 POST 和 PUT 请求。</summary>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+      <param name="link">要链接的实体的 URI。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Delete(`1)">
+      <summary>   应重写此方法，以处理用于从实体集中删除现有实体的 DELETE 请求。</summary>
+      <param name="key">要删除的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.DeleteLink(`1,System.String,System.String)">
+      <summary>应重写此方法，以处理尝试破坏两个实体之间的关系的 DELETE 请求。</summary>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="relatedKey">相关实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.DeleteLink(`1,System.String,System.Uri)">
+      <summary>  应重写此方法，以处理尝试破坏两个实体之间的关系的 DELETE 请求。</summary>
+      <param name="key">具有导航属性的实体的键。</param>
+      <param name="navigationProperty">导航属性的名称。</param>
+      <param name="link">要从导航属性中删除的实体的 URI。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Get">
+      <summary>应重写此方法，以处理尝试从实体集中检索实体的 GET 请求。</summary>
+      <returns>实体集中的匹配实体。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Get(`1)">
+      <summary>处理尝试从实体集中根据键检索单个实体的 GET 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要检索的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.GetEntityByKey(`1)">
+      <summary>应重写此方法，以从实体集中根据键检索实体。</summary>
+      <returns>检索的实体；如果在实体集中找不到具有指定实体键的实体，则为 null。</returns>
+      <param name="key">要检索的实体的实体键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.GetKey(`0)">
+      <summary>应重写此方法，以获取指定实体的实体键。</summary>
+      <returns>实体键值。</returns>
+      <param name="entity">实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.HandleUnmappedRequest(System.Web.Http.OData.Routing.ODataPath)">
+      <summary>应重写此方法，以处理所有未映射的 OData 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="odataPath">请求的 OData 路径。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.EntitySetController`2.ODataPath">
+      <summary>获取当前请求的 OData 路径。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Routing.ODataPath" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Patch(`1,System.Web.Http.OData.Delta{`0})">
+      <summary>   处理 PATCH 和 MERGE 请求，以部分更新实体集中的单个实体。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="patch">表示部分更新的修补程序。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.PatchEntity(`1,System.Web.Http.OData.Delta{`0})">
+      <summary>   应重写此方法，以将部分更新应用到实体集中的现有实体。</summary>
+      <returns>更新的实体。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="patch">表示部分更新的修补程序。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Post(`0)">
+      <summary>处理用于在实体集中创建新实体的 POST 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="entity">要插入到实体集中的实体。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.Put(`1,`0)">
+      <summary>处理尝试替换实体集中的单个实体的 PUT 请求。</summary>
+      <returns>要发回到客户端的响应消息。</returns>
+      <param name="key">要替换的实体的实体键。</param>
+      <param name="update">更新的实体。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.EntitySetController`2.QueryOptions">
+      <summary>  获取当前请求的 OData 查询选项。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.EntitySetController`2.UpdateEntity(`1,`0)">
+      <summary>   应重写此方法，以更新实体集中的现有实体。</summary>
+      <returns>更新的实体。</returns>
+      <param name="key">要更新的实体的实体键。</param>
+      <param name="update">更新的实体。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.FeedContext">
+      <summary>包含有关当前序列化的源的上下文信息。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.FeedContext.#ctor"></member>
+    <member name="P:System.Web.Http.OData.FeedContext.EntitySet">
+      <summary>获取此实例所属的 <see cref="T:Microsoft.Data.Edm.IEdmEntitySet" />。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.FeedContext.FeedInstance">
+      <summary>获取此源实例的值。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.FeedContext.Request"></member>
+    <member name="P:System.Web.Http.OData.FeedContext.Url"></member>
+    <member name="T:System.Web.Http.OData.FromODataUriAttribute">
+      <summary>
+        <see cref="T:System.Web.Http.ParameterBindingAttribute" /> 的实现，它可以使用 OData 约定绑定 URI 参数。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.FromODataUriAttribute.#ctor"></member>
+    <member name="M:System.Web.Http.OData.FromODataUriAttribute.GetBinding(System.Web.Http.Controllers.HttpParameterDescriptor)">
+      <summary>获取参数绑定。</summary>
+      <returns>包含绑定的 <see cref="T:System.Web.Http.Controllers.HttpParameterBinding" />。</returns>
+      <param name="parameter">要绑定的参数。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.IDelta">
+      <summary>允许更改对象并跟踪所做的更改。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.Clear">
+      <summary>清除 <see cref="T:System.Web.Http.OData.IDelta" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.GetChangedPropertyNames">
+      <summary>返回已通过此 IDelta 修改为属性名称可枚举值的属性</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.GetUnchangedPropertyNames">
+      <summary>返回尚未通过此 IDelta 修改为属性名称可枚举值的属性</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.TryGetPropertyType(System.String,System.Type@)">
+      <summary>尝试从基础实体获取名为 <paramref name="name" /> 的属性的 <see cref="T:System.Type" />。</summary>
+      <returns>如果找到了该属性，则返回 true；否则返回 false。</returns>
+      <param name="name">属性的名称</param>
+      <param name="type">属性的类型</param>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.TryGetPropertyValue(System.String,System.Object@)">
+      <summary>尝试从基础实体获取名为 <paramref name="name" /> 的属性的值。</summary>
+      <returns>如果找到了该属性，则返回 true；否则返回 false。</returns>
+      <param name="name">属性的名称</param>
+      <param name="value">属性的值</param>
+    </member>
+    <member name="M:System.Web.Http.OData.IDelta.TrySetPropertyValue(System.String,System.Object)">
+      <summary>尝试将名为 <paramref name="name" /> 的属性设置为指定的 <paramref name="value" />。</summary>
+      <returns>如果成功，则返回 true；否则返回 false。</returns>
+      <param name="name">属性的名称</param>
+      <param name="value">属性的新值</param>
+    </member>
+    <member name="T:System.Web.Http.OData.ODataActionParameters">
+      <summary>ActionPayload 保留客户端在 POST 请求中提供的参数名称和值，以调用特定的操作。参数值存储在使用参数名称键控的字典中。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataActionParameters.#ctor"></member>
+    <member name="T:System.Web.Http.OData.ODataController">
+      <summary>为支持使用 OData 格式读取和写入数据的 OData 控制器定义基类。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataController.#ctor"></member>
+    <member name="T:System.Web.Http.OData.ODataFormattingAttribute">
+      <summary>     一个要放置在控制器上的特性，用于启用 OData 格式化程序。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataFormattingAttribute.#ctor"></member>
+    <member name="M:System.Web.Http.OData.ODataFormattingAttribute.Initialize(System.Web.Http.Controllers.HttpControllerSettings,System.Web.Http.Controllers.HttpControllerDescriptor)">
+      <summary>为设置此 controllerDescriptor 的按控制器重写而调用的回调。</summary>
+      <param name="controllerSettings">要初始化的控制器设置。</param>
+      <param name="controllerDescriptor">控制器描述符。请注意，<see cref="T:System.Web.Http.Controllers.HttpControllerDescriptor" /> 可以与派生的控制器类型相关联（假定 <see cref="T:System.Web.Http.Controllers.IControllerConfiguration" /> 是继承的）。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.ODataMetadataController">
+      <summary>Represents an <see cref="T:System.Web.Http.ApiController" /> for generating OData servicedoc and metadata document ($metadata).</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataMetadataController.#ctor"></member>
+    <member name="M:System.Web.Http.OData.ODataMetadataController.GetMetadata">
+      <summary>Generates the OData $metadata document.</summary>
+      <returns>The <see cref="T:Microsoft.Data.Edm.IEdmModel" /> representing $metadata.</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataMetadataController.GetServiceDocument">
+      <summary>Generates the OData service document.</summary>
+      <returns>The service document for the service.</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.ODataQueryContext">
+      <summary>此项定义用于执行查询撰写的某些上下文信息。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataQueryContext.#ctor(Microsoft.Data.Edm.IEdmModel,System.Type)">
+      <summary>  使用 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和元素 CLR 类型构造 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 的实例。</summary>
+      <param name="model">EdmModel，包含与给定的 <paramref name="elementClrType" /> 对应的 <see cref="T:Microsoft.Data.Edm.IEdmType" />。</param>
+      <param name="elementClrType">正在查询的集合元素的 CLR 类型。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.ODataQueryContext.ElementClrType">
+      <summary>获取元素的 CLR 类型。</summary>
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.ODataQueryContext.ElementType">
+      <summary>   获取元素的 <see cref="T:Microsoft.Data.Edm.IEdmType" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmType" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.ODataQueryContext.Model">
+      <summary>获取包含 EntitySet 的给定 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.ODataQueryParameterBindingAttribute">
+      <summary>A <see cref="T:System.Web.Http.ParameterBindingAttribute" /> to bind parameters of type <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions" /> to the OData query from the incoming request.</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataQueryParameterBindingAttribute.#ctor"></member>
+    <member name="M:System.Web.Http.OData.ODataQueryParameterBindingAttribute.GetBinding(System.Web.Http.Controllers.HttpParameterDescriptor)"></member>
+    <member name="T:System.Web.Http.OData.ODataRoutingAttribute">
+      <summary>定义一个控制器级别的特性，可以使用该特性基于路由约定启用 OData 操作选择。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.ODataRoutingAttribute.#ctor"></member>
+    <member name="M:System.Web.Http.OData.ODataRoutingAttribute.Initialize(System.Web.Http.Controllers.HttpControllerSettings,System.Web.Http.Controllers.HttpControllerDescriptor)">
+      <summary>  为设置此 controllerDescriptor 的按控制器重写而调用的回调。</summary>
+      <param name="controllerSettings">要初始化的控制器设置。</param>
+      <param name="controllerDescriptor">控制器描述符。请注意，<see cref="T:System.Web.Http.Controllers.HttpControllerDescriptor" /> 可以与派生的控制器类型相关联（假定 <see cref="T:System.Web.Http.Controllers.IControllerConfiguration" /> 是继承的）。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.PageResult">
+      <summary>Represents a feed of entities that includes additional information that OData formats support.</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.PageResult.#ctor(System.Uri,System.Nullable{System.Int64})">
+      <summary>Initializes a new instance of the <see cref="T:System.Web.Http.OData.PageResult" /> class.</summary>
+      <param name="nextPageLink">The link for the next page of items in the feed.</param>
+      <param name="count">The total count of items in the feed.</param>
+    </member>
+    <member name="P:System.Web.Http.OData.PageResult.Count">
+      <summary>Gets the total count of items in the feed.</summary>
+      <returns>Returns <see cref="T:System.Int64" />.</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.PageResult.NextPageLink">
+      <summary>Gets the link for the next page of items in the feed.</summary>
+      <returns>Returns <see cref="T:System.Uri" />.</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.PageResult`1">
+      <summary>PageResult 是包含 OData 格式支持的附加信息的实体源。当前限制为：服务器上所有匹配实体的计数（使用 $inlinecount=allpages 进行请求）；用于检索下一页结果的 NextLink（当服务器强制实施服务器驱动的分页时添加）。</summary>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.PageResult`1.#ctor(System.Collections.Generic.IEnumerable{`0},System.Uri,System.Nullable{System.Int64})">
+      <summary>创建部分结果集 - 当启用服务器驱动的分页时使用。</summary>
+      <param name="items">应在此页中序列化的匹配结果的子集。</param>
+      <param name="nextPageLink">下一页匹配结果的链接（如果存在更多结果）</param>
+      <param name="count">匹配结果的总计数，使客户端能够知道服务器上的匹配项数。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.PageResult`1.GetEnumerator">
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerator`1" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.PageResult`1.Items">
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.PageResult`1.System#Collections#IEnumerable#GetEnumerator">
+      <returns>返回 <see cref="T:System.Collections.IEnumerator" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ActionConfiguration">
+      <summary> ActionConfiguration 表示你希望通过服务公开的 OData 操作。ActionConfigurations 通过 $metadata 公开为 &lt;FunctionImport /&gt; 元素。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.AddParameter(System.String,System.Web.Http.OData.Builder.IEdmTypeConfiguration)">
+      <summary> 添加新的非绑定参数。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.BindingParameter">
+      <summary> 获取 bindingParameter。Null 表示操作没有 bindingParameter。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.CollectionParameter``1(System.String)">
+      <summary> 添加新的非绑定集合参数</summary>
+      <typeparam name="TElementType"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.FollowsConventions"></member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.GetActionLink">
+      <summary> 检索当前注册的操作链接工厂。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.HasActionLink(System.Func{System.Web.Http.OData.EntityInstanceContext,System.Uri},System.Boolean)"></member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.IsAlwaysBindable">
+      <summary> 是否始终可以绑定此操作。例如，假设某个 Watch 操作可绑定到 Movie：但不可能总是能够 Watch（观看）Movie（电影），在此情况下，IsAlwaysBindable 将返回 false。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.IsBindable"></member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.Kind"></member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.Parameter``1(System.String)">
+      <summary> 添加新的非绑定参数</summary>
+      <typeparam name="TParameter"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ActionConfiguration.Parameters"></member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.Returns``1">
+      <summary> 已建立操作的返回类型。在返回类型为单个 Primitive 或 ComplexType 时使用。</summary>
+      <typeparam name="TReturnType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.ReturnsCollection``1">
+      <summary> 建立操作的返回类型。在返回类型为 Primitive 或 ComplexType 的集合时使用。</summary>
+      <typeparam name="TReturnElementType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.ReturnsCollectionFromEntitySet``1(System.String)">
+      <summary> 将返回类型设置为 EntityType 实例的集合。</summary>
+      <param name="entitySetName">包含返回的 EntityType 实例的 entitySetName</param>
+      <typeparam name="TElementEntityType">作为 EntityType 的类型</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.ReturnsFromEntitySet``1(System.String)">
+      <summary> 将返回类型设置为单个 EntityType 实例。</summary>
+      <param name="entitySetName">包含返回 EntityType 实例的 entitySetName</param>
+      <typeparam name="TEntityType">作为 EntityType 的类型</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionConfiguration.SetBindingParameter(System.String,System.Web.Http.OData.Builder.IEdmTypeConfiguration,System.Boolean)">
+      <summary> 指定 bindingParameter 的名称、类型及其属性是否为 alwaysBindable，仅当操作的属性为“isBindable”时才使用此项 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ActionLinkBuilder">
+      <summary> ActionLinkBuilder 可用于对某个操作进行批注。这是格式化程序创建链接来调用绑定操作的方式。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ActionLinkBuilder.#ctor(System.Func{System.Web.Http.OData.EntityInstanceContext,System.Uri},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.ActionLinkBuilder.BuildActionLink(System.Web.Http.OData.EntityInstanceContext)"></member>
+    <member name="M:System.Web.Http.OData.Builder.ActionLinkBuilder.CreateActionLinkFactory(System.Func{System.Web.Http.OData.EntityInstanceContext,System.Uri},System.Func{System.Web.Http.OData.EntityInstanceContext,System.Boolean})">
+      <summary> 创建一个用于生成操作链接的操作链接工厂，但只能根据 expensiveAvailabilityCheck 以及是否要执行高开销检查（可通过查看 EntityInstanceContext.SkipExpensiveActionAvailabilityChecks 属性推测）的情况来适当创建。</summary>
+      <returns>新的操作链接工厂。</returns>
+      <param name="baseFactory">在通过了所有检查的情况下实际生成链接的操作链接工厂。</param>
+      <param name="expensiveAvailabilityCheck">可用性检查函数的开销较高，但调用时会返回操作是否可用。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ActionLinkBuilder.FollowsConventions"></member>
+    <member name="T:System.Web.Http.OData.Builder.BindingParameterConfiguration">
+      <summary> 表示 BindingParameter。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.BindingParameterConfiguration.#ctor(System.String,System.Web.Http.OData.Builder.IEdmTypeConfiguration,System.Boolean)">
+      <summary> 创建 BindingParameterConfiguration</summary>
+      <param name="name">绑定参数的名称</param>
+      <param name="parameterType">绑定参数的类型</param>
+      <param name="alwaysBindable">是否始终可以将操作绑定到绑定参数的实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.BindingParameterConfiguration.AlwaysBindable">
+      <summary> 指示 BindingParameter 是否始终可绑定。例如，有些操作始终可用，而有些操作只在特定的时间或特定状态下才可用。 </summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.BindingParameterConfiguration.DefaultBindingParameterName"></member>
+    <member name="T:System.Web.Http.OData.Builder.CollectionPropertyConfiguration">
+      <summary>CollectionPropertyConfiguration 表示 EntityType 或 ComplexType 上的 CollectionProperty。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.#ctor(System.Reflection.PropertyInfo,System.Web.Http.OData.Builder.StructuralTypeConfiguration)">
+      <summary>使用提供的 <paramref name="property" /> 构造一个 CollectionPropertyConfiguration。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.ElementType">
+      <summary>返回集合中的元素类型</summary>
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.IsOptional">
+      <summary>将 CollectionProperty 设置为 optional（即可为 null）。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.CollectionPropertyConfiguration" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.IsRequired">
+      <summary>将 CollectionProperty 设置为 required（即不可为 null）。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.CollectionPropertyConfiguration" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.Kind">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.PropertyKind" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionPropertyConfiguration.RelatedClrType">
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.CollectionTypeConfiguration">
+      <summary>表示某个命名类型（例如 Collection(Namespace.Customer) 或 Collection(Namespace.Address)）的集合。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.CollectionTypeConfiguration.#ctor(System.Web.Http.OData.Builder.IEdmTypeConfiguration,System.Type)">
+      <summary>构造一个集合，该集合包含指定 ElementType 的元素，并在 .NET 中使用指定的 clrType 表示</summary>
+      <param name="elementType">集合中元素的 EdmTypeConfiguration</param>
+      <param name="clrType">此集合在 .NET 中建立清单后的类型</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.ClrType">
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.ElementType">
+      <summary>此集合中元素的 EdmTypeConfiguration</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.IEdmTypeConfiguration" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.FullName">
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.Kind">
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.EdmTypeKind" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.ModelBuilder">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.Name">
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.CollectionTypeConfiguration.Namespace">
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ComplexPropertyConfiguration"></member>
+    <member name="M:System.Web.Http.OData.Builder.ComplexPropertyConfiguration.#ctor(System.Reflection.PropertyInfo,System.Web.Http.OData.Builder.StructuralTypeConfiguration)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Builder.ComplexPropertyConfiguration" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ComplexPropertyConfiguration.IsOptional"></member>
+    <member name="M:System.Web.Http.OData.Builder.ComplexPropertyConfiguration.IsRequired"></member>
+    <member name="P:System.Web.Http.OData.Builder.ComplexPropertyConfiguration.Kind"></member>
+    <member name="P:System.Web.Http.OData.Builder.ComplexPropertyConfiguration.RelatedClrType"></member>
+    <member name="T:System.Web.Http.OData.Builder.ComplexTypeConfiguration">
+      <summary>允许针对模型中的复杂类型执行配置。可通过使用方法 <see cref="M:System.Web.Http.OData.Builder.ODataModelBuilder.ComplexType``1" /> 获取 ComplexTypeConfiguration。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ComplexTypeConfiguration.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Builder.ComplexTypeConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,System.Type)"></member>
+    <member name="P:System.Web.Http.OData.Builder.ComplexTypeConfiguration.Kind"></member>
+    <member name="T:System.Web.Http.OData.Builder.ComplexTypeConfiguration`1">
+      <summary>Represents an <see cref="T:Microsoft.Data.Edm.IEdmComplexType" /> that can be built using <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />.</summary>
+      <typeparam name="TComplexType"></typeparam>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.EntityCollectionConfiguration`1">
+      <summary>EntityCollectionConfiguration 表示实体的集合。此类可用于配置要绑定到实体的项，例如绑定到集合的操作。</summary>
+      <typeparam name="TEntityType">EntityType，作为 EntityCollection 的 ElementType</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityCollectionConfiguration`1.Action(System.String)">
+      <summary>创建一个可绑定到 Collection(EntityType) 的新操作。</summary>
+      <returns>ActionConfiguration，允许对操作执行进一步的配置。</returns>
+      <param name="name">操作的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityCollectionConfiguration`1.TransientAction(System.String)">
+      <summary>创建一个有时可绑定到 Collection(EntityType) 的新操作。</summary>
+      <returns>ActionConfiguration，允许对操作执行进一步的配置。</returns>
+      <param name="name">操作的名称。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.EntitySetConfiguration">
+      <summary>允许针对模型中的实体集执行配置。可通过使用方法 <see cref="M:System.Web.Http.OData.Builder.ODataModelBuilder.EntitySet``1(System.String)" /> 获取 <see cref="T:System.Web.Http.OData.Builder.EntitySetConfiguration" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,System.Type,System.String)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,System.Web.Http.OData.Builder.EntityTypeConfiguration,System.String)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.AddBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Web.Http.OData.Builder.EntitySetConfiguration)">
+      <summary>将给定的导航属性绑定到目标实体集。</summary>
+      <returns>
+        <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyBinding" />，从而可以进一步对其进行配置。</returns>
+      <param name="navigationConfiguration">导航属性。</param>
+      <param name="targetEntitySet">目标实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntitySetConfiguration.Bindings">
+      <summary>获取此实体集的导航目标。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntitySetConfiguration.ClrType">
+      <summary>获取此实体集中包含的实体类型的支持 CLR 类型。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntitySetConfiguration.EntityType">
+      <summary>获取此实体集中包含的实体类型。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.FindBinding(System.String)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.FindBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.FindBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetEditLink">
+      <summary>获取用于为此实体集中的条目生成编辑链接的生成器。</summary>
+      <returns>链接生成器。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetFeedSelfLink">
+      <summary>获取用于为此实体集的源生成自助链接的生成器。</summary>
+      <returns>链接生成器。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetIdLink">
+      <summary>获取用于为此实体集中的条目生成 ID 的生成器。</summary>
+      <returns>生成器。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetNavigationPropertyLink(System.Web.Http.OData.Builder.NavigationPropertyConfiguration)">
+      <summary>获取用于为此实体集中条目的给定导航属性生成导航链接的生成器。</summary>
+      <returns>链接生成器。</returns>
+      <param name="navigationProperty">导航属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetReadLink">
+      <summary>获取用于为此实体集中的条目生成读取链接的生成器。</summary>
+      <returns>链接生成器。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.GetUrl"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasEditLink(System.Web.Http.OData.Builder.SelfLinkBuilder{System.Uri})"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasFeedSelfLink(System.Func{System.Web.Http.OData.FeedContext,System.Uri})">
+      <summary>向源添加自助链接。</summary>
+      <returns>当前正在配置的实体集配置。</returns>
+      <param name="feedSelfLinkFactory">用于生成链接 URL 的生成器。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasIdLink(System.Web.Http.OData.Builder.SelfLinkBuilder{System.String})"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasNavigationPropertiesLink(System.Collections.Generic.IEnumerable{System.Web.Http.OData.Builder.NavigationPropertyConfiguration},System.Web.Http.OData.Builder.NavigationLinkBuilder)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasNavigationPropertyLink(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Web.Http.OData.Builder.NavigationLinkBuilder)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasReadLink(System.Web.Http.OData.Builder.SelfLinkBuilder{System.Uri})"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.HasUrl(System.String)">
+      <summary>配置实体集 URL。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+      <param name="url">实体集 URL。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntitySetConfiguration.Name">
+      <summary>获取此实体集的名称。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration.RemoveBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration)">
+      <summary>删除给定导航属性的绑定。</summary>
+      <param name="navigationConfiguration">导航属性</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.EntitySetConfiguration`1">
+      <typeparam name="TEntityType"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntitySetConfiguration`1.EntityType"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.FindBinding(System.String)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.FindBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.FindBinding(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasEditLink(System.Func{System.Web.Http.OData.EntityInstanceContext{`0},System.String},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasEditLink(System.Func{System.Web.Http.OData.EntityInstanceContext{`0},System.Uri},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasFeedSelfLink(System.Func{System.Web.Http.OData.FeedContext,System.String})">
+      <summary> 向源添加自助链接。</summary>
+      <param name="feedSelfLinkFactory">用于生成链接 URL 的生成器。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasFeedSelfLink(System.Func{System.Web.Http.OData.FeedContext,System.Uri})">
+      <summary> 向源添加自助链接。</summary>
+      <param name="feedSelfLinkFactory">用于生成链接 URL 的生成器。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasIdLink(System.Func{System.Web.Http.OData.EntityInstanceContext{`0},System.String},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasManyBinding``2(System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``0}}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasManyBinding``2(System.Linq.Expressions.Expression{System.Func{``1,System.Collections.Generic.IEnumerable{``0}}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasManyBinding``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasManyBinding``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasNavigationPropertiesLink(System.Collections.Generic.IEnumerable{System.Web.Http.OData.Builder.NavigationPropertyConfiguration},System.Func{System.Web.Http.OData.EntityInstanceContext{`0},Microsoft.Data.Edm.IEdmNavigationProperty,System.Uri},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasNavigationPropertyLink(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Func{System.Web.Http.OData.EntityInstanceContext{`0},Microsoft.Data.Edm.IEdmNavigationProperty,System.Uri},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasOptionalBinding``2(System.Linq.Expressions.Expression{System.Func{``1,``0}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasOptionalBinding``2(System.Linq.Expressions.Expression{System.Func{``1,``0}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasOptionalBinding``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasOptionalBinding``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasReadLink(System.Func{System.Web.Http.OData.EntityInstanceContext{`0},System.String},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasReadLink(System.Func{System.Web.Http.OData.EntityInstanceContext{`0},System.Uri},System.Boolean)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasRequiredBinding``2(System.Linq.Expressions.Expression{System.Func{``1,``0}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasRequiredBinding``2(System.Linq.Expressions.Expression{System.Func{``1,``0}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+      <typeparam name="TDerivedEntityType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasRequiredBinding``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.String)">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntitySetConfiguration`1.HasRequiredBinding``1(System.Linq.Expressions.Expression{System.Func{`0,``0}},System.Web.Http.OData.Builder.EntitySetConfiguration{``0})">
+      <typeparam name="TTargetType"></typeparam>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.EntityTypeConfiguration">
+      <summary>表示一个可以使用 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" /> 生成的 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,System.Type)"></member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.Abstract">
+      <summary>将此实体类型标记为抽象。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.AddCollectionProperty(System.Reflection.PropertyInfo)">
+      <summary>将新的 EDM 集合属性添加到此实体类型。</summary>
+      <returns>返回所添加属性的 <see cref="T:System.Web.Http.OData.Builder.CollectionPropertyConfiguration" />。</returns>
+      <param name="propertyInfo">支持 CLR 属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.AddComplexProperty(System.Reflection.PropertyInfo)">
+      <summary>将新的 EDM 复杂属性添加到此实体类型。</summary>
+      <returns>返回所添加属性的 <see cref="T:System.Web.Http.OData.Builder.ComplexPropertyConfiguration" />。</returns>
+      <param name="propertyInfo">支持 CLR 属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.AddNavigationProperty(System.Reflection.PropertyInfo,Microsoft.Data.Edm.EdmMultiplicity)">
+      <summary>将新的 EDM 导航属性添加到此实体类型。</summary>
+      <returns>返回所添加属性的 <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyConfiguration" />。</returns>
+      <param name="navigationProperty">支持 CLR 属性。</param>
+      <param name="multiplicity">导航属性的 <see cref="T:Microsoft.Data.Edm.EdmMultiplicity" />。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.AddProperty(System.Reflection.PropertyInfo)">
+      <summary>将新的 EDM 基元属性添加到此实体类型。</summary>
+      <returns>返回所添加属性的 <see cref="T:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration" />。</returns>
+      <param name="propertyInfo">支持 CLR 属性。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.BaseType">
+      <summary>获取或设置此实体类型的基类型。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.EntityTypeConfiguration" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.BaseTypeConfigured">
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.DerivesFrom(System.Web.Http.OData.Builder.EntityTypeConfiguration)">
+      <summary>设置此实体类型的基类型。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+      <param name="baseType">基实体类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.DerivesFromNothing">
+      <summary>将此实体类型的基类型设置为 null，表示此实体类型无法从任何元素派生。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.HasKey(System.Reflection.PropertyInfo)">
+      <summary>配置此实体类型的键属性。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+      <param name="keyProperty">要添加到此实体类型键属性的属性。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.IsAbstract">
+      <summary>获取或设置一个值，该值指示此类型是否为抽象类型。</summary>
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.Keys">
+      <summary>获取此实体类型的键的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.Kind">
+      <summary>获取此 <see cref="T:System.Web.Http.OData.Builder.IEdmTypeConfiguration" /> 的 <see cref="T:Microsoft.Data.Edm.EdmTypeKind" /></summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.EdmTypeKind" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration.NavigationProperties">
+      <summary>获取此实体类型的 <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyConfiguration" /> 的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.RemoveKey(System.Web.Http.OData.Builder.PrimitivePropertyConfiguration)">
+      <summary>从实体键集合中删除属性。</summary>
+      <param name="keyProperty">要删除的键。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration.RemoveProperty(System.Reflection.PropertyInfo)"></member>
+    <member name="T:System.Web.Http.OData.Builder.EntityTypeConfiguration`1">
+      <summary>表示一个可以使用 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" /> 生成的 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" />。</summary>
+      <typeparam name="TEntityType">此 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" /> 的支持 CLR 类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.Abstract">
+      <summary>将此实体类型标记为抽象。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.Action(System.String)">
+      <summary>创建一个可绑定到此 EntityType 的操作。</summary>
+      <returns>ActionConfiguration，允许对新操作执行进一步的配置。</returns>
+      <param name="name">操作的名称。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.BaseType">
+      <summary>获取此实体类型的基类型。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.Collection">
+      <summary>用于访问实体的集合，通过该集合能够配置可绑定到 EntityCollection 的操作。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.DerivesFrom``1">
+      <summary>设置此实体类型的基类型。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+      <typeparam name="TBaseType">基实体类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.DerivesFromNothing">
+      <summary>将此实体类型的基类型设置为 null，表示此实体类型无法从任何元素派生。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.HasKey``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <summary>配置此实体类型的键属性。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+      <param name="keyDefinitionExpression">一个 lambda 表达式，表示要用作主键的属性。例如，在 C# 中，t =&amp;gt; t.Id；在 Visual Basic 中，.Net Function(t) t.Id。</param>
+      <typeparam name="TKey">键的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.HasMany``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})">
+      <summary>通过此实体类型配置一对多关系。</summary>
+      <returns>一个配置对象，可用于进一步配置关系。</returns>
+      <param name="navigationPropertyExpression">一个 lambda 表达式，表示关系的导航属性。例如，在 C# 中，t =&amp;gt; t.MyProperty；在 Visual Basic 中，.Net Function(t) t.MyProperty。</param>
+      <typeparam name="TTargetEntity">位于关系另一端的实体的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.HasOptional``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <summary>通过此实体类型配置可选关系。</summary>
+      <returns>一个配置对象，可用于进一步配置关系。</returns>
+      <param name="navigationPropertyExpression">一个 lambda 表达式，表示关系的导航属性。例如，在 C# 中，t =&amp;gt; t.MyProperty；在 Visual Basic 中，.Net Function(t) t.MyProperty。</param>
+      <typeparam name="TTargetEntity">位于关系另一端的实体的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.HasRequired``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <summary>通过此实体类型配置所需的关系。</summary>
+      <returns>一个配置对象，可用于进一步配置关系。</returns>
+      <param name="navigationPropertyExpression">一个 lambda 表达式，表示关系的导航属性。例如，在 C# 中，t =&amp;gt; t.MyProperty；在 Visual Basic 中，.Net Function(t) t.MyProperty。</param>
+      <typeparam name="TTargetEntity">位于关系另一端的实体的类型。</typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.NavigationProperties">
+      <summary>获取此实体类型的 <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyConfiguration" /> 的集合。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.EntityTypeConfiguration`1.TransientAction(System.String)">
+      <summary>创建一个有时可绑定到此 EntityType 的操作</summary>
+      <returns>ActionConfiguration，允许对新的“瞬态”操作执行进一步的配置。</returns>
+      <param name="name">操作的名称。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.IEdmTypeConfiguration">
+      <summary>表示 EdmType。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.ClrType">
+      <summary>与 EdmType 关联的 .NET 类型。</summary>
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.FullName">
+      <summary>EdmType 的全名（包括命名空间）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.Kind">
+      <summary>EdmType 的类型。示例包括 EntityType、ComplexType、PrimitiveType 和 CollectionType。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.EdmTypeKind" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.ModelBuilder">
+      <summary>用于创建此 IEdmType 的 ODataModelBuilder。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.Name">
+      <summary>EdmType 的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.IEdmTypeConfiguration.Namespace">
+      <summary>EdmType 的命名空间。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.NavigationLinkBuilder"></member>
+    <member name="M:System.Web.Http.OData.Builder.NavigationLinkBuilder.#ctor(System.Func{System.Web.Http.OData.EntityInstanceContext,Microsoft.Data.Edm.IEdmNavigationProperty,System.Uri},System.Boolean)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Builder.NavigationLinkBuilder" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationLinkBuilder.Factory"></member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationLinkBuilder.FollowsConventions"></member>
+    <member name="T:System.Web.Http.OData.Builder.NavigationPropertyBindingConfiguration">
+      <summary>Used to configure the binding for a navigation property for an entity set. This configuration functionality is exposed by the model builder Fluent API, see <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />.</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.NavigationPropertyBindingConfiguration.#ctor(System.Web.Http.OData.Builder.NavigationPropertyConfiguration,System.Web.Http.OData.Builder.EntitySetConfiguration)">
+      <summary>Initializes a new instance of the <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyBindingConfiguration" /> class.</summary>
+      <param name="navigationProperty">The navigation property for the binding.</param>
+      <param name="entitySet">The target entity set of the binding.</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyBindingConfiguration.EntitySet">
+      <summary>Gets the target entity set of the binding.</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyBindingConfiguration.NavigationProperty">
+      <summary>Gets the navigation property of the binding.</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.NavigationPropertyConfiguration"></member>
+    <member name="M:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.#ctor(System.Reflection.PropertyInfo,Microsoft.Data.Edm.EdmMultiplicity,System.Web.Http.OData.Builder.EntityTypeConfiguration)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Builder.NavigationPropertyConfiguration" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.DeclaringEntityType"></member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.Kind"></member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.Multiplicity"></member>
+    <member name="M:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.Optional"></member>
+    <member name="P:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.RelatedClrType"></member>
+    <member name="M:System.Web.Http.OData.Builder.NavigationPropertyConfiguration.Required"></member>
+    <member name="T:System.Web.Http.OData.Builder.NonbindingParameterConfiguration">
+      <summary> 表示非绑定过程参数。非绑定参数在操作的 POST 正文中提供。对于函数，非绑定参数以 3 种方式提供 - ~/.../Function(p1=value) - ~/.../Function(p1=@x)?@x=value - ~/.../Function?p1=value（仅当 Function 是最后一个 URL 路径段时才允许使用）。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.NonbindingParameterConfiguration.#ctor(System.String,System.Web.Http.OData.Builder.IEdmTypeConfiguration)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Builder.NonbindingParameterConfiguration" /> 类的新实例。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder">
+      <summary>用于根据一组 <see cref="T:System.Web.Http.OData.Builder.Conventions.IConvention" /> 自动将 CLR 类映射到 EDM 模型。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.#ctor">
+      <summary>初始化新的 <see cref="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.#ctor(System.Web.Http.HttpConfiguration)">
+      <summary>初始化新的 <see cref="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder" />。</summary>
+      <param name="configuration">要使用的 <see cref="T:System.Web.Http.HttpConfiguration" />。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.AddComplexType(System.Type)">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.ComplexTypeConfiguration" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.AddEntity(System.Type)">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.EntityTypeConfiguration" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.AddEntitySet(System.String,System.Web.Http.OData.Builder.EntityTypeConfiguration)">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.EntitySetConfiguration" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.GetEdmModel">
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.Ignore``1">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder" />。</returns>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataConventionModelBuilder.Ignore(System.Type[])">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataConventionModelBuilder.OnModelCreating">
+      <summary>在 <see cref="T:System.Web.Http.OData.Builder.ODataConventionModelBuilder" /> 运行所有约定之后、但在配置已锁定并用于生成 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 之前调用此操作。</summary>
+      <returns>返回 <see cref="T:System.Action`1" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ODataModelBuilder">
+      <summary>将 CLR 类映射到 EDM 模型。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.Action(System.String)">
+      <summary>向生成器添加一个不可绑定的操作。</summary>
+      <returns>指定的操作的配置对象。</returns>
+      <param name="name">操作的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.AddComplexType(System.Type)">
+      <summary>将某个复杂类型注册为模型的一部分，并返回可用于配置实体的对象。可以针对同一个实体多次调用此方法，以执行多行配置。</summary>
+      <returns>指定复杂类型的配置对象。</returns>
+      <param name="type">要注册或配置的类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.AddEntity(System.Type)">
+      <summary>将某个实体类型注册为模型的一部分，并返回可用于配置实体的对象。可以针对同一个实体多次调用此方法，以执行多行配置。</summary>
+      <returns>指定实体类型的配置对象。</returns>
+      <param name="type">要注册或配置的类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.AddEntitySet(System.String,System.Web.Http.OData.Builder.EntityTypeConfiguration)">
+      <summary>将某个实体集注册为模型的一部分，并返回可用于配置该实体集的对象。可以针对同一个类型多次调用此方法，以执行多行配置。</summary>
+      <returns>指定实体集的配置对象。</returns>
+      <param name="name">实体集的名称。</param>
+      <param name="entityType">要注册或配置的类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.AddProcedure(System.Web.Http.OData.Builder.ProcedureConfiguration)">
+      <summary>将过程添加到模型中。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.ComplexType``1">
+      <summary>将某个类型注册为模型中的复杂类型，并返回可用于配置该复杂类型的对象。可以针对同一个类型多次调用此方法，以执行多行配置。</summary>
+      <returns>指定复杂类型的配置对象。</returns>
+      <typeparam name="TComplexType">要注册或配置的类型。</typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.ContainerName">
+      <summary>获取或设置要保留所有 EntitySet、Action 和 Function 的容器的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.DataServiceVersion">
+      <summary>获取或设置模型的数据服务版本。默认值为 3.0。</summary>
+      <returns>返回 <see cref="T:System.Version" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.Entity``1">
+      <summary>将某个实体类型注册为模型的一部分，并返回可用于配置实体的对象。可以针对同一个实体多次调用此方法，以执行多行配置。</summary>
+      <returns>指定实体类型的配置对象。</returns>
+      <typeparam name="TEntityType">要注册或配置的类型。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.EntitySet``1(System.String)">
+      <summary>将某个实体集注册为模型的一部分，并返回可用于配置该实体集的对象。可以针对同一个类型多次调用此方法，以执行多行配置。</summary>
+      <returns>指定实体集的配置对象。</returns>
+      <param name="name">实体集的名称。</param>
+      <typeparam name="TEntityType">实体集的实体类型。</typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.EntitySets">
+      <summary>获取要生成的模型中 EDM 实体集的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.GetEdmModel">
+      <summary>使用此生成器基于执行的配置创建 <see cref="T:Microsoft.Data.Edm.IEdmModel" />。</summary>
+      <returns>生成的模型。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.GetTypeConfigurationOrNull(System.Type)">
+      <summary>尝试查找与 T 匹配的预配置结构类型或基元类型。如果找不到匹配项，则返回 NULL。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.IEdmTypeConfiguration" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.MaxDataServiceVersion">
+      <summary>获取或设置模型的最大数据服务版本。默认值为 3.0。</summary>
+      <returns>返回 <see cref="T:System.Version" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.Namespace">
+      <summary>获取或设置要用于生成的模型的命名空间。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.Procedures">
+      <summary>获取要生成的模型中过程（即 Action、Function 和 ServiceOperation）的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.RemoveEntitySet(System.String)">
+      <summary>从模型中删除实体集。</summary>
+      <returns>如果该实体集在模型中存在，则为 <see cref="" />；否则为 <see cref="" />。</returns>
+      <param name="name">要删除的实体集的名称</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.RemoveProcedure(System.String)">
+      <summary>      从模型中删除过程。</summary>
+      <returns>如果该过程在模型中存在，则为 true；否则为 false。</returns>
+      <param name="name">要删除的过程的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.RemoveProcedure(System.Web.Http.OData.Builder.ProcedureConfiguration)">
+      <summary>从模型中删除过程。</summary>
+      <returns>如果该过程在模型中存在，则为 true；否则为 false。</returns>
+      <param name="procedure">要删除的过程。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ODataModelBuilder.RemoveStructuralType(System.Type)">
+      <summary>从模型中删除类型。</summary>
+      <returns>如果该类型在模型中存在，则为 true；否则为 false。</returns>
+      <param name="type">要删除的类型</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ODataModelBuilder.StructuralTypes">
+      <summary>获取要生成的模型中 EDM 类型的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.IEnumerable`1" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ParameterConfiguration">
+      <summary>表示过程的参数</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ParameterConfiguration.#ctor(System.String,System.Web.Http.OData.Builder.IEdmTypeConfiguration)"></member>
+    <member name="P:System.Web.Http.OData.Builder.ParameterConfiguration.Name">
+      <summary>参数名。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ParameterConfiguration.TypeConfiguration">
+      <summary>参数的类型。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration">
+      <summary>用于配置实体类型或复杂类型的基元属性。此配置功能由模型生成器 Fluent API 公开，请参阅 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration.#ctor(System.Reflection.PropertyInfo,System.Web.Http.OData.Builder.StructuralTypeConfiguration)"></member>
+    <member name="M:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration.IsOptional">
+      <summary>将属性配置为 optional。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration.IsRequired">
+      <summary>将属性配置为 required。</summary>
+      <returns>返回自身，以便能够链接多个调用。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration.Kind"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration.RelatedClrType"></member>
+    <member name="T:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration">
+      <summary>表示 PrimitiveType</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,Microsoft.Data.Edm.IEdmPrimitiveType,System.Type)">
+      <summary>此构造函数仅公用于单元测试目的。若要获取 PrimitiveTypeConfiguration，请使用 ODataModelBuilder.GetTypeConfigurationOrNull(Type)</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.ClrType"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.EdmPrimitiveType">
+      <summary>返回与此 PrimitiveTypeConfiguration 关联的 IEdmPrimitiveType</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.FullName"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.Kind"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.ModelBuilder"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.Name"></member>
+    <member name="P:System.Web.Http.OData.Builder.PrimitiveTypeConfiguration.Namespace"></member>
+    <member name="T:System.Web.Http.OData.Builder.ProcedureConfiguration">
+      <summary>表示在模型中公开的过程</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.ProcedureConfiguration.#ctor"></member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.ContainerQualifiedName">
+      <summary>该过程在 OData URL 中使用时的限定名称。需要进行限定，以便将该过程与其他可能的单一组成部分标识符区分开来。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.EntitySet">
+      <summary>从中返回实体的 EntitySet。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.FullName">
+      <summary>FullName 是 ContainerQualifiedName。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.FullyQualifiedName">
+      <summary>FullyQualifiedName 是使用命名空间进一步限定的 ContainerQualifiedName。通常，这是不需要的，因为大多数服务最多只有一个同名的容器。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.IsAlwaysBindable">
+      <summary>如果该过程的属性为 IsBindable，它是否始终可绑定。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.IsBindable">
+      <summary>是否可以将该过程绑定到表示 BindingParameter 的 URL。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.IsComposable">
+      <summary>该过程是否可用作组合基础。例如，调用该过程的 URL 是否可用作调用该过程并对结果执行其他某些操作的请求的基 URL</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.IsSideEffecting">
+      <summary>该过程是否有副作用。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.Kind">
+      <summary>过程的类型，可以是 Action、Function 或 ServiceOperation</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.ModelBuilder"></member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.Name">
+      <summary>过程的名称</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.Parameters">
+      <summary>过程使用的参数</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.ProcedureConfiguration.ReturnType">
+      <summary>调用该过程时返回的类型。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.ProcedureKind">
+      <summary>OData 过程的类型。Action、Function 和 ServiceOperation 中的一个。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.ProcedureKind.Action">
+      <summary />
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.ProcedureKind.Function">
+      <summary />
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.ProcedureKind.ServiceOperation">
+      <summary />
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.PropertyConfiguration">
+      <summary>所有属性配置的基类。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.PropertyConfiguration.#ctor(System.Reflection.PropertyInfo,System.Web.Http.OData.Builder.StructuralTypeConfiguration)"></member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.AddedExplicitly">
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.DeclaringType">
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.StructuralTypeConfiguration" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.Kind">
+      <summary>获取属性的 <see cref="T:System.Web.Http.OData.Builder.PropertyKind" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Builder.PropertyKind" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.Name">
+      <summary>获取属性的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.PropertyInfo">
+      <summary>获取映射 CLR <see cref="P:System.Web.Http.OData.Builder.PropertyConfiguration.PropertyInfo" />。</summary>
+      <returns>返回 <see cref="T:System.Reflection.PropertyInfo" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.PropertyConfiguration.RelatedClrType">
+      <summary>获取属性的 CLR <see cref="T:System.Type" />。</summary>
+      <returns>返回 <see cref="T:System.Type" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.PropertyKind"></member>
+    <member name="F:System.Web.Http.OData.Builder.PropertyKind.Primitive">
+      <summary>.</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.PropertyKind.Complex">
+      <summary>.</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.PropertyKind.Collection">
+      <summary>.</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Builder.PropertyKind.Navigation">
+      <summary>.</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.SelfLinkBuilder`1">
+      <summary> 封装自助链接工厂，并指示该链接工厂是否遵循约定。</summary>
+      <typeparam name="T">生成的自助链接类型。此值应该针对 ID 链接以及读取和编辑链接。</typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.SelfLinkBuilder`1.#ctor(System.Func{System.Web.Http.OData.EntityInstanceContext,`0},System.Boolean)">
+      <summary> 构造 <see cref="T:System.Web.Http.OData.Builder.SelfLinkBuilder`1" /> 的新实例。</summary>
+      <param name="linkFactory">链接工厂。</param>
+      <param name="followsConventions">工厂是否遵循有关生成链接的 OData 约定。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.SelfLinkBuilder`1.Factory">
+      <summary> 获取用于生成链接的工厂。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.SelfLinkBuilder`1.FollowsConventions">
+      <summary> 获取一个布尔值，该值指示链接工厂是否遵循 OData 约定。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.StructuralPropertyConfiguration">
+      <summary>所有结构属性配置的基类。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralPropertyConfiguration.#ctor(System.Reflection.PropertyInfo,System.Web.Http.OData.Builder.StructuralTypeConfiguration)"></member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralPropertyConfiguration.OptionalProperty"></member>
+    <member name="T:System.Web.Http.OData.Builder.StructuralTypeConfiguration">
+      <summary>表示一个可以使用 <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" /> 生成的 <see cref="T:Microsoft.Data.Edm.IEdmStructuredType" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.#ctor(System.Web.Http.OData.Builder.ODataModelBuilder,System.Type)"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.AddCollectionProperty(System.Reflection.PropertyInfo)">
+      <summary>将集合属性添加到此 EDM 类型。</summary>
+      <returns>
+        <see cref="T:System.Web.Http.OData.Builder.CollectionPropertyConfiguration" />，从而可以进一步对该属性进行配置。</returns>
+      <param name="propertyInfo">正在添加的属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.AddComplexProperty(System.Reflection.PropertyInfo)">
+      <summary>将复杂属性添加到此 EDM 类型。</summary>
+      <returns>
+        <see cref="T:System.Web.Http.OData.Builder.ComplexPropertyConfiguration" />，从而可以进一步对该属性进行配置。</returns>
+      <param name="propertyInfo">正在添加的属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.AddProperty(System.Reflection.PropertyInfo)">
+      <summary>将基元属性添加到此 EDM 类型。</summary>
+      <returns>
+        <see cref="T:System.Web.Http.OData.Builder.PrimitivePropertyConfiguration" />，从而可以进一步对该属性进行配置。</returns>
+      <param name="propertyInfo">正在添加的属性。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.ClrType">
+      <summary>获取支持 CLR <see cref="T:System.Type" />。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.ExplicitProperties"></member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.FullName">
+      <summary>获取此 EDM 类型的全名。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.IgnoredProperties">
+      <summary>从支持 CLR 类型中获取要对此 EDM 类型忽略的属性。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.Kind">
+      <summary>获取此 EDM 类型的 <see cref="T:Microsoft.Data.Edm.EdmTypeKind" />。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.ModelBuilder">
+      <summary>
+        <see cref="T:System.Web.Http.OData.Builder.ODataModelBuilder" />。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.Name">
+      <summary>获取此 EDM 类型的名称。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.Namespace">
+      <summary>获取此 EDM 类型的命名空间。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.Properties">
+      <summary>获取此 EDM 类型的声明属性。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration.RemovedProperties"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration.RemoveProperty(System.Reflection.PropertyInfo)">
+      <summary>删除给定的属性。</summary>
+      <param name="propertyInfo">正在删除的属性。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1">
+      <typeparam name="TStructuralType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.#ctor(System.Web.Http.OData.Builder.StructuralTypeConfiguration)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.CollectionProperty``1(System.Linq.Expressions.Expression{System.Func{`0,System.Collections.Generic.IEnumerable{``0}}})">
+      <typeparam name="TElementType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.ComplexProperty``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <typeparam name="TComplexType"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Ignore``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <typeparam name="TProperty"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Properties"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Property(System.Linq.Expressions.Expression{System.Func{`0,System.Byte[]}})"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Property(System.Linq.Expressions.Expression{System.Func{`0,System.IO.Stream}})"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,System.Nullable{``0}}})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Property(System.Linq.Expressions.Expression{System.Func{`0,System.String}})"></member>
+    <member name="M:System.Web.Http.OData.Builder.StructuralTypeConfiguration`1.Property``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="T:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter">
+      <summary>用于处理 OData 的 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter" /> 类。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.CanReadType(System.Type)">
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.CanWriteType(System.Type)">
+      <returns>返回 <see cref="T:System.Boolean" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.GetPerRequestFormatterInstance(System.Type,System.Net.Http.HttpRequestMessage,System.Net.Http.Headers.MediaTypeHeaderValue)">
+      <returns>返回 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.MessageReaderQuotas">
+      <summary>获取或设置此格式化程序在读取端使用的 <see cref="T:Microsoft.Data.OData.ODataMessageQuotas" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.OData.ODataMessageQuotas" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.MessageWriterQuotas">
+      <summary>获取或设置此格式化程序在写入端使用的 <see cref="T:Microsoft.Data.OData.ODataMessageQuotas" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.OData.ODataMessageQuotas" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.ReadFromStreamAsync(System.Type,System.IO.Stream,System.Net.Http.HttpContent,System.Net.Http.Formatting.IFormatterLogger)">
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.SetDefaultContentHeaders(System.Type,System.Net.Http.Headers.HttpContentHeaders,System.Net.Http.Headers.MediaTypeHeaderValue)"></member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatter.WriteToStreamAsync(System.Type,System.Object,System.IO.Stream,System.Net.Http.HttpContent,System.Net.TransportContext)">
+      <returns>返回 <see cref="T:System.Threading.Tasks.Task" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Formatter.ODataMediaTypeFormatters">
+      <summary>用于处理 OData 的 <see cref="T:System.Net.Http.Formatting.MediaTypeFormatter" /> 类。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataMediaTypeFormatters.Create">
+      <summary>创建一组媒体类型格式化程序用于处理 OData。</summary>
+      <returns>一组用于处理 OData 的媒体类型格式化程序。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Formatter.ODataModelBinderProvider">
+      <summary>为 EDM 基元类型提供 <see cref="T:System.Web.Http.ModelBinding.IModelBinder" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataModelBinderProvider.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Formatter.ODataModelBinderProvider.GetBinder(System.Web.Http.HttpConfiguration,System.Type)"></member>
+    <member name="T:System.Web.Http.OData.Query.AllowedArithmeticOperators">
+      <summary> 允许使用 $filter 进行查询的算术运算符。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.None">
+      <summary> 与不允许在 $filter 中使用算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.Add">
+      <summary> 与允许在 $filter 中使用“Add”算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.Subtract">
+      <summary> 与允许在 $filter 中使用“Subtract”算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.Multiply">
+      <summary> 与允许在 $filter 中使用“Multiply”算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.Divide">
+      <summary> 与允许在 $filter 中使用“Divide”算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.Modulo">
+      <summary> 与允许在 $filter 中使用“Modulo”算术运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedArithmeticOperators.All">
+      <summary> 与允许在 $filter 中使用所有算术运算符对应的值。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.AllowedFunctions">
+      <summary> 允许使用 $filter 进行查询的函数。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.None">
+      <summary> 与不允许在 $filter 中使用函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.StartsWith">
+      <summary> 与允许在 $filter 中使用“StartsWith”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.EndsWith">
+      <summary> 与允许在 $filter 中使用“EndsWith”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.SubstringOf">
+      <summary> 与允许在 $filter 中使用“SubstringOf”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Length">
+      <summary> 与允许在 $filter 中使用“Length”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.IndexOf">
+      <summary> 与允许在 $filter 中使用“IndexOf”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Concat">
+      <summary> 与允许在 $filter 中使用“Concat”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Substring">
+      <summary> 与允许在 $filter 中使用“Substring”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.ToLower">
+      <summary> 与允许在 $filter 中使用“ToLower”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.ToUpper">
+      <summary> 与允许在 $filter 中使用“ToUpper”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Trim">
+      <summary> 与允许在 $filter 中使用“Trim”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Cast">
+      <summary> 与允许在 $filter 中使用“Cast”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Year">
+      <summary> 与允许在 $filter 中使用“Year”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Years">
+      <summary> 与允许在 $filter 中使用“Years”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Month">
+      <summary> 与允许在 $filter 中使用“Month”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Months">
+      <summary> 与允许在 $filter 中使用“Months”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Day">
+      <summary> 与允许在 $filter 中使用“Day”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Days">
+      <summary> 与允许在 $filter 中使用“Days”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Hour">
+      <summary> 与允许在 $filter 中使用“Hour”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Hours">
+      <summary> 与允许在 $filter 中使用“Hours”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Minute">
+      <summary> 与允许在 $filter 中使用“Minute”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Minutes">
+      <summary> 与允许在 $filter 中使用“Minutes”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Second">
+      <summary> 与允许在 $filter 中使用“Second”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Seconds">
+      <summary> 与允许在 $filter 中使用“Seconds”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Round">
+      <summary> 与允许在 $filter 中使用“Round”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Floor">
+      <summary> 与允许在 $filter 中使用“Floor”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Ceiling">
+      <summary> 与允许在 $filter 中使用“Ceiling”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.IsOf">
+      <summary> 与允许在 $filter 中使用“IsOf”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.Any">
+      <summary> 与允许在 $filter 中使用“Any”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.All">
+      <summary> 与允许在 $filter 中使用“All”函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.AllStringFunctions">
+      <summary> 与允许在 $filter 中使用所有字符串相关函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.AllDateTimeFunctions">
+      <summary> 与允许在 $filter 中使用所有日期时间相关函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.AllMathFunctions">
+      <summary> 与允许在 $filter 中使用数学相关函数对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedFunctions.AllFunctions">
+      <summary> 与允许在 $filter 中使用所有函数对应的值。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.AllowedLogicalOperators">
+      <summary> 允许使用 $filter 进行查询的逻辑运算符。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.None">
+      <summary> 与不允许在 $filter 中使用逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.Or">
+      <summary> 与允许在 $filter 中使用“Or”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.And">
+      <summary> 与允许在 $filter 中使用“And”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.Equal">
+      <summary> 与允许在 $filter 中使用“Equal”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.NotEqual">
+      <summary> 与允许在 $filter 中使用“NotEqual”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.GreaterThan">
+      <summary> 与允许在 $filter 中使用“GreaterThan”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.GreaterThanOrEqual">
+      <summary> 与允许在 $filter 中使用“GreaterThanOrEqual”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.LessThan">
+      <summary> 与允许在 $filter 中使用“LessThan”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.LessThanOrEqual">
+      <summary> 与允许在 $filter 中使用“LessThanOrEqual”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.Not">
+      <summary> 与允许在 $filter 中使用“Not”逻辑运算符对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedLogicalOperators.All">
+      <summary> 与允许在 $filter 中使用所有逻辑运算符对应的值。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.AllowedQueryOptions">
+      <summary> 允许查询的 OData 查询选项。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.None">
+      <summary> 与不允许查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Filter">
+      <summary> 与允许 $filter 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Expand">
+      <summary> 与允许 $expand 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Select">
+      <summary> 与允许 $select 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.OrderBy">
+      <summary> 与允许 $orderby 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Top">
+      <summary> 与允许 $top 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Skip">
+      <summary> 与允许 $skip 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.InlineCount">
+      <summary> 与允许 $inlinecount 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Format">
+      <summary> 与允许 $format 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.SkipToken">
+      <summary> 与允许 $skiptoken 查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.Supported">
+      <summary> 与 <see cref="T:System.Web.Http.QueryableAttribute" /> 支持的默认查询选项对应的值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.AllowedQueryOptions.All">
+      <summary> 与允许所有查询选项对应的值。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.FilterQueryOption">
+      <summary>此项定义 $filter OData 查询选项用于查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.FilterQueryOption.#ctor(System.String,System.Web.Http.OData.ODataQueryContext)">
+      <summary>基于原始 $filter 值和 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的 EdmModel 初始化 <see cref="T:System.Web.Http.OData.Query.FilterQueryOption" /> 的新实例。</summary>
+      <param name="rawValue">$filter 查询的原始值。可为 null 或为空。</param>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.FilterQueryOption.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings)">
+      <summary>将 filter 查询应用到给定的 IQueryable。</summary>
+      <returns>filter 查询已应用到的查询。</returns>
+      <param name="query">正在对其应用 filter 查询的 IQueryable。</param>
+      <param name="querySettings">指定是否需要处理 null 传播。如果基础查询提供程序处理 null 传播，则传递 false。否则传递 true。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.FilterQueryOption.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings,System.Web.Http.Dispatcher.IAssembliesResolver)">
+      <summary>将 filter 查询应用到给定的 IQueryable。</summary>
+      <returns>返回 <see cref="T:System.Linq.IQueryable" />。</returns>
+      <param name="query">正在对其应用 filter 查询的 IQueryable。</param>
+      <param name="querySettings">指定是否需要处理 null 传播。如果基础查询提供程序处理 null 传播，则传递 false。否则传递 true。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.FilterQueryOption.Context">
+      <summary>获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.FilterQueryOption.FilterClause">
+      <summary>获取此查询选项的已分析 <see cref="P:System.Web.Http.OData.Query.FilterQueryOption.FilterClause" />。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.OData.Query.SemanticAst.FilterClause" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.FilterQueryOption.RawValue">
+      <summary>获取原始 $filter 值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.FilterQueryOption.Validate(System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>基于给定的 <paramref name="validationSettings" /> 验证 filter 查询。如果验证失败，将引发 ODataException。</summary>
+      <param name="validationSettings">包含所有验证设置的 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.FilterQueryOption.Validator">
+      <summary>获取或设置 Filter 查询验证程序。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.Validators.FilterQueryValidator" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.HandleNullPropagationOption">
+      <summary>此枚举定义如何处理可查询支持中的 null 传播。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.HandleNullPropagationOption.Default">
+      <summary>确定如何在查询撰写期间基于查询提供程序处理 null 传播。这是在 <see cref="T:System.Web.Http.OData.Query.ODataQuerySettings" /> 中使用的默认值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.HandleNullPropagationOption.True">
+      <summary>在查询撰写期间处理 null 传播。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.HandleNullPropagationOption.False">
+      <summary>在查询撰写期间不处理 null 传播。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.InlineCountQueryOption">
+      <summary> 表示 $inlinecount 查询选项的值，并公开一种方法用于检索满足查询条件的实体数。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.InlineCountQueryOption.#ctor(System.String,System.Web.Http.OData.ODataQueryContext)">
+      <summary> 初始化 <see cref="T:System.Web.Http.OData.Query.InlineCountQueryOption" /> 类的新实例。</summary>
+      <param name="rawValue">$inlinecount 查询选项的原始值。</param>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.InlineCountQueryOption.Context">
+      <summary> 获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.InlineCountQueryOption.GetEntityCount(System.Linq.IQueryable)">
+      <summary> 如果响应中应该包含内联计数，则获取满足给定查询条件的实体数；否则获取 null。</summary>
+      <returns>如果响应中应该包含内联计数，则为满足指定查询条件的实体数；否则为 null。</returns>
+      <param name="query">要计算其计数的查询。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.InlineCountQueryOption.RawValue">
+      <summary> 获取原始 $inlinecount 值。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.InlineCountQueryOption.Value">
+      <summary> 获取已分析格式的 $inlinecount 值。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.InlineCountValue">
+      <summary> 定义 $inlinecount 查询选项值的枚举。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.InlineCountValue.None">
+      <summary> 与“none”$inlinecount 查询选项值对应。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Query.InlineCountValue.AllPages">
+      <summary> 与“allpages”$inlinecount 查询选项值对应。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.ODataQueryOptions">
+      <summary>此项定义可用于执行查询撰写的复合 OData 查询选项。此项当前仅支持 $filter、$orderby、$top、$skip 和 $inlinecount。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.#ctor(System.Web.Http.OData.ODataQueryContext,System.Net.Http.HttpRequestMessage)">
+      <summary>基于传入的请求以及 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的某些元数据信息初始化 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions" /> 类的新实例。</summary>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+      <param name="request">传入请求消息</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.ApplyTo(System.Linq.IQueryable)">
+      <summary>  按正确的顺序将单个查询应用到给定的 IQueryable。</summary>
+      <returns>查询已应用到的查询。</returns>
+      <param name="query">正在对其应用查询的 IQueryable。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings)">
+      <summary>按正确的顺序将单个查询应用到给定的 IQueryable。</summary>
+      <returns>查询已应用到的查询。</returns>
+      <param name="query">正在对其应用查询的 IQueryable。</param>
+      <param name="querySettings">要在查询撰写中使用的设置。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Context">
+      <summary>获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Filter">
+      <summary>获取 <see cref="T:System.Web.Http.OData.Query.FilterQueryOption" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.FilterQueryOption" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.InlineCount">
+      <summary>获取 <see cref="T:System.Web.Http.OData.Query.InlineCountQueryOption" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.InlineCountQueryOption" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.IsSystemQueryOption(System.String)">
+      <summary>检查给定的查询选项是否为 OData 系统查询选项。</summary>
+      <returns>如果查询选项是 OData 系统查询选项，则为 true；否则为 false。</returns>
+      <param name="queryOptionName">查询选项的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.LimitResults``1(System.Linq.IQueryable{``0},System.Int32,System.Boolean@)">
+      <summary>将查询结果限制为最大结果数。</summary>
+      <returns>限制的查询结果。</returns>
+      <param name="queryable">要限制的可查询结果。</param>
+      <param name="limit">查询结果限制。</param>
+      <param name="resultsLimited">如果限制了查询结果，则为 true；否则为 false</param>
+      <typeparam name="T">实体 CLR 类型</typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.OrderBy">
+      <summary>获取 <see cref="T:System.Web.Http.OData.Query.OrderByQueryOption" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.OrderByQueryOption" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.RawValues">
+      <summary>获取所有 OData 查询选项的原始字符串</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.ODataRawQueryOptions" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Request">
+      <summary>获取与此实例关联的请求消息。</summary>
+      <returns>返回 <see cref="T:System.Net.Http.HttpRequestMessage" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Skip">
+      <summary>获取 <see cref="T:System.Web.Http.OData.Query.SkipQueryOption" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.SkipQueryOption" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Top">
+      <summary>获取 <see cref="T:System.Web.Http.OData.Query.TopQueryOption" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.TopQueryOption" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions.Validate(System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>基于给定的 <paramref name="validationSettings" /> 验证所有 OData 查询，包括 $skip、$top、$orderby 和 $filter。如果验证失败，将引发 ODataException。</summary>
+      <param name="validationSettings">包含所有验证设置的 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQueryOptions.Validator">
+      <summary>获取或设置查询验证程序。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.Validators.ODataQueryValidator" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.ODataQueryOptions`1">
+      <summary>此项定义可用于执行查询撰写的复合 OData 查询选项。此项当前仅支持 $filter、$orderby、$top 和 $skip。</summary>
+      <typeparam name="TEntity"></typeparam>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions`1.#ctor(System.Web.Http.OData.ODataQueryContext,System.Net.Http.HttpRequestMessage)">
+      <summary>基于传入的请求以及 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的某些元数据信息初始化 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions" /> 类的新实例。</summary>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+      <param name="request">传入请求消息</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions`1.ApplyTo(System.Linq.IQueryable)">
+      <summary>按正确的顺序将单个查询应用到给定的 IQueryable。</summary>
+      <returns>查询已应用到的查询。</returns>
+      <param name="query">正在对其应用查询的 IQueryable。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQueryOptions`1.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings)">
+      <summary>按正确的顺序将单个查询应用到给定的 IQueryable。</summary>
+      <returns>查询已应用到的查询。</returns>
+      <param name="query">正在对其应用查询的 IQueryable。</param>
+      <param name="querySettings">要在查询撰写中使用的设置。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.ODataQuerySettings">
+      <summary>此类描述在查询撰写期间要使用的设置。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQuerySettings.#ctor">
+      <summary>实例化 <see cref="T:System.Web.Http.OData.Query.ODataQuerySettings" /> 类的新实例并初始化默认设置。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataQuerySettings.#ctor(System.Web.Http.OData.Query.ODataQuerySettings)">
+      <summary>基于现有实例初始化 <see cref="T:System.Web.Http.OData.Query.ODataQuerySettings" /> 类的新实例。</summary>
+      <param name="settings">要从中复制的设置。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQuerySettings.EnableConstantParameterization">
+      <summary>获取或设置一个值，该值指示是否应对常量进行参数化。常量参数化可提升 Entity Framework 的性能。</summary>
+      <returns>默认值为 true。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQuerySettings.EnsureStableOrdering">
+      <summary>获取或设置一个值，该值指示查询撰写是否应在必要时更改原始查询，以确保稳定的排序顺序。</summary>
+      <returns>true 值表示应在必要时修改原始查询，以保证稳定的排序顺序。false 值表示可以将排序顺序视为稳定，而无需修改查询。确保稳定排序顺序的查询提供程序应将此值设置为 false。默认值为 true。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQuerySettings.HandleNullPropagation">
+      <summary>获取或设置一个值，该值指示在查询撰写期间应如何处理 null 传播。</summary>
+      <returns>默认值为 <see cref="F:System.Web.Http.OData.Query.HandleNullPropagationOption.Default" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataQuerySettings.PageSize">
+      <summary>获取或设置要返回的最大查询结果数。</summary>
+      <returns>要返回的最大查询结果数；如果没有限制，则为 null。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.ODataRawQueryOptions">
+      <summary>表示来自传入请求的字符串格式的原始查询值</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataRawQueryOptions.#ctor"></member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Expand">
+      <summary>从传入请求 URI 中获取原始 $expand 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Filter">
+      <summary>从传入请求 URI 中获取原始 $filter 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Format">
+      <summary>从传入请求 URI 中获取原始 $format 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.InlineCount">
+      <summary>从传入请求 URI 中获取原始 $inlineCount 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.OrderBy">
+      <summary>从传入请求 URI 中获取原始 $orderby 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Select">
+      <summary>从传入请求 URI 中获取原始 $select 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Skip">
+      <summary>从传入请求 URI 中获取原始 $skip 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.SkipToken">
+      <summary>从传入请求 URI 中获取原始 $skiptoken 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataRawQueryOptions.Top">
+      <summary>从传入请求 URI 中获取原始 $top 查询值（如果存在）。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.ODataValidationSettings">
+      <summary> 此类描述用于查询的验证设置。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.ODataValidationSettings.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.AllowedArithmeticOperators">
+      <summary> 获取或设置允许的算术运算符（包括“add”、“sub”、“mul”、“div”、“mod”）的列表。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.AllowedFunctions">
+      <summary>  获取或设置允许在 $filter 查询中使用的函数的列表。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.AllowedLogicalOperators">
+      <summary> 获取或设置允许的逻辑运算符（包括“eq”、“ne”、“gt”、“ge”、“lt”、“le”、“and”、“or”、“not”）的列表。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.AllowedOrderByProperties">
+      <summary> 获取可用作结果排序依据的属性的列表。请注意，此列表在默认情况下为空，这实际意味着结果可按任意属性排序。例如，提供空集合意味着客户端可按任意属性对可查询结果进行排序。将“Name”添加到此列表意味着只允许按 Name 属性对可查询结果进行排序。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.AllowedQueryOptions">
+      <summary> 获取或设置允许在查询内部使用的查询参数。默认值为所有查询选项，包括 $filter、$skip、$top、$orderby、$expand、$select、$inlineCount、$format 和 $skipToken。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.MaxAnyAllExpressionDepth">
+      <summary> 获取或设置嵌套在查询内部的 Any 或 All 元素的最大深度。</summary>
+      <returns> 嵌套在查询内部的 Any 或 All 元素的最大深度。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.MaxNodeCount">
+      <summary> 获取或设置 $filter 语法树中的最大节点数。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.MaxSkip">
+      <summary> 获取或设置客户端可以请求的最大 $skip 值。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.ODataValidationSettings.MaxTop">
+      <summary> 获取或设置客户端可以请求的最大 $top 值。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.OrderByItNode">
+      <summary> 表示 $orderby 子句中的 order by 表达式“$it”。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByItNode.#ctor(Microsoft.Data.OData.Query.OrderByDirection)">
+      <summary> 实例化 <see cref="T:System.Web.Http.OData.Query.OrderByItNode" /> 类的新实例。</summary>
+      <param name="direction">此节点的 <see cref="T:Microsoft.Data.OData.Query.OrderByDirection" />。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.OrderByNode">
+      <summary> 表示 $orderby 子句中的单个 order by 表达式。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByNode.#ctor(Microsoft.Data.OData.Query.OrderByDirection)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.OrderByNode" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByNode.CreateCollection(Microsoft.Data.OData.Query.SemanticAst.OrderByClause)">
+      <summary> 从 <see cref="T:Microsoft.Data.OData.Query.SemanticAst.OrderByClause" /> 实例的链接列表创建 <see cref="T:System.Web.Http.OData.Query.OrderByPropertyNode" /> 实例的集合。</summary>
+      <returns>新的 <see cref="T:System.Web.Http.OData.Query.OrderByPropertyNode" /> 实例的集合。</returns>
+      <param name="orderByClause">
+        <see cref="T:Microsoft.Data.OData.Query.SemanticAst.OrderByClause" /> 链接列表的标头。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByNode.Direction">
+      <summary> 获取当前节点的 <see cref="T:Microsoft.Data.OData.Query.OrderByDirection" />。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.OrderByPropertyNode">
+      <summary>表示按 <see cref="T:Microsoft.Data.Edm.IEdmProperty" /> 表达式排序。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByPropertyNode.#ctor(Microsoft.Data.Edm.IEdmProperty,Microsoft.Data.OData.Query.OrderByDirection)">
+      <summary>实例化 <see cref="T:System.Web.Http.OData.Query.OrderByPropertyNode" /> 类的新实例。</summary>
+      <param name="property">此节点的 <see cref="T:Microsoft.Data.Edm.IEdmProperty" />。</param>
+      <param name="direction">此节点的 <see cref="T:Microsoft.Data.OData.Query.OrderByDirection" />。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByPropertyNode.Property">
+      <summary>获取当前节点的 <see cref="T:Microsoft.Data.Edm.IEdmProperty" />。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.OrderByQueryOption">
+      <summary>此项定义 $orderby OData 查询选项用于查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByQueryOption.#ctor(System.String,System.Web.Http.OData.ODataQueryContext)">
+      <summary>基于原始 $orderby 值和 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的 EdmModel 初始化 <see cref="T:System.Web.Http.OData.Query.OrderByQueryOption" /> 的新实例。</summary>
+      <param name="rawValue">$orderby 查询的原始值。可为 null 或为空。</param>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByQueryOption.ApplyTo(System.Linq.IQueryable)">
+      <summary>将 $orderby 查询应用到给定的 IQueryable。</summary>
+      <returns>orderby 查询已应用到的查询。</returns>
+      <param name="query">正在对其应用 orderby 查询的 IQueryable。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByQueryOption.ApplyTo``1(System.Linq.IQueryable{``0})">
+      <summary>  将 $orderby 查询应用到给定的 IQueryable。</summary>
+      <returns>orderby 查询已应用到的查询。</returns>
+      <param name="query">正在对其应用 orderby 查询的 IQueryable。</param>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByQueryOption.Context">
+      <summary>获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByQueryOption.OrderByNodes">
+      <summary>获取当前 <see cref="T:System.Web.Http.OData.Query.OrderByQueryOption" /> 的 <see cref="T:System.Web.Http.OData.Query.OrderByPropertyNode" /> 实例的集合。</summary>
+      <returns>返回 <see cref="T:System.Collections.Generic.ICollection`1" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByQueryOption.RawValue">
+      <summary>获取原始 $orderby 值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.OrderByQueryOption.Validate(System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>基于给定的 <paramref name="validationSettings" /> 验证 orderby 查询。如果验证失败，将引发 ODataException。</summary>
+      <param name="validationSettings">包含所有验证设置的 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.OrderByQueryOption.Validator">
+      <summary>获取或设置 OrderBy 查询验证程序。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.Validators.OrderByQueryValidator" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.QueryFilterProvider">
+      <summary>
+        <see cref="T:System.Web.Http.Filters.IFilterProvider" /> 的实现，它可将操作筛选器应用到返回类型为 <see cref="T:System.Linq.IQueryable" /> 或 <see cref="T:System.Linq.IQueryable`1" /> 且不绑定类型 <see cref="T:System.Web.Http.OData.Query.ODataQueryOptions" /> 的参数的任意操作。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.QueryFilterProvider.#ctor(System.Web.Http.Filters.IActionFilter)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.QueryFilterProvider" /> 类的新实例。</summary>
+      <param name="queryFilter">执行查询的操作筛选器。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.QueryFilterProvider.GetFilters(System.Web.Http.HttpConfiguration,System.Web.Http.Controllers.HttpActionDescriptor)">
+      <summary>提供要应用到指定操作的筛选器。</summary>
+      <returns>要应用到指定操作的筛选器。</returns>
+      <param name="configuration">服务器配置。</param>
+      <param name="actionDescriptor">要为其提供筛选器的操作的操作描述符。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.QueryFilterProvider.QueryFilter">
+      <summary>获取执行查询的操作筛选器。</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.SkipQueryOption">
+      <summary>此项定义 $skip OData 查询选项用于查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.SkipQueryOption.#ctor(System.String,System.Web.Http.OData.ODataQueryContext)">
+      <summary>基于原始 $skip 值和 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的 EdmModel 初始化 <see cref="T:System.Web.Http.OData.Query.SkipQueryOption" /> 的新实例。</summary>
+      <param name="rawValue">$skip 查询的原始值。可为 null 或为空。</param>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.SkipQueryOption.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings)">
+      <returns>返回 <see cref="T:System.Linq.IQueryable" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.SkipQueryOption.ApplyTo``1(System.Linq.IQueryable{``0},System.Web.Http.OData.Query.ODataQuerySettings)">
+      <returns>返回 <see cref="T:System.Linq.IQueryable`1" />。</returns>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.SkipQueryOption.Context">
+      <summary>获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.SkipQueryOption.RawValue">
+      <summary>获取原始 $skip 值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.SkipQueryOption.Validate(System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>基于给定的 <paramref name="validationSettings" /> 验证 skip 查询。如果验证失败，将引发 ODataException。</summary>
+      <param name="validationSettings">包含所有验证设置的 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.SkipQueryOption.Validator">
+      <summary>  获取或设置 Skip 查询验证程序。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.Validators.SkipQueryValidator" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.SkipQueryOption.Value">
+      <summary>获取作为已分析整数的 $skip 值。</summary>
+      <returns>返回 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.TopQueryOption">
+      <summary>此项定义 $top OData 查询选项用于查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.TopQueryOption.#ctor(System.String,System.Web.Http.OData.ODataQueryContext)">
+      <summary>基于原始 $top 值和 <see cref="T:System.Web.Http.OData.ODataQueryContext" /> 中的 EdmModel 初始化 <see cref="T:System.Web.Http.OData.Query.TopQueryOption" /> 的新实例。</summary>
+      <param name="rawValue">$top 查询的原始值。可为 null 或为空。</param>
+      <param name="context">包含 <see cref="T:Microsoft.Data.Edm.IEdmModel" /> 和某些类型信息的 <see cref="T:System.Web.Http.OData.ODataQueryContext" /></param>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.TopQueryOption.ApplyTo(System.Linq.IQueryable,System.Web.Http.OData.Query.ODataQuerySettings)">
+      <returns>返回 <see cref="T:System.Linq.IQueryable" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.TopQueryOption.ApplyTo``1(System.Linq.IQueryable{``0},System.Web.Http.OData.Query.ODataQuerySettings)">
+      <returns>返回 <see cref="T:System.Linq.IOrderedQueryable`1" />。</returns>
+      <typeparam name="T"></typeparam>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.TopQueryOption.Context">
+      <summary>获取给定的 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.ODataQueryContext" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.TopQueryOption.RawValue">
+      <summary>获取原始 $top 值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.TopQueryOption.Validate(System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>基于给定的 <paramref name="validationSettings" /> 验证 top 查询。如果验证失败，将引发 ODataException。</summary>
+      <param name="validationSettings">包含所有验证设置的 <see cref="T:System.Web.Http.OData.Query.ODataValidationSettings" /> 实例。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.TopQueryOption.Validator">
+      <summary>获取或设置 Top 查询验证程序。</summary>
+      <returns>返回 <see cref="T:System.Web.Http.OData.Query.Validators.TopQueryValidator" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Query.TopQueryOption.Value">
+      <summary>获取作为已分析整数的 $top 值。</summary>
+      <returns>返回 <see cref="T:System.Int32" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.Validators.FilterQueryValidator">
+      <summary> 定义一个验证程序类，用于根据设置验证 FilterQueryOption。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.Validators.FilterQueryValidator" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.Validate(System.Web.Http.OData.Query.FilterQueryOption,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 此验证程序类的入口点。使用此方法可以验证 FilterQueryOption。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateAllNode(Microsoft.Data.OData.Query.SemanticAst.AllNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以限制 filter 查询中的“all”查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateAnyNode(Microsoft.Data.OData.Query.SemanticAst.AnyNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以限制 filter 查询中的“any”查询。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateArithmeticOperator(Microsoft.Data.OData.Query.SemanticAst.BinaryOperatorNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 针对算术运算符（包括 add、sub、mul、div 和 mod）重写此方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateBinaryOperatorNode(Microsoft.Data.OData.Query.SemanticAst.BinaryOperatorNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary>重写此方法可以限制 filter 查询中的二进制运算符。这包括除“not”以外的所有逻辑运算符，以及所有数学运算符。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateCollectionPropertyAccessNode(Microsoft.Data.OData.Query.SemanticAst.CollectionPropertyAccessNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证集合属性访问器。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateConstantNode(Microsoft.Data.OData.Query.SemanticAst.ConstantNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以限制 filter 查询中的“constant”。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateConvertNode(Microsoft.Data.OData.Query.SemanticAst.ConvertNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以限制 filter 查询中的“cast”。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateEntityCollectionCastNode(Microsoft.Data.OData.Query.SemanticAst.EntityCollectionCastNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 如果要验证对实体集合执行的转换，请重写此方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateLogicalOperator(Microsoft.Data.OData.Query.SemanticAst.BinaryOperatorNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证 LogicalOperators，例如“eq”、“ne”、“gt”、“ge”、“lt”、“le”、“and”、“or”。请注意，其中不包括“not”。请重写 ValidateUnaryOperatorNode 来自定义“not”。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateNavigationPropertyNode(Microsoft.Data.OData.Query.SemanticAst.QueryNode,Microsoft.Data.Edm.IEdmNavigationProperty,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 针对导航属性节点重写此方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateQueryNode(Microsoft.Data.OData.Query.SemanticAst.QueryNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 如果要访问每个查询节点，请重写此方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateRangeVariable(Microsoft.Data.OData.Query.SemanticAst.RangeVariable,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证在 filter 查询中使用的参数。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateSingleEntityCastNode(Microsoft.Data.OData.Query.SemanticAst.SingleEntityCastNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 如果要验证对单个实体执行的转换，请重写此方法。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateSingleValueFunctionCallNode(Microsoft.Data.OData.Query.SingleValueFunctionCallNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证 Function 调用，例如“length”、“years”等。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateSingleValuePropertyAccessNode(Microsoft.Data.OData.Query.SemanticAst.SingleValuePropertyAccessNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证属性访问器</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.FilterQueryValidator.ValidateUnaryOperatorNode(Microsoft.Data.OData.Query.SemanticAst.UnaryOperatorNode,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 重写此方法可以验证 Not 运算符</summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.Validators.ODataQueryValidator"></member>
+    <member name="M:System.Web.Http.OData.Query.Validators.ODataQueryValidator.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.Validators.ODataQueryValidator" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.ODataQueryValidator.Validate(System.Web.Http.OData.Query.ODataQueryOptions,System.Web.Http.OData.Query.ODataValidationSettings)">
+      <summary> 验证给定的 ODataQueryOption 是否遵循 AllowedQueryOptions 中的内容。默认情况下，允许使用所有四个运算符。 </summary>
+    </member>
+    <member name="T:System.Web.Http.OData.Query.Validators.OrderByQueryValidator"></member>
+    <member name="M:System.Web.Http.OData.Query.Validators.OrderByQueryValidator.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.Validators.OrderByQueryValidator" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.OrderByQueryValidator.Validate(System.Web.Http.OData.Query.OrderByQueryOption,System.Web.Http.OData.Query.ODataValidationSettings)"></member>
+    <member name="T:System.Web.Http.OData.Query.Validators.SkipQueryValidator"></member>
+    <member name="M:System.Web.Http.OData.Query.Validators.SkipQueryValidator.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.Validators.SkipQueryValidator" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.SkipQueryValidator.Validate(System.Web.Http.OData.Query.SkipQueryOption,System.Web.Http.OData.Query.ODataValidationSettings)"></member>
+    <member name="T:System.Web.Http.OData.Query.Validators.TopQueryValidator"></member>
+    <member name="M:System.Web.Http.OData.Query.Validators.TopQueryValidator.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Query.Validators.TopQueryValidator" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Query.Validators.TopQueryValidator.Validate(System.Web.Http.OData.Query.TopQueryOption,System.Web.Http.OData.Query.ODataValidationSettings)"></member>
+    <member name="T:System.Web.Http.OData.Routing.ActionPathSegment">
+      <summary>表示操作调用的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ActionPathSegment.#ctor(Microsoft.Data.Edm.IEdmFunctionImport)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.ActionPathSegment" /> 类的新实例。</summary>
+      <param name="action">正在调用的操作。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ActionPathSegment.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.ActionPathSegment" /> 类的新实例。</summary>
+      <param name="actionName">操作的名称。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ActionPathSegment.Action">
+      <summary>获取正在调用的操作。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmFunctionImport" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ActionPathSegment.ActionName">
+      <summary>获取操作的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ActionPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ActionPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ActionPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ActionPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.BatchPathSegment">
+      <summary>表示 $batch 段的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.BatchPathSegment.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Routing.BatchPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>   获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.BatchPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.BatchPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.BatchPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.CastPathSegment">
+      <summary>表示转换的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.CastPathSegment.#ctor(Microsoft.Data.Edm.IEdmEntityType)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.CastPathSegment" /> 类的新实例。</summary>
+      <param name="castType">转换的类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.CastPathSegment.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.CastPathSegment" /> 类的新实例。</summary>
+      <param name="castTypeName">转换类型的名称。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.CastPathSegment.CastType">
+      <summary>获取转换的类型。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmEntityType" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.CastPathSegment.CastTypeName">
+      <summary>  获取转换类型的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.CastPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>  此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.CastPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.CastPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.CastPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.DefaultODataPathHandler">
+      <summary> 将 OData 路径分析为 <see cref="T:System.Web.Http.OData.Routing.ODataPath" />，并将 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 转换为 OData 链接。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.DefaultODataPathHandler" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.Link(System.Web.Http.OData.Routing.ODataPath)">
+      <summary> 将 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 的实例转换为 OData 链接。</summary>
+      <returns> 生成的 OData 链接。</returns>
+      <param name="path">要转换为链接的 OData 路径。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.Parse(Microsoft.Data.Edm.IEdmModel,System.String)">
+      <summary> 将指定的 OData 路径分析为 <see cref="T:System.Web.Http.OData.Routing.ODataPath" />，其中包含有关 EDM 类型以及该路径的实体集的附加信息。</summary>
+      <returns>路径的已分析表示形式；如果路径与模型不匹配，则为 null。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="odataPath">要分析的 OData 路径。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseAtCollection(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析集合后面的下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseAtComplex(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析复杂类型段后面的下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseAtEntity(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析实体后面的下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseAtEntityCollection(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析实体集合后面的下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseAtPrimitiveProperty(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析基元属性后面的下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseEntrySegment(Microsoft.Data.Edm.IEdmModel,System.String)">
+      <summary> 分析服务基 URI 后面的第一个 OData 段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseNextSegment(Microsoft.Data.Edm.IEdmModel,System.Web.Http.OData.Routing.ODataPathSegment,Microsoft.Data.Edm.IEdmType,System.String)">
+      <summary> 分析下一个 OData 路径段。</summary>
+      <returns>段的已分析表示形式。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="previous">上一个路径段。</param>
+      <param name="previousEdmType">上一个段前面的 OData 路径的 EDM 类型。</param>
+      <param name="segment">要分析的段的值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.DefaultODataPathHandler.ParseSegments(System.String)">
+      <summary> 将 OData 路径分析为段。</summary>
+      <returns>OData 路径的段。</returns>
+      <param name="odataPath">OData 路径。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.EntitySetPathSegment">
+      <summary>表示实体集的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.EntitySetPathSegment.#ctor(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.EntitySetPathSegment" /> 类的新实例。</summary>
+      <param name="entitySet">所访问的实体集。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.EntitySetPathSegment.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.EntitySetPathSegment" /> 类的新实例。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.EntitySetPathSegment.EntitySet">
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmEntitySet" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.EntitySetPathSegment.EntitySetName">
+      <summary>获取实体集的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.EntitySetPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>   获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.EntitySetPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>   获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.EntitySetPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.EntitySetPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.IODataPathHandler">
+      <summary> 公开将 OData 路径分析为 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 的功能，并将 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 转换为 OData 链接。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.IODataPathHandler.Link(System.Web.Http.OData.Routing.ODataPath)">
+      <summary> 将 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 的实例转换为 OData 链接。</summary>
+      <returns>生成的 OData 链接。</returns>
+      <param name="path">要转换为链接的 OData 路径。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.IODataPathHandler.Parse(Microsoft.Data.Edm.IEdmModel,System.String)">
+      <summary> 将指定的 OData 路径分析为 <see cref="T:System.Web.Http.OData.Routing.ODataPath" />，其中包含有关 EDM 类型以及该路径的实体集的附加信息。</summary>
+      <returns>URI 的已分析表示形式；如果 URI 与模型不匹配，则为 null。</returns>
+      <param name="model">要用于路径分析的模型。</param>
+      <param name="odataPath">要分析的 OData 路径。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.KeyValuePathSegment">
+      <summary>一个 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现，表示根据键在实体集合中建立索引。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.KeyValuePathSegment.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.KeyValuePathSegment" /> 类的新实例。</summary>
+      <param name="value">要在集合中建立索引使用的键值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.KeyValuePathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.KeyValuePathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.KeyValuePathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.KeyValuePathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.KeyValuePathSegment.Value">
+      <summary>获取要在集合中建立索引使用的键值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.LinksPathSegment">
+      <summary>表示 $links 段的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.LinksPathSegment.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Routing.LinksPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>  获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.LinksPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.LinksPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.LinksPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.MetadataPathSegment">
+      <summary>表示 $metadata 段的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.MetadataPathSegment.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Routing.MetadataPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>  获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.MetadataPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>  获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.MetadataPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.MetadataPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.NavigationPathSegment">
+      <summary>表示导航的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.NavigationPathSegment.#ctor(Microsoft.Data.Edm.IEdmNavigationProperty)">
+      <summary>  初始化 <see cref="T:System.Web.Http.OData.Routing.NavigationPathSegment" /> 类的新实例。</summary>
+      <param name="navigationProperty">此段正在访问的导航属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.NavigationPathSegment.#ctor(System.String)">
+      <summary>  初始化 <see cref="T:System.Web.Http.OData.Routing.NavigationPathSegment" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.NavigationPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.NavigationPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.NavigationPathSegment.NavigationProperty">
+      <summary>获取此段正在访问的导航属性。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmNavigationProperty" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.NavigationPathSegment.NavigationPropertyName">
+      <summary>获取导航属性的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.NavigationPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.NavigationPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataActionSelector">
+      <summary>
+        <see cref="T:System.Web.Http.Controllers.IHttpActionSelector" /> 的实现，它使用服务器的 OData 路由约定为 OData 请求选择操作。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataActionSelector.#ctor(System.Web.Http.Controllers.IHttpActionSelector)">
+      <summary> 初始化 <see cref="T:System.Web.Http.OData.Routing.ODataActionSelector" /> 类的新实例。</summary>
+      <param name="innerSelector">要调用的内部控制器选择器。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataActionSelector.GetActionMapping(System.Web.Http.Controllers.HttpControllerDescriptor)">
+      <summary> 返回选择器可以选择的所有 <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor" /> 的映射，该映射使用操作字符串作为键。此方法主要由 <see cref="T:System.Web.Http.Description.IApiExplorer" /> 调用，以发现控制器中的所有可能操作。</summary>
+      <returns> 选择器可以选择的 <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor" /> 的映射或 null（如果选择器没有 <see cref="T:System.Web.Http.Controllers.HttpActionDescriptor" /> 的已经过良好定义的映射）。</returns>
+      <param name="controllerDescriptor">控制器描述符。</param>
+      <exception cref="T:System.NotImplementedException"></exception>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataActionSelector.SelectAction(System.Web.Http.Controllers.HttpControllerContext)">
+      <summary> 为 <see cref="T:System.Web.Http.Controllers.ApiControllerActionSelector" /> 选择操作。</summary>
+      <returns> 选定的操作。 </returns>
+      <param name="controllerContext">控制器上下文。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataPath">
+      <summary>提供 OData 路径的对象表示形式，以及有关 EDM 类型和该路径的实体集的附加信息。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPath.#ctor(System.Collections.Generic.IList{System.Web.Http.OData.Routing.ODataPathSegment})">
+      <summary>  初始化 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 类的新实例。</summary>
+      <param name="segments">路径的路径段。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPath.#ctor(System.Web.Http.OData.Routing.ODataPathSegment[])">
+      <summary>  初始化 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 类的新实例。</summary>
+      <param name="segments">路径的路径段。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPath.EdmType">
+      <summary>获取或设置路径的 EDM 类型。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmType" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPath.EntitySet">
+      <summary>获取或设置路径的实体集。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmEntitySet" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPath.PathTemplate">
+      <summary>获取描述路径中的段类型的路径模板。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPath.Segments">
+      <summary>获取 OData 路径的路径段。</summary>
+      <returns>返回 <see cref="T:System.Collections.ObjectModel.ReadOnlyCollection`1" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPath.ToString">
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataPathParameterBindingAttribute">
+      <summary>
+        <see cref="T:System.Web.Http.ParameterBindingAttribute" /> 的实现，用于将 <see cref="T:System.Web.Http.OData.Routing.ODataPath" /> 的实例绑定为操作参数。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathParameterBindingAttribute.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.ODataPathParameterBindingAttribute" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathParameterBindingAttribute.GetBinding(System.Web.Http.Controllers.HttpParameterDescriptor)">
+      <summary> 获取参数绑定。</summary>
+      <returns> 参数绑定。 </returns>
+      <param name="parameter">参数说明。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataPathRouteConstraint">
+      <summary> 只与 OData 路径匹配的 <see cref="T:System.Web.Http.Routing.IHttpRouteConstraint" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathRouteConstraint.#ctor(System.Web.Http.OData.Routing.IODataPathHandler,Microsoft.Data.Edm.IEdmModel,System.String,System.Collections.Generic.IEnumerable{System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention})">
+      <summary> 初始化 <see cref="T:System.Web.Http.OData.Routing.ODataPathRouteConstraint" /> 类的新实例。</summary>
+      <param name="pathHandler">用于分析的 OData 路径处理程序。</param>
+      <param name="model">用于分析路径的 EDM 模型。</param>
+      <param name="routeName">与此约束关联的路由的名称。</param>
+      <param name="routingConventions">用于选择控制器名称的 OData 路由约定。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPathRouteConstraint.EdmModel">
+      <summary> 获取用于分析路径的 EDM 模型。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathRouteConstraint.Match(System.Net.Http.HttpRequestMessage,System.Web.Http.Routing.IHttpRoute,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Web.Http.Routing.HttpRouteDirection)">
+      <summary> 确定此实例是否等于指定的路由。</summary>
+      <returns> 如果此实例等于指定的路由，则为 true；否则为 false。</returns>
+      <param name="request">请求。</param>
+      <param name="route">要比较的路由。</param>
+      <param name="parameterName">参数名。</param>
+      <param name="values">参数值的列表。</param>
+      <param name="routeDirection">路由方向。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPathRouteConstraint.PathHandler">
+      <summary> 获取用于分析的 OData 路径处理程序。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPathRouteConstraint.RouteName">
+      <summary> 获取与此约束关联的路由的名称。</summary>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPathRouteConstraint.RoutingConventions">
+      <summary> 获取用于选择控制器名称的 OData 路由约定。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathRouteConstraint.SelectControllerName(System.Web.Http.OData.Routing.ODataPath,System.Net.Http.HttpRequestMessage)">
+      <summary> 选择要将请求调度到的控制器的名称。</summary>
+      <returns>要调度到的控制器的名称；如果无法解析这种控制器，则为 null。</returns>
+      <param name="path">请求的 OData 路径。</param>
+      <param name="request">请求。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataPathSegment">
+      <summary>提供 OData 路径段的对象表示形式，以及有关 EDM 类型和该路径的实体集的附加信息。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathSegment.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ODataPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>  获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ODataPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ODataRouteConstants"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.Action"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.ConstraintName"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.Controller"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.Key"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.NavigationProperty"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.ODataPath"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.ODataPathTemplate"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataRouteConstants.RelatedKey"></member>
+    <member name="T:System.Web.Http.OData.Routing.ODataSegmentKinds">
+      <summary>提供 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 的实现的段类型值。</summary>
+    </member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Action"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Batch"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Cast"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.EntitySet"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Key"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Links"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Metadata"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Navigation"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Property"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.ServiceBase"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Unresolved"></member>
+    <member name="F:System.Web.Http.OData.Routing.ODataSegmentKinds.Value"></member>
+    <member name="T:System.Web.Http.OData.Routing.PropertyAccessPathSegment">
+      <summary>表示属性访问的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.PropertyAccessPathSegment.#ctor(Microsoft.Data.Edm.IEdmProperty)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.PropertyAccessPathSegment" /> 类的新实例。</summary>
+      <param name="property">此段正在访问的属性。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.PropertyAccessPathSegment.#ctor(System.String)">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.PropertyAccessPathSegment" /> 类的新实例。</summary>
+      <param name="propertyName">属性的名称。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.PropertyAccessPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.PropertyAccessPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>  获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.PropertyAccessPathSegment.Property">
+      <summary>获取此段正在访问的属性。</summary>
+      <returns>返回 <see cref="T:Microsoft.Data.Edm.IEdmProperty" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.PropertyAccessPathSegment.PropertyName">
+      <summary>获取属性的名称。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.PropertyAccessPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.PropertyAccessPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.UnresolvedPathSegment">
+      <summary>表示无法解析的段的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.UnresolvedPathSegment.#ctor(System.String)">
+      <summary>  初始化 <see cref="T:System.Web.Http.OData.Routing.UnresolvedPathSegment" /> 类的新实例。</summary>
+      <param name="segmentValue">无法解析的段值。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.UnresolvedPathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <returns>上一个路径段的 EDM 类型。</returns>
+      <param name="previousEdmType">获取此段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.UnresolvedPathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.UnresolvedPathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.UnresolvedPathSegment.SegmentValue">
+      <summary>获取无法解析的段值。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.UnresolvedPathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.ValuePathSegment">
+      <summary>表示 $value 段的 <see cref="T:System.Web.Http.OData.Routing.ODataPathSegment" /> 实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ValuePathSegment.#ctor"></member>
+    <member name="M:System.Web.Http.OData.Routing.ValuePathSegment.GetEdmType(Microsoft.Data.Edm.IEdmType)">
+      <summary>获取此段的 EDM 类型。</summary>
+      <returns>此段的 EDM 类型。</returns>
+      <param name="previousEdmType">上一个路径段的 EDM 类型。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ValuePathSegment.GetEntitySet(Microsoft.Data.Edm.IEdmEntitySet)">
+      <summary>获取此段的实体集。</summary>
+      <returns>此段的实体集。</returns>
+      <param name="previousEntitySet">上一个路径段的实体集。</param>
+    </member>
+    <member name="P:System.Web.Http.OData.Routing.ValuePathSegment.SegmentKind">
+      <summary>获取当前段的段类型。</summary>
+      <returns>返回 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.ValuePathSegment.ToString">
+      <summary>返回一个表示此实例的 <see cref="T:System.String" />。</summary>
+      <returns>一个表示此实例的 <see cref="T:System.String" />。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.ActionRoutingConvention">
+      <summary> 处理操作调用的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.ActionRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.ActionRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.ActionRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 为 OData 请求选择操作。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定操作的名称 </returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.EntityRoutingConvention">
+      <summary> 根据键对实体处理操作的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.EntityRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.EntityRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.EntityRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 为 OData 请求选择操作。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定操作的名称 </returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.EntitySetRoutingConvention">
+      <summary> 处理实体集的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.EntitySetRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.EntitySetRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.EntitySetRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 为 OData 请求选择操作。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定操作的名称</returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.EntitySetRoutingConvention.SelectController(System.Web.Http.OData.Routing.ODataPath,System.Net.Http.HttpRequestMessage)">
+      <summary> 为 OData 请求选择控制器。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定控制器的名称 </returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="request">请求。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention">
+      <summary> 提供抽象以便为 OData 请求选择控制器和操作。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 为 OData 请求选择操作。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定操作的名称</returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention.SelectController(System.Web.Http.OData.Routing.ODataPath,System.Net.Http.HttpRequestMessage)">
+      <summary> 为 OData 请求选择控制器。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定控制器的名称</returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="request">请求。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.LinksRoutingConvention">
+      <summary> 处理链接操作的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.LinksRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.LinksRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.LinksRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 选择操作。</summary>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.MetadataRoutingConvention">
+      <summary> 处理 OData 元数据请求的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.MetadataRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.MetadataRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.MetadataRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 为 OData 请求选择操作。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定操作的名称</returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.MetadataRoutingConvention.SelectController(System.Web.Http.OData.Routing.ODataPath,System.Net.Http.HttpRequestMessage)">
+      <summary> 为 OData 请求选择控制器。</summary>
+      <returns>如果不按此约定处理请求，则为 null；否则为选定控制器的名称 </returns>
+      <param name="odataPath">OData 路径。</param>
+      <param name="request">请求。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.NavigationRoutingConvention">
+      <summary> 处理导航属性的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.NavigationRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.NavigationRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.NavigationRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 选择操作。</summary>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.ODataRoutingConventions">
+      <summary> 提供帮助器方法用于创建路由约定。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.ODataRoutingConventions.CreateDefault">
+      <summary> 创建默认 OData 路由约定的可变集合。</summary>
+      <returns>默认 OData 路由约定的可变集合。</returns>
+    </member>
+    <member name="T:System.Web.Http.OData.Routing.Conventions.UnmappedRequestRoutingConvention">
+      <summary> 始终选择名为 HandleUnmappedRequest 的操作（如果存在该操作）的 <see cref="T:System.Web.Http.OData.Routing.Conventions.IODataRoutingConvention" /> 的实现。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.UnmappedRequestRoutingConvention.#ctor">
+      <summary>初始化 <see cref="T:System.Web.Http.OData.Routing.Conventions.UnmappedRequestRoutingConvention" /> 类的新实例。</summary>
+    </member>
+    <member name="M:System.Web.Http.OData.Routing.Conventions.UnmappedRequestRoutingConvention.SelectAction(System.Web.Http.OData.Routing.ODataPath,System.Web.Http.Controllers.HttpControllerContext,System.Linq.ILookup{System.String,System.Web.Http.Controllers.HttpActionDescriptor})">
+      <summary> 选择操作。</summary>
+      <param name="odataPath">OData 路径。</param>
+      <param name="controllerContext">控制器上下文。</param>
+      <param name="actionMap">操作映射。</param>
+    </member>
+  </members>
+</doc>

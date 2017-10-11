@@ -1,0 +1,101 @@
+﻿Global里启动时添加
+Job.Start();
+
+
+Quartz.NET是一个开源的作业调度框架，非常适合在平时的工作中，定时轮询数据库同步，定时邮件通知，定时处理数据等。 
+Quartz.NET允许开发人员根据时间间隔（或天）来调度作业。它实现了作业和触发器的多对多关系，还能把多个作业与不同的触发器关联。
+整合了 Quartz.NET的应用程序可以重用来自不同事件的作业，还可以为一个事件组合多个作业。
+
+
+
+官方学习文档：http://www.quartz-scheduler.net/documentation/index.html
+
+使用实例介绍：http://www.quartz-scheduler.net/documentation/quartz-2.x/quick-start.html
+
+官方的源代码下载：http://sourceforge.net/projects/quartznet/files/quartznet/  
+
+
+
+1去NuGet下载它
+
+2实现IJob接口
+
+3在应用程序入口处启动它
+
+4配置quartz_jobs.xml
+
+job 任务
+
+其实就是1.x版本中的<job-detail>，这个节点是用来定义每个具体的任务的，多个任务请创建多个job节点即可
+•name(必填) 任务名称，同一个group中多个job的name不能相同，若未设置group则所有未设置group的job为同一个分组，如:<name>sampleJob</name>
+•group(选填) 任务所属分组，用于标识任务所属分组，如:<group>sampleGroup</group>
+•description(选填) 任务描述，用于描述任务具体内容，如:<description>Sample job for Quartz Server</description>
+•job-type(必填) 任务类型，任务的具体类型及所属程序集，格式：实现了IJob接口的包含完整命名空间的类名,程序集名称，如:<job-type>Quartz.Server.SampleJob, Quartz.Server</job-type>
+•durable(选填) 具体作用不知，官方示例中默认为true，如:<durable>true</durable>
+•recover(选填) 具体作用不知，官方示例中默认为false，如:<recover>false</recover>
+
+trigger 任务触发器
+
+用于定义使用何种方式出发任务(job)，同一个job可以定义多个trigger ，多个trigger 各自独立的执行调度，每个trigger 中必须且只能定义一种触发器类型(calendar-interval、simple、cron)
+
+calendar-interval 一种触发器类型，使用较少，此处略过
+
+simple 简单任务的触发器，可以调度用于重复执行的任务
+•name(必填) 触发器名称，同一个分组中的名称必须不同
+•group(选填) 触发器组
+•description(选填) 触发器描述
+•job-name(必填) 要调度的任务名称，该job-name必须和对应job节点中的name完全相同
+•job-group(选填) 调度任务(job)所属分组，该值必须和job中的group完全相同
+•start-time(选填) 任务开始执行时间utc时间，北京时间需要+08:00，如：<start-time>2012-04-01T08:00:00+08:00</start-time>表示北京时间2012年4月1日上午8:00开始执行，注意服务启动或重启时都会检测此属性，若没有设置此属性或者start-time设置的时间比当前时间较早，则服务启动后会立即执行一次调度，若设置的时间比当前时间晚，服务会等到设置时间相同后才会第一次执行任务，一般若无特殊需要请不要设置此属性
+•repeat-count(必填)  任务执行次数，如:<repeat-count>-1</repeat-count>表示无限次执行，<repeat-count>10</repeat-count>表示执行10次
+•repeat-interval(必填) 任务触发间隔(毫秒)，如:<repeat-interval>10000</repeat-interval> 每10秒执行一次
+
+cron复杂任务触发器--使用cron表达式定制任务调度（强烈推荐)
+•name(必填) 触发器名称，同一个分组中的名称必须不同
+•group(选填) 触发器组d
+•escription(选填) 触发器描述
+•job-name(必填) 要调度的任务名称，该job-name必须和对应job节点中的name完全相同
+•job-group(选填) 调度任务(job)所属分组，该值必须和job中的group完全相同
+•start-time(选填) 任务开始执行时间utc时间，北京时间需要+08:00，如：<start-time>2012-04-01T08:00:00+08:00</start-time>表示北京时间2012年4月1日上午8:00开始执行，注意服务启动或重启时都会检测此属性，若没有设置此属性，服务会根据cron-expression的设置执行任务调度；若start-time设置的时间比当前时间较早，则服务启动后会忽略掉cron-expression设置，立即执行一次调度，之后再根据cron-expression执行任务调度；若设置的时间比当前时间晚，则服务会在到达设置时间相同后才会应用cron-expression，根据规则执行任务调度，一般若无特殊需要请不要设置此属性
+•cron-expression(必填) cron表达式，如:<cron-expression>0/10 * * * * ?</cron-expression>每10秒执行一次
+
+Quartz的cron表达式
+
+ 官方英文介绍地址：http://www.quartz-scheduler.net/documentation/quartz-2.x/tutorial/crontrigger.html
+
+cron expressions 整体上还是非常容易理解的，只有一点需要注意："?"号的用法，看下文可以知道“？”可以用在 day of month 和 day of week中，他主要是为了解决如下场景，如：每月的1号的每小时的31分钟，正确的表达式是：* 31 * 1 * ？，而不能是：* 31 * 1 * *，因为这样代表每周的任意一天。
+
+
+由7段构成：秒 分 时 日 月 星期 年（可选）
+"-" ：表示范围  MON-WED表示星期一到星期三
+"," ：表示列举 MON,WEB表示星期一和星期三
+"*" ：表是“每”，每月，每天，每周，每年等
+"/" :表示增量：0/15（处于分钟段里面） 每15分钟，在0分以后开始，3/20 每20分钟，从3分钟以后开始
+"?" :只能出现在日，星期段里面，表示不指定具体的值
+"L" :只能出现在日，星期段里面，是Last的缩写，一个月的最后一天，一个星期的最后一天（星期六）
+"W" :表示工作日，距离给定值最近的工作日
+"#" :表示一个月的第几个星期几，例如："6#3"表示每个月的第三个星期五（1=SUN...6=FRI,7=SAT）
+
+官方实例
+ 
+
+0 0 12 * * ? 每天中午12点触发 
+0 15 10 ? * * 每天上午10:15触发  
+0 15 10 * * ? 每天上午10:15触发  
+0 15 10 * * ? * 每天上午10:15触发  
+0 15 10 * * ? 2005 2005年的每天上午10:15触发 
+0 * 14 * * ? 在每天下午2点到下午2:59期间的每1分钟触发  
+0 0/5 14 * * ? 在每天下午2点到下午2:55期间的每5分钟触发 
+0 0/5 14,18 * * ? 在每天下午2点到2:55期间和下午6点到6:55期间的每5分钟触发 
+0 0-5 14 * * ? 在每天下午2点到下午2:05期间的每1分钟触发 
+0 10,44 14 ? 3 WED 每年三月的星期三的下午2:10和2:44触发 
+0 15 10 ? * MON-FRI 周一至周五的上午10:15触发 
+0 15 10 15 * ? 每月15日上午10:15触发 
+0 15 10 L * ? 每月最后一日的上午10:15触发 
+0 15 10 L-2 * ? Fire at 10:15am on the 2nd-to-last last day of every month 
+0 15 10 ? * 6L 每月的最后一个星期五上午10:15触发 
+0 15 10 ? * 6L Fire at 10:15am on the last Friday of every month 
+0 15 10 ? * 6L 2002-2005 2002年至2005年的每月的最后一个星期五上午10:15触发 
+0 15 10 ? * 6#3 每月的第三个星期五上午10:15触发 
+0 0 12 1/5 * ? Fire at 12pm (noon) every 5 days every month, starting on the first day of the month. 
+0 11 11 11 11 ? Fire every November 11th at 11:11am. 

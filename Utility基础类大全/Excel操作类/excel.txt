@@ -1,0 +1,130 @@
+﻿有两个操作excel的工具 Aspose.Cells 和Npoi
+
+Aspose.Cells是一款功能强大的Excel文档处理和转换控件，开发人员和客户电脑无需安装Microsoft Excel也能在应用程序中实现类似Excel的强大数据管理功能，
+支持所有Excel格式类型的操作，在没有Microsoft Excel的环境下，用户也可为其应用程序嵌入类似Excel的强大数据管理功能。
+Aspose.Cells可以对每一个具体的数据，表格和格式进行管理，在各个层面导入图像，应用复杂的计算公式，并将应用程序中的表格保存为各种格式等。
+
+常见用途编辑
+创建Excel仪表盘，结合图表和数据透视表
+高保真Excel呈现和印刷
+从Excel电子表格中导入数据
+数据导出到Excel电子表格
+电子表格操作/编辑
+电子表格转换
+
+
+使用方式编辑
+1， 下载Aspose.Cells.dll 。在项目或者网站中添加引用Aspose.Cells.dll
+   下载地址https://github.com/aspose-cells/Aspose.Cells-for-.NET
+Aspose.Cells(支持64位系统)
+Aspose.Cells.支持64位系统。可以很方便的操作Excel...在项目或者网站中添加引用 Aspose.Cells.dll
+1， 下载Aspose.Cells.dll 。在项目或者网站中添加引用Aspose.Cells.dll
+Code：
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using Aspose.Cells;
+///<summary>
+///AsposeExcel 的摘要说明
+///</summary>
+publicclassAsposeExcel
+{
+privatestring outFileName = "";
+privatestring fullFilename = "";
+privateWorkbook book = null;
+privateWorksheet sheet = null;
+publicAsposeExcel(string outfilename, string tempfilename)//导出构造数
+{
+outFileName = outfilename;
+book = newWorkbook();
+//book.Open(tempfilename);这里我们暂时不用模板
+sheet = book.Worksheets[0];
+}
+publicAsposeExcel(string fullfilename)//导入构造数
+{
+fullFilename = fullfilename;
+// book = newWorkbook();
+//book.Open(tempfilename);
+//sheet =book.Worksheets[0];
+}
+privatevoid AddTitle(stringtitle, int columnCount)
+{
+sheet.Cells.Merge(0, 0, 1,columnCount);
+sheet.Cells.Merge(1, 0, 1,columnCount);
+Cellcell1 = sheet.Cells[0, 0];
+cell1.PutValue(title);
+cell1.Style.HorizontalAlignment = TextAlignmentType.Center;
+cell1.Style.Font.Name = "黑体";
+cell1.Style.Font.Size = 14;
+cell1.Style.Font.IsBold = true;
+Cellcell2 = sheet.Cells[1, 0];
+cell1.PutValue("查询时间：" + DateTime.Now.ToLocalTime());
+cell2.SetStyle(cell1.Style);
+}
+privatevoid AddHeader(DataTabledt)
+{
+Cellcell = null;
+for (int col = 0; col < dt.Columns.Count; col++)
+{
+cell = sheet.Cells[0, col];
+cell.PutValue(dt.Columns[col].ColumnName);
+cell.Style.Font.IsBold = true;
+}
+}
+privatevoid AddBody(DataTabledt)
+{
+for (int r = 0; r < dt.Rows.Count; r++)
+{
+for(int c = 0; c < dt.Columns.Count; c++)
+{
+sheet.Cells[r + 1,c].PutValue(dt.Rows[r][c].ToString());
+}
+}
+}
+//导出------------下一篇会用到这个方法
+publicBoolean DatatableToExcel(DataTabledt)
+{
+Booleanyn = false;
+try
+{
+//sheet.Name= sheetName;
+//AddTitle(title,dt.Columns.Count);
+//AddHeader(dt);
+AddBody(dt);
+sheet.AutoFitColumns();
+//sheet.AutoFitRows();
+book.Save(outFileName);
+yn = true;
+returnyn;
+}
+catch (Exception e)
+{
+returnyn;
+// throwe;
+}
+}
+publicDataTable ExcelToDatatable()//导入
+{
+Workbookbook = newWorkbook();
+book.Open(fullFilename);
+Worksheetsheet = book.Worksheets[0];
+Cellscells = sheet.Cells;
+//获取excel中的数据保存到一个datatable中
+DataTabledt_Import = cells.ExportDataTableAsString(0, 0, cells.MaxDataRow + 1,cells.MaxDataColumn + 1, false);
+// dt_Import.
+returndt_Import;
+}
+}
+
+
+
+
+==========================================npio======================
+项目地址http://npoi.codeplex.com
+使用 NPOI 你就可以在没有安装 Office 或者相应环境的机器上对 WORD/EXCEL 文档进行读写。NPOI是构建在POI 3.x版本之上的，它可以在没有安装Office的情况下对Word/Excel文档进行读写操作。
