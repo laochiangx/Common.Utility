@@ -1,7 +1,18 @@
-## 比较全面的c#帮助类，日常工作收集，各式各样的几乎都能找到,所有功能性代码都是独立的类，类与类之间没有联系，可以单独引用至项目，不断完善收集中...
-比较全面的c#帮助类，日常工作收集，各式各样的几乎都能找到,所有功能性代码都是独立的类，类与类之间没有联系，可以单独引用至项目，分享出来，方便大家，几乎都有注释，喜欢的请点star，不断完善收集中... 
+##比较全面的c#帮助类
+日常工作总结，加上网上收集，各式各样的几乎都能找到,所有功能性代码都是独立的类，类与类之间没有联系，可以单独引用至项目，分享出来，方便大家，几乎都有注释，喜欢的请点赞，不断完善收集中... 
+##总揽
+![2.png](http://upload-images.jianshu.io/upload_images/6855212-26b0b78fc2743d1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##主干是Utility基础类大全
+比较详细，这里是重点，花了一些时间
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-在平时的工作中，或多或少会涉及到帮助类，最常见的上传下载文件，excel，sqlhelper,等等，我相信很多对大家来说都不难， 但是如果什么都重头去写的话，确实很浪费时间，如果有比较全面的帮助类，我需要什么就能找到该多好，我现在做的就是收集尽量多的帮助类，方便日后用到。
+##在平时的工作中，或多或少会涉及到帮助类
+最常见的上传下载文件，excel，sqlhelper,等等，我相信很多对大家来说都不难， 但是如果什么都重头去写的话，确实很浪费时间，如果有比较全面的帮助类，我需要什么就能找到该多好，我现在做的就是收集尽量多的帮助类，方便日后用到。
+##样板图片操作类
+![WEFE@M%}SN4_K$6H0D{6IYJ.png](http://upload-images.jianshu.io/upload_images/6855212-34f0ee0339e3cb49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##操作文档
+里面包含一下操作文档，这个是用工具生成的。还在研究中... 
+![H819EQUYFVA~WXK6YAQ1%6Q.png](http://upload-images.jianshu.io/upload_images/6855212-6cf5a7a2a4a75c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+##附上一些常见的帮助类栏目
 1. cookie操作 --------- CookieHelper.cs
 2. session操作 ------- SessionHelper.cs
 3. cache操作
@@ -55,4 +66,21 @@
 51. 页面辅助类
 52. 验证码
 
+##github地址
 最后老规矩，[github地址](https://github.com/Jimmey-Jiang/Common.Utility.git) https://github.com/Jimmey-Jiang/Common.Utility.git求star,喜欢点赞
+##里面的操作类都很详细，基本都有注释
+比如这里展示一下 字符串操作帮助类就有下面这个方法：
+ 1、GetStrArray(string str, char speater, bool toLower) 把字符串按照分隔符转换成 List
+ 2、GetStrArray(string str) 把字符串转 按照, 分割 换为数据
+3、GetArrayStr(List list, string speater) 把 List 按照分隔符组装成 string
+4、GetArrayStr(List list) 得到数组列表以逗号分隔的字符串
+ 5、GetArrayValueStr(Dictionary<int, int> list)得到数组列表以逗号分隔的字符串
+ 6、DelLastComma(string str)删除最后结尾的一个逗号
+ 7、DelLastChar(string str, string strchar)删除最后结尾的指定字符后的字符
+ 8、ToSBC(string input)转全角的函数(SBC case)
+9、ToDBC(string input)转半角的函数(SBC case)
+10、GetSubStringList(string o_str, char sepeater)把字符串按照指定分隔符装成 List 去除重复
+11、GetCleanStyle(string StrList, string SplitString)将字符串样式转换为纯字符串
+12、GetNewStyle(string StrList, string NewStyle, string SplitString, out string Error)将字符串转换为新样式
+13、SplitMulti(string str, string splitstr)分割字符串
+14、SqlSafeString(string String, bool IsDel)
