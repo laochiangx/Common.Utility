@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED5A8CC8-3896-4538-BA09-9197B869FA18}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HD.Common</RootNamespace>
+    <AssemblyName>HD.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\HD.Common.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChnCharInfo">
+      <HintPath>Lib\PinYin\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="COM.Excel">
+      <HintPath>Lib\COM.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Excel">
+      <HintPath>Lib\Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>Lib\NPOI\.net 4.0\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\DLL\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="LTP.Accounts">
+      <HintPath>Lib\LTP.Accounts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.UI.WebControls">
+      <HintPath>Lib\Microsoft.Web.UI.WebControls.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>Lib\NPOI\.net 4.0\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSmtp">
+      <HintPath>Lib\OpenSmtp.dll</HintPath>
+    </Reference>
+    <Reference Include="OWC10Chart">
+      <HintPath>Lib\OWC10Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarCode\BarCodeHelper.cs" />
+    <Compile Include="Cache\CacheHelper.cs" />
+    <Compile Include="Date\ChineseCalHelper.cs" />
+    <Compile Include="Config\ConfigHelper.cs" />
+    <Compile Include="Email\SmtpConfig.cs" />
+    <Compile Include="Email\SmtpSetting.cs" />
+    <Compile Include="Page\ValidateImgPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\GridViewHelper.cs" />
+    <Compile Include="Convert\ConvertHelper.cs" />
+    <Compile Include="Cookie\CookieHelper.cs" />
+    <Compile Include="CSV\CsvHelper.cs" />
+    <Compile Include="Date\TimeHelper.cs" />
+    <Compile Include="DEncrypt\Base64DEncrypt.cs" />
+    <Compile Include="DEncrypt\TripleDESDEncrypt.cs" />
+    <Compile Include="DEncrypt\DESDEncrypt.cs" />
+    <Compile Include="DEncrypt\FileDEncrypt.cs" />
+    <Compile Include="DEncrypt\HashDEncrypt.cs" />
+    <Compile Include="DEncrypt\MD5Encrypt.cs" />
+    <Compile Include="DEncrypt\RSADEncrypt.cs" />
+    <Compile Include="File\DirectoryHelper.cs" />
+    <Compile Include="File\FileDownHelper.cs" />
+    <Compile Include="File\FileHelper.cs" />
+    <Compile Include="Formula\FormulaHelper.cs" />
+    <Compile Include="Html\JavaScriptHelper.cs" />
+    <Compile Include="Email\MailHelper.cs" />
+    <Compile Include="Page\BindDataControl.cs" />
+    <Compile Include="Media\MediaHelper.cs" />
+    <Compile Include="Net\IpHelper.cs" />
+    <Compile Include="Page\PageHelper.cs" />
+    <Compile Include="Image\ImageHelper.cs" />
+    <Compile Include="Image\ImageDown.cs" />
+    <Compile Include="Image\ImageUpload.cs" />
+    <Compile Include="Net\NetHelper.cs" />
+    <Compile Include="NPOI\NPOIHelper.cs" />
+    <Compile Include="Excel\DataToExcel.cs" />
+    <Compile Include="Excel\ExcelHelper.cs" />
+    <Compile Include="Excel\GridViewExport.cs" />
+    <Compile Include="FTP\FTPClient.cs" />
+    <Compile Include="FTP\FTPHelper.cs" />
+    <Compile Include="Html\HtmlHelper.cs" />
+    <Compile Include="Net\WebClientHelper.cs" />
+    <Compile Include="File\INIFileHelper.cs" />
+    <Compile Include="Json\JsonHelper.cs" />
+    <Compile Include="Email\MailSmtpHelper.cs" />
+    <Compile Include="Message\MessageBoxHelper.cs" />
+    <Compile Include="Page\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\PageValidate.cs" />
+    <Compile Include="Path\WebSitePathHelper.cs" />
+    <Compile Include="PDF\PDFOperation.cs" />
+    <Compile Include="PinYin\PinYinHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random\RandomHelper.cs" />
+    <Compile Include="Regex\RegexHelper.cs" />
+    <Compile Include="Register\RegisterHelper.cs" />
+    <Compile Include="RMB\RMBHelper.cs" />
+    <Compile Include="Serialize\SerializeHelper.cs" />
+    <Compile Include="Session\SessionHelper.cs" />
+    <Compile Include="String\StringHelper.cs" />
+    <Compile Include="System\SysHelper.cs" />
+    <Compile Include="File\FileUpHelper.cs" />
+    <Compile Include="Url\UrlHelper.cs" />
+    <Compile Include="Validator\ValidatorHelper.cs" />
+    <Compile Include="VerifyCode\VerifyCodeHelper.cs" />
+    <Compile Include="VerifyCode\VerifyCodeRand.cs" />
+    <Compile Include="Video\VideoHelper.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="XML\XmlHelper.cs" />
+    <Compile Include="XML\XmlHelperExt.cs" />
+    <Compile Include="Zip\ZipHelper.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

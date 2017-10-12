@@ -1,0 +1,9 @@
+E:\Projects\Helper\Helper\bin\Debug\HD.Helper.dll
+E:\Projects\Helper\Helper\bin\Debug\HD.Helper.pdb
+E:\Projects\Helper\Helper\bin\Debug\ChnCharInfo.dll
+E:\Projects\Helper\Helper\bin\Debug\Ionic.Zip.dll
+E:\Projects\Helper\Helper\bin\Debug\NPOI.dll
+E:\Projects\Helper\Helper\bin\Debug\NPOI.xml
+E:\Projects\Helper\Helper\obj\Debug\ResolveAssemblyReference.cache
+E:\Projects\Helper\Helper\obj\Debug\HD.Helper.dll
+E:\Projects\Helper\Helper\obj\Debug\HD.Helper.pdb

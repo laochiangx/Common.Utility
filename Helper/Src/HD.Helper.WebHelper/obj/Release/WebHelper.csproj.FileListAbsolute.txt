@@ -1,0 +1,4 @@
+E:\Projects\Helper\WebHelper\bin\WebHelper.dll
+E:\Projects\Helper\WebHelper\bin\WebHelper.pdb
+E:\Projects\Helper\WebHelper\obj\Release\WebHelper.dll
+E:\Projects\Helper\WebHelper\obj\Release\WebHelper.pdb
