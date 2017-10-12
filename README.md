@@ -70,19 +70,4 @@
 
 ## github地址
 最后老规矩，[github地址](https://github.com/Jimmey-Jiang/Common.Utility.git) https://github.com/Jimmey-Jiang/Common.Utility.git求star,喜欢点赞
-## 里面的操作类都很详细，基本都有注释
-比如这里展示一下 字符串操作帮助类就有下面这个方法：
- 1、GetStrArray(string str, char speater, bool toLower) 把字符串按照分隔符转换成 List
- 2、GetStrArray(string str) 把字符串转 按照, 分割 换为数据
-3、GetArrayStr(List list, string speater) 把 List 按照分隔符组装成 string
-4、GetArrayStr(List list) 得到数组列表以逗号分隔的字符串
- 5、GetArrayValueStr(Dictionary<int, int> list)得到数组列表以逗号分隔的字符串
- 6、DelLastComma(string str)删除最后结尾的一个逗号
- 7、DelLastChar(string str, string strchar)删除最后结尾的指定字符后的字符
- 8、ToSBC(string input)转全角的函数(SBC case)
-9、ToDBC(string input)转半角的函数(SBC case)
-10、GetSubStringList(string o_str, char sepeater)把字符串按照指定分隔符装成 List 去除重复
-11、GetCleanStyle(string StrList, string SplitString)将字符串样式转换为纯字符串
-12、GetNewStyle(string StrList, string NewStyle, string SplitString, out string Error)将字符串转换为新样式
-13、SplitMulti(string str, string splitstr)分割字符串
-14、SqlSafeString(string String, bool IsDel)
+
