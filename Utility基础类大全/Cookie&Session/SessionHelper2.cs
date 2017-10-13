@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public static class SessionHelper2
     {

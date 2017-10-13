@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class HTMLHelper
     {

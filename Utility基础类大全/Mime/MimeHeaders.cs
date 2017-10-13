@@ -1,5 +1,5 @@
 ﻿
-namespace DotNet.Utilities
+namespace Utilities
 {
     public static class MimeHeaders
     {

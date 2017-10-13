@@ -4,7 +4,7 @@
 
 using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
     /// BaseRandom

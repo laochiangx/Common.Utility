@@ -5,7 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents a generic Pop3 command and 

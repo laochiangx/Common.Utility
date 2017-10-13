@@ -1,6 +1,6 @@
 ﻿
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class contains a string representation of Pop3 commands

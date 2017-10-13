@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 //using Excel;
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 操作EXCEL导出数据报表的类

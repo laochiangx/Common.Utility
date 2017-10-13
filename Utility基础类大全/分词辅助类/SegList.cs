@@ -3,7 +3,7 @@ using System.Collections;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// ∑÷¥ ∏®÷˙¿‡

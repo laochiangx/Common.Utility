@@ -1,5 +1,5 @@
 ﻿
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 共用工具类

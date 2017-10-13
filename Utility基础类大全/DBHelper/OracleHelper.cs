@@ -5,7 +5,7 @@ using System.Data.OracleClient;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DBHelper
+namespace HD.DBHelper
 {
 
     /// <summary>

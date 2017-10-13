@@ -2,7 +2,7 @@
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// PDF文档操作类

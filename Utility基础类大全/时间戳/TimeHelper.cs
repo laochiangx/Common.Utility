@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DotNet.Utilities.时间戳
+namespace Utilities.时间戳
 {
    public class TimeHelper
     {

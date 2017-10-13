@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// A wrapper class for System.Threading.Timer

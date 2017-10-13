@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 时间类

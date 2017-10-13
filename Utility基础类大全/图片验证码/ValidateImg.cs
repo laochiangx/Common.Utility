@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 验证码 继承 System.Web.UI.Page ，Session["xk_validate_code"]

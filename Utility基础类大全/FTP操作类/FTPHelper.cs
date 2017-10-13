@@ -5,7 +5,7 @@ using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class FTPHelper
     {

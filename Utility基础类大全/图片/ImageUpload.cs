@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 文件类型

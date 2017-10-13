@@ -1,6 +1,6 @@
 ﻿
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class contains the Positive and Negative starting response strings

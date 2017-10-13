@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Common;
 using System.Collections.Generic;
-namespace DBHelper
+namespace HD.DBHelper
 {
     /// <summary>
     /// 数据访问抽象基础类

@@ -5,7 +5,7 @@ using System.Web.UI;
 using System.IO;
 using System.Web.UI.WebControls;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class ExportExcel
     {

@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 邮件操作类

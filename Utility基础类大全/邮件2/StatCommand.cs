@@ -2,7 +2,7 @@
 using System.IO;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents the Pop3 STAT command.

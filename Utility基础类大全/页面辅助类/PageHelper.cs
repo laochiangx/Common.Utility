@@ -4,7 +4,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.HtmlControls;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class PageHelper
     {

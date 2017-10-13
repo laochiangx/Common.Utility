@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     [Flags()]
     public enum Pop3State

@@ -4,7 +4,7 @@ using System.IO;
 using System.Net.Sockets;
 using System.Collections;
 
-namespace DotNet.Utilities_Xofly
+namespace Utilities_Xofly
 {
     public enum MailFormat { Text, HTML };
     public enum MailPriority { Low = 1, Normal = 3, High = 5 };

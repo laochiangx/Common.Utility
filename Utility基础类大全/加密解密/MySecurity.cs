@@ -6,7 +6,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// MySecurity(安全类) 的摘要说明。

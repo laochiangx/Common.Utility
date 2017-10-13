@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class CookieHelper
     {

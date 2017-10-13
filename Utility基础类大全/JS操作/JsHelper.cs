@@ -1,7 +1,7 @@
 ﻿
 using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 客户端脚本输出

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents an item returned from the 

@@ -1,5 +1,5 @@
 ﻿
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents the resulting Pop3 response from a STAT command

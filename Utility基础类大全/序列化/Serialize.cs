@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization.Formatters.Soap;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 
     #region 序列化

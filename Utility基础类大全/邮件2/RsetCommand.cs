@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This command represents the Pop3 RSET command.

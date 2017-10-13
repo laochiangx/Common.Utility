@@ -8,7 +8,7 @@ using System.Web;
 using System.Threading;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// For ASP.Net applications.

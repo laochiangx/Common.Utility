@@ -7,7 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.IO.Compression;
 using System.Net.Cache;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>    
     /// 上传数据参数    

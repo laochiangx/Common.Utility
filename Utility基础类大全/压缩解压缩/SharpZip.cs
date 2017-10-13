@@ -7,7 +7,7 @@ using ICSharpCode.SharpZipLib.Checksums;
 using ICSharpCode.SharpZipLib.Zip;
 
 ///压缩、解压缩类
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class SharpZip
     {

@@ -7,7 +7,7 @@ using System.Xml.Serialization;
 using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization.Formatters.Binary;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class SerializeHelper
     {

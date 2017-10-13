@@ -2,7 +2,7 @@
 using System.IO;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This command represents a Pop3 USER command.

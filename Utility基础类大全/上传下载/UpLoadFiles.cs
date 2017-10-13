@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// UpLoadFiles 的摘要说明

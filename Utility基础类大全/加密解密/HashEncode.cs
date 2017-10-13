@@ -3,7 +3,7 @@
 using System;
 using System.Text;
 using System.Security.Cryptography;
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// 得到随机安全码（哈希加密）。

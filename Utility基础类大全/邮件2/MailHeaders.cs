@@ -1,6 +1,6 @@
 ﻿
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public static class MailHeaders
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
 //Download by http://www.codefans.net
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 文件上传类

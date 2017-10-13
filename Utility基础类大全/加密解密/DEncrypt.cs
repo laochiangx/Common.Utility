@@ -3,7 +3,7 @@ using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Encrypt 的摘要说明。

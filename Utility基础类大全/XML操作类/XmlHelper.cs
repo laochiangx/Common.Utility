@@ -1,7 +1,7 @@
 ﻿using System.Xml;
 using System.Data;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Xml的操作公共类

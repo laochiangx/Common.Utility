@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Collections;
 using System.Data.Common;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     //JSON转换类
     public class ConvertJson

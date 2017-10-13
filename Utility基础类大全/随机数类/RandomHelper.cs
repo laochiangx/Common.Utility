@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 使用Random类生成伪随机数

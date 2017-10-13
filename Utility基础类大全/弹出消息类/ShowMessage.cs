@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 页面常用方法包装

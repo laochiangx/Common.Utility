@@ -7,7 +7,7 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class MailSender
     {

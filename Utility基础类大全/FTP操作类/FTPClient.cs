@@ -5,7 +5,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class FTPClient
     {

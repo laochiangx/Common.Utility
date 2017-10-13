@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Data;
 using System.Configuration;
 using System.Data.SQLite;
-namespace DBHelper
+namespace HD.DBHelper
 {
     /// <summary>
     /// Copyright (C) 2011 Maticsoft 

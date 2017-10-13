@@ -5,7 +5,7 @@ using System.Configuration;
 using System.Web;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class MailPoper
     {

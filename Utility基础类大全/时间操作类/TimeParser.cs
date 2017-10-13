@@ -1,6 +1,6 @@
 using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class TimeParser
     {

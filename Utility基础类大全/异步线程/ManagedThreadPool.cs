@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     ///用C#托管代码实现的线程池

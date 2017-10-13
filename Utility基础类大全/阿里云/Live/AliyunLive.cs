@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 
-namespace DotNet.Utilities.Aliyun.Live
+namespace Utilities.Aliyun.Live
 {
     /*阿里云中直播 分为：推流，拉流，录制
      * 为防止推流，拉流url非法盗用，使用了A类鉴权 对url进行鉴权

@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 文件下载类

@@ -6,7 +6,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Summary description for GridViewExport

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents the response message 

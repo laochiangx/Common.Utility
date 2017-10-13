@@ -4,7 +4,7 @@ using System.Net.Mail;
 using System.Net.Mime;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class adds a few internet mail headers not already exposed by the 

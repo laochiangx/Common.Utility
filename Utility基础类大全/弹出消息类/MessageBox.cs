@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     //页面中弹出对话框
     public class MessageBox

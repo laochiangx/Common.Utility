@@ -3,7 +3,7 @@ using System;
 using System.Web;
 using System.Collections;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class CacheHelper
     {

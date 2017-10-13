@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Media;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 处理多媒体的公共类

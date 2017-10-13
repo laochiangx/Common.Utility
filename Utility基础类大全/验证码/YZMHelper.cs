@@ -3,7 +3,7 @@ using System.Web;
 using System.Drawing;
 using System.Security.Cryptography;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 验证码类

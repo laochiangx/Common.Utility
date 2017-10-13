@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     internal sealed class ConnectResponse : Pop3Response
     {

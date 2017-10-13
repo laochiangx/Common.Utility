@@ -10,7 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
 
-namespace DBHelper
+namespace HD.DBHelper
 {
 
     /// <summary>

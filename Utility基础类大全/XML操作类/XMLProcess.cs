@@ -3,7 +3,7 @@ using System.Data;
 using System.IO;
 using System.Xml;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class XMLProcess
     {

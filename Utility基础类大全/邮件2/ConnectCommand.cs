@@ -3,7 +3,7 @@ using System.Net.Sockets;
 using System.Net.Security;
 using System.Security.Authentication;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Performs the connect to a Pop3 server and returns a Pop3 

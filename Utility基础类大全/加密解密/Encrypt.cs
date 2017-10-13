@@ -3,7 +3,7 @@ using System;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// 加密解密实用类。

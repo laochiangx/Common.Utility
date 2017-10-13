@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class PinYin
     {

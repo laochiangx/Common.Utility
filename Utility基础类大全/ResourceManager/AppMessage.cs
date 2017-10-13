@@ -5,7 +5,7 @@
 using System;
 using System.Globalization;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     ///	BUBaseAppMessage

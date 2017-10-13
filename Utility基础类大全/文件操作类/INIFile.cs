@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// INIÎÄ¼þ¶ÁÐ´Àà¡£

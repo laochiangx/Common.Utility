@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// CSV文件转换类

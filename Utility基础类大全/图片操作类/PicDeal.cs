@@ -3,31 +3,10 @@ using System.Drawing.Imaging;
 using System.Collections;
 using System.Drawing;
 using System.IO;
+using System.Drawing.Drawing2D;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
-    /// <summary>
-    /// 枚举,生成缩略图模式
-    /// </summary>
-    public enum ThumbnailMod : byte
-    {
-        /// <summary>
-        /// HW
-        /// </summary>
-        HW,
-        /// <summary>
-        /// W
-        /// </summary>
-        W,
-        /// <summary>
-        /// H
-        /// </summary>
-        H,
-        /// <summary>
-        /// Cut
-        /// </summary>
-        Cut
-    };
 
     /// <summary>
     /// 操作图片类, 生成缩略图,添加水印
@@ -160,19 +139,6 @@ namespace DotNet.Utilities
         }
         #endregion
 
-        /// <summary>
-        /// 公共方法
-        /// </summary>
-        private static void GetImgType()
-        {
-            htmimes[".jpe"] = "image/jpeg";
-            htmimes[".jpeg"] = "image/jpeg";
-            htmimes[".jpg"] = "image/jpeg";
-            htmimes[".png"] = "image/png";
-            htmimes[".tif"] = "image/tiff";
-            htmimes[".tiff"] = "image/tiff";
-            htmimes[".bmp"] = "image/bmp";
-        }
 
 
         #region 返回新图片尺寸

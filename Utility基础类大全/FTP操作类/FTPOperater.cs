@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class FTPOperater
     {

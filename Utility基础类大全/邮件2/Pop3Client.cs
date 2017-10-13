@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// The Pop3Client class provides a wrapper for the Pop3 commands

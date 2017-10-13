@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents a Pop3 response message and

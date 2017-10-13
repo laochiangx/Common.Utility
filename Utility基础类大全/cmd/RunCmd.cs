@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class RunCmd
     {

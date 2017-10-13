@@ -4,7 +4,7 @@ using System.Net.Sockets;
 using System.Net.Mail;
 using System.Net;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 网络操作相关的类

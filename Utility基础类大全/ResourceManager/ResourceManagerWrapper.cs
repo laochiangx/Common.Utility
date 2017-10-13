@@ -5,7 +5,7 @@
 using System;
 using System.Collections;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// ResourceManagerWrapper

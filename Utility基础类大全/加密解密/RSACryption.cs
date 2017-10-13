@@ -2,7 +2,7 @@
 using System; 
 using System.Text; 
 using System.Security.Cryptography;
-namespace DotNet.Utilities
+namespace Utilities
 { 
 	/// <summary> 
 	/// RSA加密解密及RSA签名和验证

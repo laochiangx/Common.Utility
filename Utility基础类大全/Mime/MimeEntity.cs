@@ -6,7 +6,7 @@ using System.IO;
 using System.Net.Mime;
 using System.Net.Mail;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents a Mime entity.

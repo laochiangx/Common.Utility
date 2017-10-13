@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// This class represents both the multiline and single line Pop3 LIST command.

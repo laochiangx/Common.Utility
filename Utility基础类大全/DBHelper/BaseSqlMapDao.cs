@@ -11,7 +11,7 @@ using IBatisNet.DataMapper;
 using IBatisNet.DataMapper.Exceptions;
 using IBatisNet.DataMapper.Configuration;
 
-namespace DBHelper
+namespace HD.DBHelper
 {
     /// <summary>
     /// 基于IBatisNet的数据访问基类 

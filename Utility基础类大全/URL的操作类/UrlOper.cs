@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using System.Web;
 using System.Collections.Specialized;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// URLµÄ²Ù×÷Àà

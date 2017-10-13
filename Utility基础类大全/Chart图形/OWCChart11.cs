@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 利用OWC11进行作统计图的封装类。

@@ -1,6 +1,6 @@
 ﻿using System.Net.Mime;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public static class MediaTypes
     {

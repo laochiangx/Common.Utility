@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Session 操作类

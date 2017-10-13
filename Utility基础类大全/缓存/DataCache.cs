@@ -2,7 +2,7 @@
 using System;
 using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// 缓存相关的操作类

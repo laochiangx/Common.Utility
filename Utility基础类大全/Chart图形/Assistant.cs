@@ -3,7 +3,7 @@ using System.Text;
 using System.Data;
 using OWCChart;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// Assistant 的摘要说明。

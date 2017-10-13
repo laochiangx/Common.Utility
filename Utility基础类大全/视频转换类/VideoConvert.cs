@@ -1,7 +1,7 @@
 using System.Web;
 using System.Configuration;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     //if (this.fload.HasFile)
     //{
