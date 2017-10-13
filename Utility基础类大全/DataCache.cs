@@ -1,7 +1,7 @@
 using System;
 using System.Web;
 //Download by http://www.codefans.net
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// 缓存相关的操作类

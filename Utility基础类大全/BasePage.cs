@@ -3,7 +3,7 @@ using System.Web.UI.WebControls;
 using System.IO;
 using System.Web.UI;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class BasePage :System.Web.UI.Page
     {

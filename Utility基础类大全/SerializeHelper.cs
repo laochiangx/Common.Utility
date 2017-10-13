@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.Serialization.Json;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class SerializeHelper
     {

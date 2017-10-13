@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class PageValidate
     {

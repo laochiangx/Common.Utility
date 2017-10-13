@@ -1,6 +1,6 @@
 using System;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary> 
     /// Rmb 的摘要说明。 

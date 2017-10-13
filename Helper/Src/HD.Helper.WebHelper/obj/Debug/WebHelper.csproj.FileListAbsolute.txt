@@ -1,5 +1,0 @@
-E:\Projects\Helper\Src\WebHelper\bin\WebHelper.dll
-E:\Projects\Helper\Src\WebHelper\bin\WebHelper.pdb
-E:\Projects\Helper\Src\WebHelper\obj\Debug\WebHelper.dll
-E:\Projects\Helper\Src\WebHelper\obj\Debug\WebHelper.pdb
-E:\Projects\Helper\Src\WebHelper\obj\Debug\WebHelper.csprojResolveAssemblyReference.cache

@@ -3,7 +3,7 @@ using System.Web.UI;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 数据展示控件 绑定数据类

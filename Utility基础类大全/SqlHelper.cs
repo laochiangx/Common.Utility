@@ -5,7 +5,7 @@ using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 数据库的通用访问代码 抽象类

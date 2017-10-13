@@ -1,4 +1,0 @@
-E:\Projects\Helper\Src\HD.Helper.WebHelper\bin\WebHelper.dll
-E:\Projects\Helper\Src\HD.Helper.WebHelper\bin\WebHelper.pdb
-E:\Projects\Helper\Src\HD.Helper.WebHelper\obj\Debug\WebHelper.dll
-E:\Projects\Helper\Src\HD.Helper.WebHelper\obj\Debug\WebHelper.pdb

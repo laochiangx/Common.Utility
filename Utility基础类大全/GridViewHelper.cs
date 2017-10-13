@@ -6,7 +6,7 @@ using System.Data;
 using System.Collections;
 using System.Reflection;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     public class GridViewHelper
     {

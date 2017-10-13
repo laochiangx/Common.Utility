@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// QueryString 地址栏参数

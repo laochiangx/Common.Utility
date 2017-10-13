@@ -1,6 +1,6 @@
 ﻿using System.Web;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 网站路径操作类

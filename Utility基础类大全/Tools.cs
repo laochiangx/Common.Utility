@@ -2,7 +2,7 @@
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
     /// <summary>
     /// 共用工具类

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Text.RegularExpressions;
 using System.Web.UI;
 
-namespace DotNet.Utilities
+namespace Utilities
 {
 	/// <summary>
 	/// Utility 的摘要说明。
