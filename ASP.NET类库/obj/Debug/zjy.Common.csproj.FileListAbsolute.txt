@@ -1,7 +1,0 @@
-E:\zjy.FrameWork\zjy.Common\obj\Debug\ResolveAssemblyReference.cache
-E:\zjy.FrameWork\zjy.Common\bin\Debug\zjy.Common.dll
-E:\zjy.FrameWork\zjy.Common\bin\Debug\zjy.Common.pdb
-E:\zjy.FrameWork\zjy.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
-E:\zjy.FrameWork\zjy.Common\bin\Debug\itextsharp.dll
-E:\zjy.FrameWork\zjy.Common\obj\Debug\zjy.Common.dll
-E:\zjy.FrameWork\zjy.Common\obj\Debug\zjy.Common.pdb
