@@ -5,7 +5,7 @@ using System.Data;
 using System.Data.OleDb;
 using System.Configuration;
 
-namespace HD.DBHelper
+namespace DBHelper
 {
     /// <summary>
     /// Copyright (C) Maticsoft

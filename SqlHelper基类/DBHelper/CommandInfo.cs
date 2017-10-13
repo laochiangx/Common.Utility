@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
-namespace HD.DBHelper
+namespace DBHelper
 {
     public enum EffentNextType
     {

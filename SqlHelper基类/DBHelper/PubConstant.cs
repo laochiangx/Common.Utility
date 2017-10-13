@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Configuration;
-namespace HD.DBHelper
+namespace DBHelper
 {
     
     public class PubConstant

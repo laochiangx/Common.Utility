@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Data.Common;
 using Microsoft.Practices.EnterpriseLibrary.Data;
 
-namespace HD.DBHelper
+namespace DBHelper
 {
 	/// <summary>
     /// Enterprise Library 2.0 数据访问进一步封装类

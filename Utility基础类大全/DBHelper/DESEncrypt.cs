@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;  
 using System.Text;
-namespace HD.DBHelper
+namespace DBHelper
 {
 	/// <summary>
 	/// DES加密/解密类。

@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Data.Common;
 using System.Collections.Generic;
-namespace HD.DBHelper
+namespace DBHelper
 {
     /// <summary>
     /// 数据访问类，可用于访问不同数据库
