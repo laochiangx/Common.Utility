@@ -1,9 +1,11 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// Encrypt 的摘要说明。

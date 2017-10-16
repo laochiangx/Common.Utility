@@ -1,7 +1,11 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+
+using System;
 using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class CookieHelper
     {
@@ -29,7 +33,7 @@ namespace Utilities
             string str = string.Empty;
             if (cookie != null)
             {
-                str = cookie.Value;
+                str =HttpUtility.UrlDecode(cookie.Value);
             }
             return str;
         }

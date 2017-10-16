@@ -2,25 +2,25 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// 有关程序集的常规信息通过下列属性集
-// 控制。更改这些属性值可修改
+// 有关程序集的常规信息通过以下
+// 特性集控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Utilities")]
+[assembly: AssemblyTitle("Common.Utility")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("微软中国")]
-[assembly: AssemblyProduct("Utilities")]
-[assembly: AssemblyCopyright("Copyright © 微软中国 2011")]
+[assembly: AssemblyCompany("番茄花园")]
+[assembly: AssemblyProduct("Common.Utility")]
+[assembly: AssemblyCopyright("Copyright © 番茄花园 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // 将 ComVisible 设置为 false 使此程序集中的类型
 // 对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型，
-// 则将该类型上的 ComVisible 属性设置为 true。
+// 则将该类型上的 ComVisible 特性设置为 true。
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("386b2f78-2195-4f7d-8970-36a85b003cfd")]
+[assembly: Guid("552dbf3d-6094-45fd-9ea9-b6929c7d25e2")]
 
 // 程序集的版本信息由下面四个值组成:
 //

@@ -1,8 +1,11 @@
- /// <summary>
-    /// INI文件读写类。
-    /// Copyright (C) Maticsoft
-    /// </summary>
-    public class INIFile
+using System;
+using System.Runtime.InteropServices;
+using System.Text;
+/// <summary>
+/// INI文件读写类。
+/// Copyright (C) Maticsoft
+/// </summary>
+public class INIFile
     {
         public string path;
 

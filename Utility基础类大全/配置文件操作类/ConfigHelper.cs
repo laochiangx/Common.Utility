@@ -1,7 +1,10 @@
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Configuration;
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// web.config操作类

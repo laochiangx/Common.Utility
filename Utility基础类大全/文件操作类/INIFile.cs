@@ -1,8 +1,11 @@
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// INI文件读写类。

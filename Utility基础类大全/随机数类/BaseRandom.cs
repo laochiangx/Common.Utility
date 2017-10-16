@@ -1,41 +1,71 @@
-﻿//------------------------------------------------------------
-// All Rights Reserved , Copyright (C) 2010 , Jirisoft , Ltd. 
-//------------------------------------------------------------
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 
 using System;
 
-namespace Utilities
+namespace Common.Utility
 {
-	/// <summary>
+    /// <summary>
     /// BaseRandom
-	/// 产生随机数
-	/// 
-	/// 随机数管理，最大值、最小值可以自己进行设定。
-	/// </summary>
-	public class BaseRandom
-	{
-		public static int Minimum = 100000;
-        public static int Maximal = 999999;
-        public static int RandomLength = 6;
+    /// 产生随机数
+    /// 
+    /// 随机数管理，最大值、最小值可以自己进行设定。
+    /// </summary>
+    public class BaseRandom
+    {
+        private  int Minimum { set; get; }
+        private  int Maximal { set; get; }
+        private  int RandomLength { set; get; }
 
-        private static string RandomString = "0123456789ABCDEFGHIJKMLNOPQRSTUVWXYZ";
-        private static Random Random = new Random(DateTime.Now.Second);
+        private string RandomString { set; get; } = "0123456789ABCDEFGHIJKMLNOPQRSTUVWXYZ";
+        private readonly Random Random = new Random(DateTime.Now.Second);
 
-        #region public static string GetRandomString() 产生随机字符
+        #region constructor
+
+        BaseRandom()
+        {
+            Minimum = 1;
+            Maximal = 999;
+            RandomLength = 6;
+        }
+
+        BaseRandom(int Max , int Min)
+        {
+            Minimum = Min;
+            Maximal = Max;
+        }
+
+        BaseRandom(int Length)
+        {
+            RandomLength = Length;
+        }
+
+        #endregion
+
+
+        #region public string GetRandomString() 产生随机字符
         /// <summary>
         /// 产生随机字符
         /// </summary>
         /// <returns>字符串</returns>
-        public static string GetRandomString()
+        public string GetRandomString()
         {
-            string returnValue = string.Empty;
-            for (int i = 0; i < RandomLength; i++)
-            {
-                int r = Random.Next(0, RandomString.Length - 1);
-                returnValue += RandomString[r];
-            }
-            return returnValue;
+            return GetRandomString(RandomLength);
         }
+
+        public  string GetRandomString(int stringLength)
+        {
+			string returnValue = string.Empty;
+			for (int i = 0; i < stringLength; i++)
+			{
+				int r = Random.Next(0, RandomString.Length - 1);
+				returnValue += RandomString[r];
+			}
+			return returnValue;
+
+		}
+
         #endregion
 
         #region public static int GetRandom()
@@ -43,23 +73,23 @@ namespace Utilities
         /// 产生随机数
         /// </summary>
         /// <returns>随机数</returns>
-        public static int GetRandom()
-		{
-			return Random.Next(Minimum, Maximal);
-		}
+        public int GetRandom()
+        {
+            return Random.Next(Minimum, Maximal);
+        }
 		#endregion
 
-        #region public static int GetRandom(int minimum, int maximal)
-        /// <summary>
+		#region public static int GetRandom(int minimum, int maximal)
+		/// <summary>
 		/// 产生随机数
 		/// </summary>
-		/// <param name="minimum">最小值</param>
-		/// <param name="maximal">最大值</param>
+		/// <param name="minNumber">最小值</param>
+		/// <param name="maxNumber">最大值</param>
 		/// <returns>随机数</returns>
-        public static int GetRandom(int minimum, int maximal)
-		{
-            return Random.Next(minimum, maximal);
-		}
-		#endregion
-	}
+		public int GetRandom(int minNumber, int maxNumber)
+        {
+            return Random.Next(minNumber, maxNumber);
+        }
+        #endregion
+    }
 }

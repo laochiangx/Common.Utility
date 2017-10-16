@@ -1,9 +1,11 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Web;
 using System.Collections;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class CacheHelper
     {

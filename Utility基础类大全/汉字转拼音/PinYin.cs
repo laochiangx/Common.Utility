@@ -1,6 +1,9 @@
+/*
+ Ô´Âë¼ºÍÐ¹Ü:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System.Text;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class PinYin
     {
@@ -119,7 +122,7 @@ namespace Utilities
             while (i < gbkBytes.Length)
             {
                 if (gbkBytes[i] <= 127)
-                {
+                { 
                     strResult = strResult + (char)gbkBytes[i];
                     i++;
                 }

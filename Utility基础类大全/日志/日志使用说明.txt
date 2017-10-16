@@ -1,4 +1,7 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+
 
 1.把log4net.config复制到项目中,并修改日志文件位置
 2.在Global.cs中添加以下代码

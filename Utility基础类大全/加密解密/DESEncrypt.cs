@@ -1,8 +1,10 @@
-
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Security.Cryptography;  
 using System.Text;
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// DES加密/解密类。

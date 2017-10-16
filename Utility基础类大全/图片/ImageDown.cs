@@ -1,9 +1,12 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.IO;
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 图片下载

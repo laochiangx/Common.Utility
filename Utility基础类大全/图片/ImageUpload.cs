@@ -1,10 +1,13 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.IO;
 using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 文件类型

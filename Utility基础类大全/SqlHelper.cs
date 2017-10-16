@@ -1,11 +1,13 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections;
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 数据库的通用访问代码 抽象类

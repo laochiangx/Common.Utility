@@ -1,6 +1,9 @@
-﻿using System.Web;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     public static class SessionHelper2
     {

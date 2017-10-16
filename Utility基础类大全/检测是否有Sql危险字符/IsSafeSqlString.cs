@@ -1,4 +1,12 @@
-#region 检测是否有Sql危险字符
+
+using System;
+using System.Text.RegularExpressions;
+
+namespace Utilities
+{
+    public class IsSafeSqlStrings
+    {
+        #region 检测是否有Sql危险字符
         /// <summary>
         /// 检测是否有Sql危险字符
         /// </summary>
@@ -76,3 +84,6 @@
             }
         }
         #endregion
+
+    }
+}

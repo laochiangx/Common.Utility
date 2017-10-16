@@ -198,10 +198,10 @@ namespace Utilities
 
         private string GetHeader(string header, bool stripBrackets)
         {
-            if (stripBrackets)
-            {
-                return MimeEntity.TrimBrackets(Headers[header]);
-            }
+            //if (stripBrackets)
+            //{
+            //    return MimeEntity.TrimBrackets(Headers[header]);
+            //}
 
             return Headers[header];
         }
@@ -211,13 +211,13 @@ namespace Utilities
         /// </summary>
         /// <param name="entity">The entity.</param>
         /// <returns></returns>
-        public static MailMessageEx CreateMailMessageFromEntity(MimeEntity entity)
+        public static MailMessageEx CreateMailMessageFromEntity( )///MimeEntity entity)
         {
             MailMessageEx message = new MailMessageEx();
             string value;
-            foreach (string key in entity.Headers.AllKeys)
+            foreach (string key in message.Headers.AllKeys)
             {
-                value = entity.Headers[key];
+                value = message.Headers[key];
                 if (value.Equals(string.Empty))
                 {
                     value = " ";

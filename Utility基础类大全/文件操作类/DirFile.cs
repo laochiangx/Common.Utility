@@ -1,8 +1,11 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.Text;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 文件操作夹

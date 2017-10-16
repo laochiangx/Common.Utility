@@ -1,14 +1,16 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.Data;
 using System.Text;
-
-namespace Utilities
+using OWCChart;
+namespace Common.Utility
 {
     /// <summary>
-    /// 利用OWC11进行作统计图的封装类。
-    /// 李天平 2005-8-31
+    /// 进行作统计图的封装类。
     /// </summary>
-    public class OWCChart11
+    public class OWCChart
     {
 
         #region 属性
@@ -81,10 +83,10 @@ namespace Utilities
         #endregion
 
 
-        public OWCChart11()
+        public OWCChart()
         {
         }
-        public OWCChart11(string PhaysicalImagePath, string Title, string SeriesName)
+        public OWCChart(string PhaysicalImagePath, string Title, string SeriesName)
         {
             _phaysicalimagepath = PhaysicalImagePath;
             _title = Title;

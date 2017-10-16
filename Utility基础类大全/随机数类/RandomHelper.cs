@@ -1,6 +1,9 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 使用Random类生成伪随机数
@@ -60,16 +63,16 @@ namespace Utilities
             for (int i = 0; i < count; i++)
             {
                 //生成两个随机数位置
-                int randomNum1 = GetRandomInt(0, arr.Length);
-                int randomNum2 = GetRandomInt(0, arr.Length);
+                int targetIndex1 = GetRandomInt(0, arr.Length);
+                int targetIndex2 = GetRandomInt(0, arr.Length);
 
                 //定义临时变量
                 T temp;
 
                 //交换两个随机数位置的值
-                temp = arr[randomNum1];
-                arr[randomNum1] = arr[randomNum2];
-                arr[randomNum2] = temp;
+                temp = arr[targetIndex1];
+                arr[targetIndex1] = arr[targetIndex2];
+                arr[targetIndex2] = temp;
             }
         }
         #endregion

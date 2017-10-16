@@ -1,8 +1,10 @@
-
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Diagnostics;
 //using Excel;
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 操作EXCEL导出数据报表的类

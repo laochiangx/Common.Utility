@@ -1,7 +1,10 @@
-﻿using System.Xml;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System.Xml;
 using System.Data;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// Xml的操作公共类
@@ -31,7 +34,7 @@ namespace Utilities
         public XmlHelper(string xmlFilePath)
         {
             //获取XML文件的绝对路径
-            _filePath = SysHelper.GetPath(xmlFilePath);
+            _filePath = System.Web.HttpContext.Current.Server.MapPath(xmlFilePath); 
         }
         #endregion
 
@@ -199,7 +202,7 @@ namespace Utilities
             string filePath = "";
 
             //获取XML文件的绝对路径
-            filePath = SysHelper.GetPath(xmlFilePath);
+            filePath = System.Web.HttpContext.Current.Server.MapPath(xmlFilePath);
 
             //创建XmlDocument对象
             XmlDocument xmlDocument = new XmlDocument();
@@ -254,19 +257,6 @@ namespace Utilities
 
         #endregion
 
-        public static void SetValue(string xmlFilePath, string xPath, string newtext)
-        {
-            //string path = SysHelper.GetPath(xmlFilePath);
-            //var queryXML = from xmlLog in xelem.Descendants("msg_log")
-            //               //所有名字为Bin的记录
-            //               where xmlLog.Element("user").Value == "Bin"
-            //               select xmlLog;
-
-            //foreach (XElement el in queryXML)
-            //{
-            //    el.Element("user").Value = "LiuBin";//开始修改
-            //}
-            //xelem.Save(path);
-        }
+         
     }
 }

@@ -1,8 +1,10 @@
-
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System; 
 using System.Text; 
 using System.Security.Cryptography;
-namespace Utilities
+namespace Common.Utility
 { 
 	/// <summary> 
 	/// RSA加密解密及RSA签名和验证

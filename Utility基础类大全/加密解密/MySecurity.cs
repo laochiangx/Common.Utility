@@ -1,4 +1,6 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Text;
 using System.Security.Cryptography;
@@ -6,7 +8,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// MySecurity(安全类) 的摘要说明。

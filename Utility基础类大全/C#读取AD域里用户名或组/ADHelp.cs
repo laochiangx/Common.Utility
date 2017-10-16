@@ -4,6 +4,7 @@ using System.Text;
 using System.DirectoryServices;
 using System.Security.Principal;
 using System.Runtime.InteropServices;
+using NPOI.POIFS.FileSystem;
 //Download by http://www.codefans.net
 namespace UserDLL
 {

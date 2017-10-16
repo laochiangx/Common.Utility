@@ -11,7 +11,7 @@
       <name>testJob</name>
       <group>testGroup</group>
       <description>testtask</description>
-      <job-type>Utilities.Job.TestJob,Utilities.Job</job-type>
+      <job-type>Common.Utility.Job.TestJob,Common.Utility.Job</job-type>
       <durable>true</durable>
       <recover>false</recover>
     </job>

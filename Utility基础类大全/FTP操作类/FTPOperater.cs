@@ -1,9 +1,15 @@
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Text;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
+    /// <summary>
+    /// FTP操作类
+    /// </summary>
     public class FTPOperater
     {
         #region 属性

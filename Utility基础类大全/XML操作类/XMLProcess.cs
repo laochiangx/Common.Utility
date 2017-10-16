@@ -1,9 +1,12 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.Data;
 using System.IO;
 using System.Xml;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class XMLProcess
     {

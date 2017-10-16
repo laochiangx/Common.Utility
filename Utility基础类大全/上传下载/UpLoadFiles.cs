@@ -1,7 +1,10 @@
-﻿using System;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// UpLoadFiles 的摘要说明

@@ -1,10 +1,12 @@
-
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Utilities.时间戳
+namespace Common.Utility.时间戳
 {
    public class TimeHelper
     {

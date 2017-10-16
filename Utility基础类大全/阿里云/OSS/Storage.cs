@@ -1,4 +1,6 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using Aliyun.OSS;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilities.Aliyun.OSS
+namespace Common.Utility.Aliyun.OSS
 {
     /// <summary>
     /// 阿里云存储

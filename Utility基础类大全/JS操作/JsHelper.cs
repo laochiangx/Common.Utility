@@ -1,7 +1,9 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 客户端脚本输出

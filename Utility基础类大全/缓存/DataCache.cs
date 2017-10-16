@@ -1,8 +1,10 @@
-
+/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 using System;
 using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// 缓存相关的操作类

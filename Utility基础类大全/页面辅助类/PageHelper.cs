@@ -287,17 +287,17 @@ namespace Utilities
         /// 如果不是IE类型，返回-1
         /// </summary>
         /// <returns>一位数字版本号</returns>
-        public static int GetClientBrowserVersion()
-        {
-            string USER_AGENT = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"];
+        //public static int GetClientBrowserVersion()
+        //{
+        //    string USER_AGENT = System.Web.HttpContext.Current.Request.ServerVariables["HTTP_USER_AGENT"];
 
-            if (USER_AGENT.IndexOf("MSIE") < 0) return -1;
+        //    if (USER_AGENT.IndexOf("MSIE") < 0) return -1;
 
-            string version = USER_AGENT.Substring(USER_AGENT.IndexOf("MSIE") + 5, 1);
-            if (!Utility.IsInt(version)) return -1;
+        //    string version = USER_AGENT.Substring(USER_AGENT.IndexOf("MSIE") + 5, 1);
+        //    if (!Utility.IsInt(version)) return -1;
 
-            return Convert.ToInt32(version);
-        }
+        //    return Convert.ToInt32(version);
+        //}
 
         #endregion
     }

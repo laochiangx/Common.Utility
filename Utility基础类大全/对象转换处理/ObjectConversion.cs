@@ -1,4 +1,12 @@
-#region 对象转换处理
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace Utilities
+{
+    public class ObjectConversion
+    {
         /// <summary>
         /// 判断对象是否为Int32类型的数字
         /// </summary>
@@ -272,4 +280,5 @@
                 return "";
             return obj.ToString().Trim();
         }
-        #endregion
+    }
+}

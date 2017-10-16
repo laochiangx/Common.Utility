@@ -1,4 +1,6 @@
-﻿
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
 
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Web;
 using System.Threading;
 
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// For ASP.Net applications.

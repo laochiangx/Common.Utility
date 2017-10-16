@@ -4,8 +4,8 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 //using System.Runtime.Serialization.Json;
-using System.Runtime.Serialization.Formatters.Soap;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Formatters.Soap;
 
 namespace Utilities
 {

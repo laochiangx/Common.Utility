@@ -1,7 +1,11 @@
- /// <summary>
-   /// 处理枚举类
-   /// </summary>
-   public class RenumDropList
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web.UI.WebControls;
+/// <summary>
+/// 处理枚举类
+/// </summary>
+public class RenumDropList
     {
        
      /// <summary>

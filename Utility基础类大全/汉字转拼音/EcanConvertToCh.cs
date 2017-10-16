@@ -1,6 +1,9 @@
-﻿using System.Text.RegularExpressions;
+﻿/*
+ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+ */
+using System.Text.RegularExpressions;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 汉字转拼音类
