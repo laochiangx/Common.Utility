@@ -5,7 +5,7 @@
 ## 样板图片操作类
 ![WEFE@M%}SN4_K$6H0D{6IYJ.png](http://upload-images.jianshu.io/upload_images/6855212-34f0ee0339e3cb49.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ## 操作文档
-里面包含一下操作文档，这个是用工具生成的。还在研究中... 
+里面包含一下操作文档，这个是用Sandcastle工具生成的。
 ![H819EQUYFVA~WXK6YAQ1%6Q.png](http://upload-images.jianshu.io/upload_images/6855212-6cf5a7a2a4a75c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ## 附上一些常见的帮助类栏目
 1. cookie操作 --------- CookieHelper.cs
