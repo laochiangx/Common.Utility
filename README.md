@@ -60,7 +60,21 @@
 50. 随机数类
 51. 页面辅助类
 52. 验证码
-
-## github地址
-最后老规矩，[github地址](https://github.com/Jimmey-Jiang/Common.Utility.git) https://github.com/Jimmey-Jiang/Common.Utility.git求star,喜欢点赞
-
+53. Mime
+54. Net
+55. NPOI
+56. obj
+57. Path
+58. Properties
+59. ResourceManager
+60. URL的操作类
+61. VerifyCode
+62. 处理多媒体的公共类
+63. 各种验证帮助类
+64. 分页
+65. 计划任务
+66. 配置文件操作类
+67. 分词辅助类
+68. IP辅助类
+69. Html操作类
+70. 其他
