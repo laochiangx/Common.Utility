@@ -1,6 +1,4 @@
-/*
- Ô´Âë¼ºÍÐ¹Ü:http://git.oschina.net/kuiyu/dotnetcodes
- */
+ 
 using System.Web;
 using System.Configuration;
 using System.Linq;

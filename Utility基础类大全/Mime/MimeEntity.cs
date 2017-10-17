@@ -6,6 +6,8 @@ using System.IO;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Text;
+using Utilities;
+
 namespace Maticsoft.Common.Mime
 {
     public class MimeEntity

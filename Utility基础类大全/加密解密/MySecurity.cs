@@ -1,6 +1,4 @@
-﻿/*
- 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
- */
+﻿ 
 using System;
 using System.Text;
 using System.Security.Cryptography;

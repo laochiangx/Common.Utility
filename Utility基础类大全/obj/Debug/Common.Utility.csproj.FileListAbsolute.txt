@@ -63,3 +63,23 @@ G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.xml
 G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.Core.xml
 G:\新建文件夹\Common.Utility\bin\Debug\NPOI.xml
 G:\新建文件夹\Common.Utility\bin\Debug\Quartz.xml
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\MSDATASRC.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\mscomctl.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
+D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
