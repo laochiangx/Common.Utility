@@ -1,3 +1,6 @@
+![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![H819EQUYFVA~WXK6YAQ1%6Q.png](http://upload-images.jianshu.io/upload_images/6855212-6cf5a7a2a4a75c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 比较全面的c#帮助类v1.0
 
