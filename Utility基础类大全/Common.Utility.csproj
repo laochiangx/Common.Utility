@@ -112,6 +112,8 @@
     <Compile Include="Chart图形\OWCChart11.cs" />
     <Compile Include="cmd\RunCmd.cs" />
     <Compile Include="CSV文件转换\CsvHelper.cs" />
+    <Compile Include="DataTable转实体\DataTableExtensions.cs" />
+    <Compile Include="DataTable转实体\ListExtensions.cs" />
     <Compile Include="EcanConvertToCh.cs" />
     <Compile Include="FormulaExpress.cs" />
     <Compile Include="GridViewHelper.cs" />
@@ -141,6 +143,14 @@
     <Compile Include="ResourceManager\Resources.cs" />
     <Compile Include="RMB.cs" />
     <Compile Include="SegList.cs" />
+    <Compile Include="SQL语句拦截器\BaseConfig.cs" />
+    <Compile Include="SQL语句拦截器\DbDistributor.cs" />
+    <Compile Include="SQL语句拦截器\DbGroupConfiguration.cs" />
+    <Compile Include="SQL语句拦截器\DbNodeContext.cs" />
+    <Compile Include="SQL语句拦截器\DefaultWeight.cs" />
+    <Compile Include="SQL语句拦截器\FileSerialize.cs" />
+    <Compile Include="SQL语句拦截器\SqlInterceptor.cs" />
+    <Compile Include="SQL语句拦截器\WeightObject.cs" />
     <Compile Include="SysHelper.cs" />
     <Compile Include="Tools.cs" />
     <Compile Include="URL的操作类\UrlOper.cs" />

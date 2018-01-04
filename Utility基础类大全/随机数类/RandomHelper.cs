@@ -73,6 +73,11 @@ namespace Common.Utility
                 arr[targetIndex2] = temp;
             }
         }
+
+        internal static int GetRandomSeed()
+        {
+            throw new NotImplementedException();
+        }
         #endregion
     }
 }
