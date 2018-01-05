@@ -72,6 +72,11 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
       <HintPath>bin\Debug\Microsoft.Office.Interop.Owc11.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Newtonsoft.Json.11.0.1-beta3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NPOI, Version=1.2.5.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll</HintPath>
@@ -597,6 +602,7 @@
     <Content Include="计划任务\计划任务使用说明.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="packages\Common.Logging.3.3.1\Common.Logging.3.3.1.nupkg" />
     <None Include="packages\Common.Logging.Core.3.3.1\Common.Logging.Core.3.3.1.nupkg" />
     <None Include="packages\EntityFramework.5.0.0\Content\App.config.transform" />
