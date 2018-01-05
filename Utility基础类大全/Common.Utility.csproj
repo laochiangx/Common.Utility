@@ -107,12 +107,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BarCodeToHTML.cs" />
-    <Compile Include="BasePage.cs">
+    <Compile Include="其他\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="BindDataControl.cs" />
-    <Compile Include="Captcha.cs" />
+    <Compile Include="其他\Utility.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="数据展示控件绑定数据类\BindDataControl.cs" />
+    <Compile Include="其他\Captcha.cs" />
     <Compile Include="Chart图形\Assistant.cs" />
     <Compile Include="Chart图形\OWCChart11.cs" />
     <Compile Include="cmd\RunCmd.cs" />
@@ -120,9 +122,8 @@
     <Compile Include="DataTable转实体\DataTableExtensions.cs" />
     <Compile Include="DataTable转实体\ListExtensions.cs" />
     <Compile Include="DecimalUtility及中文大写数字\DecimalUtility.cs" />
-    <Compile Include="EcanConvertToCh.cs" />
-    <Compile Include="FormulaExpress.cs" />
-    <Compile Include="GridViewHelper.cs" />
+    <Compile Include="科学计数，数学\FormulaExpress.cs" />
+    <Compile Include="其他\GridViewHelper.cs" />
     <Compile Include="Html操作类\HtmlHelper.cs" />
     <Compile Include="Html操作类\JavaScriptHelper.cs" />
     <Compile Include="INI文件读写类\INIFile.cs" />
@@ -140,15 +141,13 @@
     <Compile Include="NPOI\NPOIHelper.cs" />
     <Compile Include="Path\WebSitePathHelper.cs" />
     <Compile Include="PDF\PDFHelper.cs" />
-    <Compile Include="PDF\PDFOperation.cs" />
-    <Compile Include="PSD2swfHelper.cs" />
-    <Compile Include="QueryString.cs" />
+    <Compile Include="其他\PSD2swfHelper.cs" />
+    <Compile Include="QueryString 地址栏参数\QueryString.cs" />
     <Compile Include="ResourceManager\AppMessage.cs" />
     <Compile Include="ResourceManager\ResourceManager.cs" />
     <Compile Include="ResourceManager\ResourceManagerWrapper.cs" />
     <Compile Include="ResourceManager\Resources.cs" />
-    <Compile Include="RMB.cs" />
-    <Compile Include="SegList.cs" />
+    <Compile Include="RMB\RMB.cs" />
     <Compile Include="SQL语句拦截器\BaseConfig.cs" />
     <Compile Include="SQL语句拦截器\DbDistributor.cs" />
     <Compile Include="SQL语句拦截器\DbGroupConfiguration.cs" />
@@ -157,12 +156,12 @@
     <Compile Include="SQL语句拦截器\FileSerialize.cs" />
     <Compile Include="SQL语句拦截器\SqlInterceptor.cs" />
     <Compile Include="SQL语句拦截器\WeightObject.cs" />
-    <Compile Include="SysHelper.cs" />
-    <Compile Include="Tools.cs" />
+    <Compile Include="系统操作相关的公共类\SysHelper.cs" />
+    <Compile Include="共用工具类\Tools.cs" />
     <Compile Include="URL的操作类\UrlOper.cs" />
     <Compile Include="VerifyCode\VerifyCodeHelper.cs" />
     <Compile Include="VerifyCode\VerifyCodeRand.cs" />
-    <Compile Include="WebSitePathHelper.cs" />
+    <Compile Include="网站路径操作类\WebSitePathHelper.cs" />
     <Compile Include="分词辅助类\SegList.cs" />
     <Compile Include="分页\PageHelper.cs" />
     <Compile Include="压缩解压缩\SharpZip.cs" />
@@ -184,8 +183,8 @@
     <Compile Include="时间操作类\DateFormat.cs" />
     <Compile Include="时间操作类\TimeHelper.cs" />
     <Compile Include="时间操作类\TimeParser.cs" />
-    <Compile Include="条形码帮助类 %282%29\BarCodeHelper.cs" />
-    <Compile Include="条形码帮助类\VideoHelper.cs">
+    <Compile Include="条形码帮助类\BarCodeHelper.cs" />
+    <Compile Include="视频帮助类\VideoHelper.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="检测是否有Sql危险字符\IsSafeSqlString.cs" />
@@ -193,8 +192,7 @@
     <Compile Include="网络\HttpHelper.cs" />
     <Compile Include="JSON操作\ConvertJson.cs" />
     <Compile Include="JS操作\JsHelper.cs" />
-    <Compile Include="PDFHelper.cs" />
-    <Compile Include="SqlHelper.cs" />
+    <Compile Include="SqlHelper\SqlHelper.cs" />
     <Compile Include="XML操作类\XmlHelper.cs" />
     <Compile Include="XML操作类\XMLProcess.cs" />
     <Compile Include="二维码操作类\QRcode.cs" />
@@ -226,7 +224,7 @@
     <Compile Include="FTP操作类\FTPOperater.cs" />
     <Compile Include="网络\IpHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SerializeHelper.cs" />
+    <Compile Include="其他\SerializeHelper.cs" />
     <Compile Include="缓存\DataCache.cs" />
     <Compile Include="网站安全\WebSafe.cs" />
     <Compile Include="网络\NetHelper.cs" />
@@ -703,7 +701,9 @@
     <None Include="帮助文档\Helper帮助文档.chm" />
     <None Include="日志\log4net.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="条形码转HTML\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

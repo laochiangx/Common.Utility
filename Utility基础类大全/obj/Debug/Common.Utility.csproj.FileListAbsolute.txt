@@ -83,8 +83,7 @@ D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Lo
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
+G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
@@ -92,6 +91,7 @@ G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.d
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\ICSharpCode.SharpZipLib.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
+G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
@@ -100,7 +100,8 @@ G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
+G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.xml
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
+G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
+G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
