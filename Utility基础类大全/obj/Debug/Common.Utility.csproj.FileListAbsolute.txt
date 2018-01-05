@@ -103,3 +103,4 @@ G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.C
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
 G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
+G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache

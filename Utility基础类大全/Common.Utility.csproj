@@ -114,6 +114,7 @@
     <Compile Include="CSV文件转换\CsvHelper.cs" />
     <Compile Include="DataTable转实体\DataTableExtensions.cs" />
     <Compile Include="DataTable转实体\ListExtensions.cs" />
+    <Compile Include="DecimalUtility及中文大写数字\DecimalUtility.cs" />
     <Compile Include="EcanConvertToCh.cs" />
     <Compile Include="FormulaExpress.cs" />
     <Compile Include="GridViewHelper.cs" />
