@@ -83,7 +83,6 @@ D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Lo
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
@@ -105,3 +104,4 @@ G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
 G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
 G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
+G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
