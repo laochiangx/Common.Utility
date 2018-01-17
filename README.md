@@ -7,8 +7,8 @@
 [![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages)
 [![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 [![Eclipse Marketplace](https://img.shields.io/eclipse-marketplace/last-update/notepad4e.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
-[![JIRA sprint completion](https://img.shields.io/jira/sprint/https/jira.spring.io/94.svg)](https://github.com/Jimmey-Jiang/Common.Utility/edit/master/README.md)
-[![](https://img.shields.io/bitbucket/issues-raw/atlassian/python-bitbucket.svg)](https://github.com/Jimmey-Jiang/Common.Utility/edit/master/README.md)
+[![JIRA sprint completion](https://img.shields.io/jira/sprint/https/jira.spring.io/94.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
+[![](https://img.shields.io/bitbucket/issues-raw/atlassian/python-bitbucket.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 
 ### 初衷
 **网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,
