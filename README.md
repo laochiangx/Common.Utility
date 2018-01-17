@@ -3,7 +3,8 @@
 
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://docs.travis-ci.com/user/languages/csharp/)
 [![TeamCity (simple build status)](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
-[![Github Releases (by Asset)](https://img.shields.io/github/downloads/atom/atom/latest/atom-amd64.deb.svg)](https://github.com/Jimmey-Jiang/Common.Utility/edit/master/README.md)[![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages)
+[![Github Releases (by Asset)](https://img.shields.io/github/downloads/atom/atom/latest/atom-amd64.deb.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
+[![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages)
 [![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
