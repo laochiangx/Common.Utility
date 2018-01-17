@@ -1,38 +1,6 @@
 language: csharp
-sudo: required
-mono: none
-
-matrix:
-  include:
-  - os: linux
-    dist: trusty # Ubuntu 14.04
-    dotnet: 2.0.0
-    mono: none
-    env: DOTNETCORE=1
-    sudo: required
-#  - os: osx
-#    osx_image: xcode8.3 # macOS 10.12
-#    dotnet: 2.0.0
-#    mono: none
-#    env: DOTNETCORE=1
-#    before_install:
-#        - chmod a+x ./build.sh
-#        - ulimit -n 1024 ;
-#        - brew update
-#        - brew install mariadb
-#        - brew services start mariadb
-#        - brew install redis
-#        - brew services start redis
-
-services:
-  - mysql
-  - redis-server
-
-before_install:
-  - chmod a+x ./build.sh
-
-install:
-  - export DOTNET_CLI_TELEMETRY_OPTOUT=1
-
-script:
+solution: solution-name.sln
+script:    # the following commands are just examples, use whatever your build process requires
   - ./build.sh
+  - ./test.sh
+  - grep "Test Results" build.log
