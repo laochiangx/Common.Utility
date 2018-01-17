@@ -8,12 +8,16 @@
 [![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 
 ### 初衷
-网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,那个helper，于是萌生了收集全部helper的念头
+网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,
+那个helper，于是萌生了收集全部helper的念头,以便日后使用。
+
 ##### 集成
  于是日常工作留意总结，加上网上收集，各式各样的几乎都能找到,所有功能性代码都是独立的类，类与类之间没有联系，可以单独引用至项目，分享出来，方便大家，几乎都有注释，喜欢的请点赞（star），打开方式直接用vs打开，或者vscode等其他编译器,不断完善收集中... 
 
 
+
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 
 ## 比较全面的c#帮助类
 #### 操作文档
@@ -110,4 +114,5 @@
 85.  随机数类
 86.  页面辅助类
 87.  验证码
+
 最后，喜欢请点下stars
