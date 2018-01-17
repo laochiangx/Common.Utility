@@ -8,8 +8,8 @@
 [![Plugin on redmine.org](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 
 ### 初衷
-网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,
-那个helper，于是萌生了收集全部helper的念头,以便日后使用。
+* 网上有各式各样的帮助类，公共类，但是比较零碎，经常有人再群里或者各种社交账号上问我有没有这个helper,
+那个helper，于是萌生了收集全部helper的念头,以便日后使用。*
 
 ##### 集成
  于是日常工作留意总结，加上网上收集，各式各样的几乎都能找到,所有功能性代码都是独立的类，类与类之间没有联系，可以单独引用至项目，分享出来，方便大家，几乎都有注释，喜欢的请点赞（star），不断完善收集中... 
@@ -17,6 +17,8 @@
 ##### 打开
 打开方式直接用vs打开目录下Common.Utility.sln文件，或者vscode等其他编译器打开。需要引用到自己项目的时候直接把代码或者文件拷贝过去即可。
 
+
+* 项目样图 *
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
@@ -24,10 +26,12 @@
 #### 操作文档
 里面包含一下操作文档，这个是用Sandcastle工具生成的。方法：四种Sandcastle方法生成c#.net帮助类帮助文档，地址：http://www.cnblogs.com/anyushengcms/p/7682501.html 有兴趣的朋友可以自己折腾一下。
 
+
+* 操作文档 *
 ![H819EQUYFVA~WXK6YAQ1%6Q.png](http://upload-images.jianshu.io/upload_images/6855212-6cf5a7a2a4a75c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-## 附上一些常见的帮助类栏目
+## 附上项目帮助类栏目
 1.  C#读取AD域里用户名或组
 2.  Chart图形
 3.  cmd
@@ -116,4 +120,4 @@
 86.  页面辅助类
 87.  验证码
 
-最后，喜欢请点下stars
+* 最后，喜欢请点下stars*
