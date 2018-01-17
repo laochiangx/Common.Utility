@@ -1,4 +1,7 @@
 
+
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
+
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 比较全面的c#帮助类
