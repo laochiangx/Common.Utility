@@ -1,3 +1,9 @@
+
+[![Travis branch](https://travis-ci.org/dotnetcore/DotnetSpider.svg?branch=master)](https://travis-ci.org/dotnetcore/DotnetSpider)
+[![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages/DotnetSpider2.Extension)
+[![Member project of .NET China Foundation](https://img.shields.io/badge/member_project_of-.NET_CHINA-red.svg?style=flat&colorB=9E20C8)](https://github.com/dotnetcore)
+[![GitHub license](https://img.shields.io/aur/license/yaourt.svg)](https://raw.githubusercontent.com/dotnetcore/DotnetSpider/master/LICENSE)
+
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 比较全面的c#帮助类
