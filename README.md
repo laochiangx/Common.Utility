@@ -1,7 +1,7 @@
 
 ## Common.Utility
 
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://travis-ci.org/Jimmey-Jiang/Common.Utility.svg?branch=master)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://ci.appveyor.com/project/Jimmey-Jiang/common-utility)
 [![TeamCity (simple build status)](https://img.shields.io/teamcity/http/teamcity.jetbrains.com/s/bt345.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 [![Github Releases (by Asset)](https://img.shields.io/github/downloads/atom/atom/latest/atom-amd64.deb.svg)](https://github.com/Jimmey-Jiang/Common.Utility)
 [![NuGet](https://img.shields.io/nuget/v/DotnetSpider2.Extension.svg)](https://www.nuget.org/packages)
