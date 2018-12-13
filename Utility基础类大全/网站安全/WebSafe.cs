@@ -1,4 +1,4 @@
-﻿
+﻿ 
 
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Web;
 using System.Text.RegularExpressions;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 防止跨站脚本攻击的代码

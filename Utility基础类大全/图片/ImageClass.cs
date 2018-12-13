@@ -1,11 +1,12 @@
-﻿using System;
+﻿ 
+using System;
 using System.Collections;
 using System.IO;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class ImageClass
     {

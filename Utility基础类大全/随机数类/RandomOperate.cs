@@ -1,82 +1,62 @@
-﻿using System;
+﻿ 
+using System;
+using System.Linq;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class RandomOperate
     {
-        // 一：随机生成不重复数字字符串  
-        private int rep = 0;
-        public string GenerateCheckCodeNum(int codeCount)
-        {
-            string str = string.Empty;
-            long num2 = DateTime.Now.Ticks + this.rep;
-            this.rep++;
-            Random random = new Random(((int)(((ulong)num2) & 0xffffffffL)) | ((int)(num2 >> this.rep)));
-            for (int i = 0; i < codeCount; i++)
-            {
-                int num = random.Next();
-                str = str + ((char)(0x30 + ((ushort)(num % 10)))).ToString();
-            }
-            return str;
-        }
-
-        //方法二：随机生成字符串（数字和字母混和）
-        public string GenerateCheckCode(int codeCount)
-        {
-            string str = string.Empty;
-            long num2 = DateTime.Now.Ticks + this.rep;
-            this.rep++;
-            Random random = new Random(((int)(((ulong)num2) & 0xffffffffL)) | ((int)(num2 >> this.rep)));
-            for (int i = 0; i < codeCount; i++)
-            {
-                char ch;
-                int num = random.Next();
-                if ((num % 2) == 0)
-                {
-                    ch = (char)(0x30 + ((ushort)(num % 10)));
-                }
-                else
-                {
-                    ch = (char)(0x41 + ((ushort)(num % 0x1a)));
-                }
-                str = str + ch.ToString();
-            }
-            return str;
-        }
-
-        #region
+        static readonly Random Random = new Random(~unchecked((int)DateTime.Now.Ticks));
 
         /// <summary>
-        /// 从字符串里随机得到，规定个数的字符串.
+        /// Generates the check code with unique number.
         /// </summary>
-        /// <param name="allChar"></param>
-        /// <param name="CodeCount"></param>
-        /// <returns></returns>
-        private string GetRandomCode(string allChar, int CodeCount)
+        /// <returns>The check code number.</returns>
+        /// <param name="codeCount">Code count. Max 10</param>
+        public string GenerateCheckCodeNum(int codeCount)
         {
-            //string allChar = "1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,i,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z"; 
-            string[] allCharArray = allChar.Split(',');
-            string RandomCode = "";
-            int temp = -1;
-            Random rand = new Random();
-            for (int i = 0; i < CodeCount; i++)
+            codeCount = codeCount > 10 ? 10 :codeCount;   // unable to return unique number list longer than 10
+
+            int[] arrInt = {0,1,2,3,4,5,6,7,8,9};
+		    arrInt = arrInt.OrderBy(c => Guid.NewGuid()).ToArray<int>();// make the array in random order
+
+            string str = string.Empty;
+
+            for (int i = 0; i < codeCount; i++)
             {
-                if (temp != -1)
-                {
-                    rand = new Random(temp * i * ((int)DateTime.Now.Ticks));
-                }
-
-                int t = rand.Next(allCharArray.Length - 1);
-
-                while (temp == t)
-                {
-                    t = rand.Next(allCharArray.Length - 1);
-                }
-
-                temp = t;
-                RandomCode += allCharArray[t];
+                str += arrInt[i];
             }
-            return RandomCode;
+            return str;
+        }
+
+		//方法二：随机生成字符串（数字和字母混和）
+		/// <summary>
+		/// Generates the check code with number and char
+		/// </summary>
+		/// <returns>The check code.</returns>
+		/// <param name="CodeCount">Code lenght.</param>
+		public string GenerateCheckCode(int CodeCount)
+        {
+            char[] MixedList = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I','J', 'K', 'L', 'M', 'N','O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' }; //remove I & O
+			return GetRandomCode(MixedList, CodeCount);
+		}
+
+        #region
+       /// <summary>
+       /// Gets the random code.
+       /// </summary>
+       /// <returns>The random code.</returns>
+       /// <param name="CharList">All char want to generate.</param>
+       /// <param name="CodeLength">Code lenght.</param>
+        private string GetRandomCode(char[] CharList, int CodeLength)
+        {
+			string result = string.Empty;
+			for (int i = 0; i < CodeLength; i++)
+			{
+				int rnd = Random.Next(0, CharList.Length);
+				result += CharList[rnd];
+			}
+			return result;
         }
 
         #endregion

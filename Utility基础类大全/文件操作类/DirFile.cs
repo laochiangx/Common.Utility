@@ -1,8 +1,9 @@
-﻿using System;
+﻿ 
+using System;
 using System.Text;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 文件操作夹

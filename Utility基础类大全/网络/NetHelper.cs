@@ -1,10 +1,11 @@
-﻿using System;
+﻿ 
+using System;
 using System.Text;
 using System.Net.Sockets;
 using System.Net.Mail;
 using System.Net;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 网络操作相关的类
@@ -406,9 +407,9 @@ namespace Utilities
         /// <param name="socket">socket对象</param>
         /// <param name="msg">发送的消息</param>
         public static void SendMsg(Socket socket, string msg)
-        {
+        {            
             //将字符串消息转换成字符数组
-            byte[] buffer = ConvertHelper.StringToBytes(msg, Encoding.Default);
+            byte[] buffer =Encoding.Default.GetBytes(msg);
 
             //发送消息
             socket.Send(buffer, buffer.Length, SocketFlags.None);

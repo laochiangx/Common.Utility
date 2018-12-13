@@ -1,10 +1,16 @@
 ﻿
+using Org.BouncyCastle.Utilities.Net;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
+
 namespace Utilities
 {
     /// <summary>
     /// 共用工具类
     /// </summary>
-    public static class IpHelper
+    public class IpHelper
     {
         #region 获得用户IP
         /// <summary>
@@ -64,8 +70,8 @@ namespace Utilities
                 result = HttpContext.Current.Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
             if (string.IsNullOrEmpty(result))
                 result = HttpContext.Current.Request.UserHostAddress;
-            if (string.IsNullOrEmpty(result) || !Utils.IsIP(result))
-                return "127.0.0.1";
+            //if (string.IsNullOrEmpty(result) || !Utils.IsIP(result))
+            //    return "127.0.0.1";
             return result;
         }
         /// <summary>
@@ -100,10 +106,10 @@ namespace Utilities
         {
             string host = HttpContext.Current.Request.Url.DnsSafeHost;
             string ts = string.Format(GetUrl("Key"), host, GetServerString("LOCAL_ADDR"), "1.0");
-            if (!string.IsNullOrEmpty(host) && host != "localhost")
-            {
-                Utils.GetDomainStr("domain_info", ts);
-            }
+            //if (!string.IsNullOrEmpty(host) && host != "localhost")
+            //{
+            //    Utils.GetDomainStr("domain_info", ts);
+            //}
             return host;
         }
         /// <summary>
@@ -121,7 +127,8 @@ namespace Utilities
             strTxt.Append("E6070A99BE42E445E552F9F66FAA5");
             strTxt.Append("5F9FB376357C467EBF7F7E3B3FC77");
             strTxt.Append("F37866FEFB0237D95CCCE157A");
-            return new Common.CryptHelper.DESCrypt().Decrypt(strTxt.ToString(), key);
+            //  return new Common.CryptHelper.DESCrypt().Decrypt(strTxt.ToString(), key);
+            return strTxt.ToString();
         }
         /// <summary>
         /// 返回指定的服务器变量信息
@@ -158,29 +165,29 @@ namespace Utilities
         /// 将IP地址转为整数形式
         /// </summary>
         /// <returns>整数</returns>
-        public static long IP2Long(IPAddress ip)
-        {
-            int x = 3;
-            long o = 0;
-            foreach (byte f in ip.GetAddressBytes())
-            {
-                o += (long)f << 8 * x--;
-            }
-            return o;
-        }
-        /// <summary>
-        /// 将整数转为IP地址
-        /// </summary>
-        /// <returns>IP地址</returns>
-        public static IPAddress Long2IP(long l)
-        {
-            byte[] b = new byte[4];
-            for (int i = 0; i < 4; i++)
-            {
-                b[3 - i] = (byte)(l >> 8 * i & 255);
-            }
-            return new IPAddress(b);
-        }
+        //public static long IP2Long(IPAddress ip)
+        //{
+        //    int x = 3;
+        //    long o = 0;
+        //    foreach (byte f in ip.GetAddressBytes())
+        //    {
+        //        o += (long)f << 8 * x--;
+        //    }
+        //    return o;
+        //}
+        ///// <summary>
+        ///// 将整数转为IP地址
+        ///// </summary>
+        ///// <returns>IP地址</returns>
+        //public static IPAddress Long2IP(long l)
+        //{
+        //    byte[] b = new byte[4];
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        b[3 - i] = (byte)(l >> 8 * i & 255);
+        //    }
+        //    return new IPAddress(b);
+        //}
         #endregion
         /// <summary>
         /// 获得客户端IP

@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using System;
 using System.IO;
 using System.Data;
@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// Excel操作类

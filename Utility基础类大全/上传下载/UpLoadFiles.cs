@@ -1,7 +1,8 @@
-﻿using System;
+﻿ 
+using System;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// UpLoadFiles 的摘要说明

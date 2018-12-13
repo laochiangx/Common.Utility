@@ -1,4 +1,5 @@
-﻿ 
+﻿ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+
  说明:
  asp.net项目中所用到的计划任务代码,可以定时执行任务
 

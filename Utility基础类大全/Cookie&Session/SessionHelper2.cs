@@ -1,6 +1,7 @@
-﻿using System.Web;
+﻿ 
+using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     public static class SessionHelper2
     {

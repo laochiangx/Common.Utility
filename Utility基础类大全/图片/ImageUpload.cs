@@ -1,10 +1,11 @@
-﻿using System;
+﻿ 
+using System;
 using System.IO;
 using System.Web;
 using System.Web.UI.HtmlControls;
 using System.Drawing;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 文件类型

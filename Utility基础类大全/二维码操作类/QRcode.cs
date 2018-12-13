@@ -8,7 +8,7 @@ using ThoughtWorks.QRCode.Codec;
 using ThoughtWorks.QRCode.Codec.Util;
 using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class QRcode
     {

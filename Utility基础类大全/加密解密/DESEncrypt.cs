@@ -1,8 +1,8 @@
-
+ 
 using System;
 using System.Security.Cryptography;  
 using System.Text;
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// DESº”√‹/Ω‚√‹¿‡°£

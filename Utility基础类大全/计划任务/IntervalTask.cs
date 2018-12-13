@@ -1,4 +1,4 @@
-﻿
+﻿ 
 
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Web;
 using System.Threading;
 
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// For ASP.Net applications.

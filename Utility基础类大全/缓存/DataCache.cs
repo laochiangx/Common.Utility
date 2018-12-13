@@ -1,8 +1,8 @@
-
+ 
 using System;
 using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// 缓存相关的操作类

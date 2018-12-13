@@ -1,8 +1,8 @@
-
+ 
 using System; 
 using System.Text; 
 using System.Security.Cryptography;
-namespace Utilities
+namespace Common.Utility
 { 
 	/// <summary> 
 	/// RSA加密解密及RSA签名和验证

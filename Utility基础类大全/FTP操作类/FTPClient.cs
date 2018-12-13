@@ -1,3 +1,4 @@
+ 
 using System;
 using System.Net;
 using System.IO;
@@ -5,8 +6,11 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 
-namespace Utilities
+namespace Common.Utility
 {
+    /// <summary>
+    /// FTP 操作类客户端
+    /// </summary>
     public class FTPClient
     {
         public static object obj = new object();

@@ -1,12 +1,16 @@
-﻿using System;  
+﻿ 
+using System;  
 using System.Collections.Generic;  
 using System.Text;  
 using System.IO;  
 using System.Net;
 using System.Text.RegularExpressions;
 
-namespace Utilities
+namespace Common.Utility
 {
+    /// <summary>
+    /// FTP帮助类
+    /// </summary>
     public class FTPHelper
     {
         #region 字段

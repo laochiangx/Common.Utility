@@ -1,6 +1,7 @@
-﻿using System.Text.RegularExpressions;
+﻿ 
+using System.Text.RegularExpressions;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// 操作正则表达式的公共类

@@ -1,9 +1,10 @@
-﻿using System;
+﻿ 
+using System;
 using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
-//Download by http://www.codefans.net
-namespace Utilities
+
+namespace Common.Utility
 {
     /// <summary>
     /// 文件上传类

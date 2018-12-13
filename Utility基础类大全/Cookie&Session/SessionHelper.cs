@@ -1,6 +1,7 @@
-﻿using System.Web;
+﻿ 
+using System.Web;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// Session 操作类
@@ -27,6 +28,34 @@ namespace Utilities
         {
             HttpContext.Current.Session.Remove(name);
             HttpContext.Current.Session.Add(name, val);
+        }
+
+        /// <summary>
+        /// 清空所有的Session
+        /// </summary>
+        /// <returns></returns>
+        public static void ClearSession()
+        {
+            HttpContext.Current.Session.Clear();
+        }
+
+        /// <summary>
+        /// 删除一个指定的ession
+        /// </summary>
+        /// <param name="name">Session名称</param>
+        /// <returns></returns>
+        public static void RemoveSession(string name)
+        {
+            HttpContext.Current.Session.Remove(name);
+        }
+
+        /// <summary>
+        /// 删除所有的ession
+        /// </summary>
+        /// <returns></returns>
+        public static void RemoveAllSession(string name)
+        {
+            HttpContext.Current.Session.RemoveAll();
         }
     }
 }

@@ -1,9 +1,9 @@
-
+ 
 using System;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// 加密解密实用类。

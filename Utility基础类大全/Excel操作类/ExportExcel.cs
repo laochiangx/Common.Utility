@@ -1,11 +1,11 @@
-﻿
+﻿ 
 using System;
 using System.Web;
 using System.Web.UI;
 using System.IO;
 using System.Web.UI.WebControls;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class ExportExcel
     {

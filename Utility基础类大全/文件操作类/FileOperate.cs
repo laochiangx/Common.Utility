@@ -1,9 +1,10 @@
-﻿using System;
+﻿ 
+using System;
 using System.Text;
 using System.Web;
 using System.IO;
 
-namespace Utilities
+namespace Common.Utility
 {
     public class FileOperate
     {
@@ -65,7 +66,7 @@ namespace Utilities
          * 参    数：filename:文件名称
          * 调用示列：
          *           string filename = "aaa.aspx";        
-         *           string s = Utilities.FileOperate.GetPostfixStr(filename);         
+         *           string s = Common.Utility.FileOperate.GetPostfixStr(filename);         
         *****************************************/
         /// <summary>
         /// 取后缀名
@@ -89,7 +90,7 @@ namespace Utilities
          * 调用示列：
          *           string Path = Server.MapPath("Default2.aspx");       
          *           string Strings = "这是我写的内容啊";
-         *           Utilities.FileOperate.WriteFile(Path,Strings);
+         *           Common.Utility.FileOperate.WriteFile(Path,Strings);
         *****************************************/
         /// <summary>
         /// 写文件
@@ -121,7 +122,7 @@ namespace Utilities
          * 参    数：Path:文件路径
          * 调用示列：
          *           string Path = Server.MapPath("Default2.aspx");       
-         *           string s = Utilities.FileOperate.ReadFile(Path);
+         *           string s = Common.Utility.FileOperate.ReadFile(Path);
         *****************************************/
         /// <summary>
         /// 读文件
@@ -153,7 +154,7 @@ namespace Utilities
          * 调用示列：
          *           string Path = Server.MapPath("Default2.aspx");     
          *           string Strings = "新追加内容";
-         *           Utilities.FileOperate.FileAdd(Path, Strings);
+         *           Common.Utility.FileOperate.FileAdd(Path, Strings);
         *****************************************/
         /// <summary>
         /// 追加文件
@@ -178,7 +179,7 @@ namespace Utilities
          * 调用示列：
          *           string OrignFile = Server.MapPath("Default2.aspx");     
          *           string NewFile = Server.MapPath("Default3.aspx");
-         *           Utilities.FileOperate.FileCoppy(OrignFile, NewFile);
+         *           Common.Utility.FileOperate.FileCoppy(OrignFile, NewFile);
         *****************************************/
         /// <summary>
         /// 拷贝文件
@@ -199,7 +200,7 @@ namespace Utilities
          * 参    数：Path:文件路径
          * 调用示列：
          *           string Path = Server.MapPath("Default3.aspx");    
-         *           Utilities.FileOperate.FileDel(Path);
+         *           Common.Utility.FileOperate.FileDel(Path);
         *****************************************/
         /// <summary>
         /// 删除文件
@@ -219,7 +220,7 @@ namespace Utilities
          * 调用示列：
          *            string OrignFile = Server.MapPath("../说明.txt");    
          *            string NewFile = Server.MapPath("../../说明.txt");
-         *            Utilities.FileOperate.FileMove(OrignFile, NewFile);
+         *            Common.Utility.FileOperate.FileMove(OrignFile, NewFile);
         *****************************************/
         /// <summary>
         /// 移动文件
@@ -240,7 +241,7 @@ namespace Utilities
          * 调用示列：
          *           string OrignFolder = Server.MapPath("test/");    
          *           string NewFloder = "new";
-         *           Utilities.FileOperate.FolderCreate(OrignFolder, NewFloder); 
+         *           Common.Utility.FileOperate.FolderCreate(OrignFolder, NewFloder); 
         *****************************************/
         /// <summary>
         /// 在当前目录下创建目录
@@ -285,7 +286,7 @@ namespace Utilities
          * 参    数：dir:文件夹路径
          * 调用示列：
          *           string dir = Server.MapPath("test/");  
-         *           Utilities.FileOperate.DeleteFolder(dir);       
+         *           Common.Utility.FileOperate.DeleteFolder(dir);       
         *****************************************/
         /// <summary>
         /// 递归删除文件夹目录及文件
@@ -317,7 +318,7 @@ namespace Utilities
          * 调用示列：
          *           string srcPath = Server.MapPath("test/");  
          *           string aimPath = Server.MapPath("test1/");
-         *           Utilities.FileOperate.CopyDir(srcPath,aimPath);   
+         *           Common.Utility.FileOperate.CopyDir(srcPath,aimPath);   
         *****************************************/
         /// <summary>
         /// 指定文件夹下面的所有内容copy到目标文件夹下面
@@ -364,7 +365,7 @@ namespace Utilities
          * 参    数：Path:详细路径
          * 调用示列：
          *           string strDirlist = Server.MapPath("templates");       
-         *           this.Literal1.Text = Utilities.FileOperate.GetFoldAll(strDirlist);  
+         *           this.Literal1.Text = Common.Utility.FileOperate.GetFoldAll(strDirlist);  
         *****************************************/
         /// <summary>
         /// 获取指定文件夹下所有子目录及文件
@@ -440,7 +441,7 @@ namespace Utilities
          * 参    数：Path:详细路径
          * 调用示列：
          *            string strDirlist = Server.MapPath("templates");      
-         *            this.Literal2.Text = Utilities.FileOperate.GetFoldAll(strDirlist,"tpl","");
+         *            this.Literal2.Text = Common.Utility.FileOperate.GetFoldAll(strDirlist,"tpl","");
         *****************************************/
         /// <summary>
         /// 获取指定文件夹下所有子目录及文件(下拉框形)
@@ -536,7 +537,7 @@ namespace Utilities
          * 参    数：dirPath:文件夹详细路径
          * 调用示列：
          *           string Path = Server.MapPath("templates"); 
-         *           Response.Write(Utilities.FileOperate.GetDirectoryLength(Path));       
+         *           Response.Write(Common.Utility.FileOperate.GetDirectoryLength(Path));       
         *****************************************/
         /// <summary>
         /// 获取文件夹大小
@@ -572,7 +573,7 @@ namespace Utilities
          * 参    数：filePath:文件详细路径
          * 调用示列：
          *           string file = Server.MapPath("robots.txt");  
-         *            Response.Write(Utilities.FileOperate.GetFileAttibe(file));         
+         *            Response.Write(Common.Utility.FileOperate.GetFileAttibe(file));         
         *****************************************/
         /// <summary>
         /// 获取指定文件详细属性

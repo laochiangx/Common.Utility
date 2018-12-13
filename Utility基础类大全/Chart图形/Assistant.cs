@@ -1,9 +1,10 @@
-﻿using System;
+﻿ 
+using System;
 using System.Text;
 using System.Data;
 using OWCChart;
 
-namespace Utilities
+namespace Common.Utility
 {
     /// <summary>
     /// Assistant 的摘要说明。
@@ -424,98 +425,98 @@ namespace Utilities
 
         #endregion
 
-        #region	 创建数据图形文件
+        //#region	 创建数据图形文件
 
-        /// <summary>
-        /// 创建数据图形文件
-        /// </summary>
-        /// <param name="dt">数据源</param>
-        /// <param name="CharType">图类型 Column,Pie</param>
-        /// <param name="ImagePath">图像存放目录</param>
-        /// <param name="Title">图形标题</param>
-        /// <returns></returns>
-        public static string CreateChart(DataTable dt, string CharType, string ImagePath, string Title)
-        {
-            String PhaysicalImagePath = ImagePath;
-            OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 530, 300, new OWCChartFontStyle());
-            OWCChart.OWCSeriesClass MyItem = new OWCSeriesClass();
+        ///// <summary>
+        ///// 创建数据图形文件
+        ///// </summary>
+        ///// <param name="dt">数据源</param>
+        ///// <param name="CharType">图类型 Column,Pie</param>
+        ///// <param name="ImagePath">图像存放目录</param>
+        ///// <param name="Title">图形标题</param>
+        ///// <returns></returns>
+        //public static string CreateChart(DataTable dt, string CharType, string ImagePath, string Title)
+        //{
+        //    String PhaysicalImagePath = ImagePath;
+        //    OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 530, 300, new OWCChartFontStyle());
+        //    OWCChart.OWCSeriesClass MyItem = new OWCSeriesClass();
+  
+        //    MyItem.SeriesName = "次数";
+        //    MyItem.SetDataSource(dt, "Item", "Value");
+        //    switch (CharType)
+        //    {
+        //        case "Column":
+        //            mychart.CreateOneColumn("时间", "次", MyItem);
+        //            break;
+        //        case "Pie":
+        //            mychart.CreateSinglePie(MyItem);
+        //            break;
 
-            MyItem.SeriesName = "次数";
-            MyItem.SetDataSource(dt, "Item", "Value");
-            switch (CharType)
-            {
-                case "Column":
-                    mychart.CreateOneColumn("时间", "次", MyItem);
-                    break;
-                case "Pie":
-                    mychart.CreateSinglePie(MyItem);
-                    break;
+        //    }
+        //    String imageName = mychart.ExportPictuire();
+        //    return imageName;
+        //    //			Image1.ImageUrl = ".\\"+m_imagePath+imageName;
 
-            }
-            String imageName = mychart.ExportPictuire();
-            return imageName;
-            //			Image1.ImageUrl = ".\\"+m_imagePath+imageName;
+        //}
+        //public static string CreateMultiColumns(DataTable[] dts, string ImagePath, string Title)
+        //{
+        //    String PhaysicalImagePath = ImagePath;
+        //    OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 530, 300, new OWCChartFontStyle());
+        //    OWCChart.OWCSeriesClass[] MyItems = new OWCSeriesClass[dts.Length];
 
-        }
-        public static string CreateMultiColumns(DataTable[] dts, string ImagePath, string Title)
-        {
-            String PhaysicalImagePath = ImagePath;
-            OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 530, 300, new OWCChartFontStyle());
-            OWCChart.OWCSeriesClass[] MyItems = new OWCSeriesClass[dts.Length];
+        //    MyItems[0] = new OWCSeriesClass();
+        //    MyItems[0].SeriesName = "显示次数";
+        //    MyItems[0].SetDataSource(dts[0], "Item", "Value");
 
-            MyItems[0] = new OWCSeriesClass();
-            MyItems[0].SeriesName = "显示次数";
-            MyItems[0].SetDataSource(dts[0], "Item", "Value");
-
-            MyItems[1] = new OWCSeriesClass();
-            MyItems[1].SeriesName = "点击次数";
-            MyItems[1].SetDataSource(dts[1], "Item", "Value");
-
-
-            mychart.CreateMultiColumns("时间", "次", MyItems);
+        //    MyItems[1] = new OWCSeriesClass();
+        //    MyItems[1].SeriesName = "点击次数";
+        //    MyItems[1].SetDataSource(dts[1], "Item", "Value");
 
 
-            String imageName = mychart.ExportPictuire();
-            return imageName;
-
-        }
-
-        public static string CreateSingleBar(DataTable dt, string CharType, string ImagePath, string Title)
-        {
-            String PhaysicalImagePath = ImagePath;
-            OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 500, 600, new OWCChartFontStyle());
-            OWCChart.OWCSeriesClass MyItem = new OWCSeriesClass();
-
-            MyItem.SeriesName = "次数";
-            MyItem.SetDataSource(dt, "Item", "Value");
-            mychart.CreateSingleBar(" ", "", MyItem);
-            String imageName = mychart.ExportPictuire();
-            return imageName;
-        }
-        public static string CreateMultiBar(DataTable[] dts, string ImagePath, string Title)
-        {
-            String PhaysicalImagePath = ImagePath;
-            OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 500, 600, new OWCChartFontStyle());
-            OWCChart.OWCSeriesClass[] MyItems = new OWCSeriesClass[dts.Length];
-
-            MyItems[0] = new OWCSeriesClass();
-            MyItems[0].SeriesName = "显示次数";
-            MyItems[0].SetDataSource(dts[0], "Item", "Value");
-
-            MyItems[1] = new OWCSeriesClass();
-            MyItems[1].SeriesName = "点击次数";
-            MyItems[1].SetDataSource(dts[1], "Item", "Value");
+        //    mychart.CreateMultiColumns("时间", "次", MyItems);
 
 
-            mychart.CreateMultiBar(" ", "", MyItems);
+        //    String imageName = mychart.ExportPictuire();
+        //    return imageName;
+
+        //}
+
+        //public static string CreateSingleBar(DataTable dt, string CharType, string ImagePath, string Title)
+        //{
+        //    String PhaysicalImagePath = ImagePath;
+        //    //OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 500, 600, new OWCChartFontStyle());
+        //    //OWCChart.OWCSeriesClass MyItem = new OWCSeriesClass();
+
+        //    MyItem.SeriesName = "次数";
+        //    MyItem.SetDataSource(dt, "Item", "Value");
+        //    mychart.CreateSingleBar(" ", "", MyItem);
+        //    String imageName = mychart.ExportPictuire();
+        //    return imageName;
+        //}
+        //public static string CreateMultiBar(DataTable[] dts, string ImagePath, string Title)
+        //{
+        //    String PhaysicalImagePath = ImagePath;
+        //    //OWCChart.OWCChartFactory mychart = new OWCChartFactory(Title, PhaysicalImagePath, 500, 600, new OWCChartFontStyle());
+        //    //OWCChart.OWCSeriesClass[] MyItems = new OWCSeriesClass[dts.Length];
+
+        //    MyItems[0] = new OWCSeriesClass();
+        //    MyItems[0].SeriesName = "显示次数";
+        //    MyItems[0].SetDataSource(dts[0], "Item", "Value");
+
+        //    MyItems[1] = new OWCSeriesClass();
+        //    MyItems[1].SeriesName = "点击次数";
+        //    MyItems[1].SetDataSource(dts[1], "Item", "Value");
 
 
-            String imageName = mychart.ExportPictuire();
-            return imageName;
+        //    mychart.CreateMultiBar(" ", "", MyItems);
 
-        }
 
-        #endregion
+        //    String imageName = mychart.ExportPictuire();
+        //    return imageName;
+
+        //}
+
+        //#endregion
 
         #region
 

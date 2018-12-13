@@ -1,9 +1,9 @@
-
+ 
 
 using System;
 using System.Text;
 using System.Security.Cryptography;
-namespace Utilities
+namespace Common.Utility
 {
 	/// <summary>
 	/// 得到随机安全码（哈希加密）。
