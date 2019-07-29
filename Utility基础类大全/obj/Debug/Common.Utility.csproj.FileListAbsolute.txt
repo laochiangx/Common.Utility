@@ -121,7 +121,6 @@ C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.OpenXmlFormats.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
-C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\mscomctl.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
@@ -132,3 +131,4 @@ C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
 C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
+C:\Users\Administrator\Source\Repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojAssemblyReference.cache
