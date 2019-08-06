@@ -135,7 +135,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RDLC直接打印帮助类\PrintHelper.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="其他\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
