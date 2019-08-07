@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.IO;
-
-using Microsoft.Reporting.WebForms;
 using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Text;
 using System.Data;
-using Microsoft.Reporting.WinForms;
+using Microsoft.Reporting.WebForms;
+
+
+
+
+
 /// <summary>
 /// 打印帮助类
 /// </summary>
