@@ -175,7 +175,7 @@ namespace HD.DBHelper
                 }
             }
         }
-      
+
         /// <summary>
         /// 执行Sql和Oracle滴混合事务
         /// </summary>
@@ -203,7 +203,7 @@ namespace HD.DBHelper
                             if (myDE.CommandText.ToLower().IndexOf("count(") == -1)
                             {
                                 tx.Rollback();
-                                throw new Exception("违背要求"+myDE.CommandText+"必须符合select count(..的格式");
+                                throw new Exception("违背要求" + myDE.CommandText + "必须符合select count(..的格式");
                                 //return 0;
                             }
 
@@ -282,7 +282,7 @@ namespace HD.DBHelper
                     throw e;
                 }
             }
-        }        
+        }
         /// <summary>
         /// 执行多条SQL语句，实现数据库事务。
         /// </summary>
@@ -622,14 +622,15 @@ namespace HD.DBHelper
                 {
                     SqlCommand cmd = new SqlCommand();
                     try
-                    { int count = 0;
+                    {
+                        int count = 0;
                         //循环
                         foreach (CommandInfo myDE in cmdList)
                         {
                             string cmdText = myDE.CommandText;
                             SqlParameter[] cmdParms = (SqlParameter[])myDE.Parameters;
                             PrepareCommand(cmd, conn, trans, cmdText, cmdParms);
-                           
+
                             if (myDE.EffentNextType == EffentNextType.WhenHaveContine || myDE.EffentNextType == EffentNextType.WhenNoHaveContine)
                             {
                                 if (myDE.CommandText.ToLower().IndexOf("count(") == -1)

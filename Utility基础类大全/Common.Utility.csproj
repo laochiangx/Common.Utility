@@ -87,6 +87,10 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.11.0.1-beta3\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -123,6 +127,12 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
@@ -136,8 +146,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Pagkage\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
+    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="C#读取AD域里用户名或组\ADHelp.cs" />
+    <Compile Include="CSVHelper\CSVHelper.cs" />
+    <Compile Include="DBHelper\CommandInfo.cs" />
+    <Compile Include="DBHelper\DbHelperMySQL.cs" />
+    <Compile Include="DBHelper\DbHelperOleDb.cs" />
+    <Compile Include="DBHelper\DbHelperOra.cs" />
+    <Compile Include="DBHelper\DbHelperSQL.cs" />
+    <Compile Include="DBHelper\DbHelperSQLite.cs" />
+    <Compile Include="DBHelper\DbHelperSQLP.cs" />
+    <Compile Include="DBHelper\DESEncrypt.cs" />
+    <Compile Include="DBHelper\OracleHelper.cs" />
+    <Compile Include="DBHelper\PubConstant.cs" />
+    <Compile Include="DBHelper\SQLHelper.cs" />
     <Compile Include="RDLC直接打印帮助类\BartenderHelper.cs" />
     <Compile Include="RDLC直接打印帮助类\ConfigLoad.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
@@ -271,32 +297,31 @@
     <Compile Include="计划任务\Quartz.NET\Job.cs" />
     <Compile Include="计划任务\Quartz.NET\TestJob.cs" />
     <Compile Include="计划任务\TimerInfo.cs" />
-    <Compile Include="邮件2\ConnectCommand.cs" />
-    <Compile Include="邮件2\ConnectResponse.cs" />
-    <Compile Include="邮件2\DeleCommand.cs" />
-    <Compile Include="邮件2\ListCommand.cs" />
-    <Compile Include="邮件2\ListResponse.cs" />
-    <Compile Include="邮件2\MailHeaders.cs" />
-    <Compile Include="邮件2\MailMessageEx.cs" />
-    <Compile Include="邮件2\NoopCommand.cs" />
-    <Compile Include="邮件2\PassCommand.cs" />
-    <Compile Include="邮件2\Pop3Client.cs" />
-    <Compile Include="邮件2\Pop3Command.cs" />
-    <Compile Include="邮件2\Pop3Commands.cs" />
-    <Compile Include="邮件2\Pop3Exception.cs" />
-    <Compile Include="邮件2\Pop3ListItem.cs" />
-    <Compile Include="邮件2\Pop3Response.cs" />
-    <Compile Include="邮件2\Pop3Responses.cs" />
-    <Compile Include="邮件2\Pop3State.cs" />
-    <Compile Include="邮件2\QuitCommand.cs" />
-    <Compile Include="邮件2\RetrCommand.cs" />
-    <Compile Include="邮件2\RetrResponse.cs" />
-    <Compile Include="邮件2\RsetCommand.cs" />
-    <Compile Include="邮件2\Stat.cs" />
-    <Compile Include="邮件2\StatCommand.cs" />
-    <Compile Include="邮件2\StatResponse.cs" />
-    <Compile Include="邮件2\TopCommand.cs" />
-    <Compile Include="邮件2\UserCommand.cs" />
+    <Compile Include="邮件\ConnectCommand.cs" />
+    <Compile Include="邮件\ConnectResponse.cs" />
+    <Compile Include="邮件\DeleCommand.cs" />
+    <Compile Include="邮件\ListCommand.cs" />
+    <Compile Include="邮件\ListResponse.cs" />
+    <Compile Include="邮件\MailMessageEx.cs" />
+    <Compile Include="邮件\NoopCommand.cs" />
+    <Compile Include="邮件\PassCommand.cs" />
+    <Compile Include="邮件\Pop3Client.cs" />
+    <Compile Include="邮件\Pop3Command.cs" />
+    <Compile Include="邮件\Pop3Commands.cs" />
+    <Compile Include="邮件\Pop3Exception.cs" />
+    <Compile Include="邮件\Pop3ListItem.cs" />
+    <Compile Include="邮件\Pop3Response.cs" />
+    <Compile Include="邮件\Pop3Responses.cs" />
+    <Compile Include="邮件\Pop3State.cs" />
+    <Compile Include="邮件\QuitCommand.cs" />
+    <Compile Include="邮件\RetrCommand.cs" />
+    <Compile Include="邮件\RetrResponse.cs" />
+    <Compile Include="邮件\RsetCommand.cs" />
+    <Compile Include="邮件\Stat.cs" />
+    <Compile Include="邮件\StatCommand.cs" />
+    <Compile Include="邮件\StatResponse.cs" />
+    <Compile Include="邮件\TopCommand.cs" />
+    <Compile Include="邮件\UserCommand.cs" />
     <Compile Include="邮件\MailHelper.cs" />
     <Compile Include="邮件\MailPoper.cs" />
     <Compile Include="邮件\MailSender.cs" />
@@ -751,9 +776,7 @@
     <None Include="帮助文档\Helper帮助文档.chm" />
     <None Include="日志\log4net.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="条形码转HTML\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
