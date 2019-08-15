@@ -87,6 +87,14 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.0.0.4098, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.0.0.4098, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\MySql.Data.dll</HintPath>
@@ -164,6 +172,8 @@
     <Compile Include="DBHelper\OracleHelper.cs" />
     <Compile Include="DBHelper\PubConstant.cs" />
     <Compile Include="DBHelper\SQLHelper.cs" />
+    <Compile Include="MongoDBHelper\MongoDBHelper.cs" />
+    <Compile Include="MongoDBHelper\PagerInfo.cs" />
     <Compile Include="RDLC直接打印帮助类\BartenderHelper.cs" />
     <Compile Include="RDLC直接打印帮助类\ConfigLoad.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
