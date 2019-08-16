@@ -1,3 +1,4 @@
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -28,9 +29,6 @@ C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\WebDriver.xml
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\MongoDB.Bson.xml
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\MongoDB.Driver.xml

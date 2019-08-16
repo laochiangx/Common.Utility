@@ -14,7 +14,7 @@ namespace Utilities
             //
         }
 
-        public static string Title = "标题";
+        public  static string Title = "标题";
         public static string keywords = "关键字";
         public static string description = "网站描述";
 
