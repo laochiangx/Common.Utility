@@ -132,9 +132,22 @@
     <Reference Include="Seagull.BarTender.Print">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Seagull.BarTender.Print.dll</HintPath>
     </Reference>
+    <Reference Include="ServiceStack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\StackExchange.Redis.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -180,6 +193,7 @@
     <Compile Include="MongoDBHelper\PagerInfo.cs" />
     <Compile Include="RDLC直接打印帮助类\BartenderHelper.cs" />
     <Compile Include="RDLC直接打印帮助类\ConfigLoad.cs" />
+    <Compile Include="RedisHelper\RedisHelper.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="其他\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
@@ -790,9 +804,7 @@
     <None Include="帮助文档\Helper帮助文档.chm" />
     <None Include="日志\log4net.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RedisHelper\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
