@@ -12,6 +12,7 @@ C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.OOXML.dll
@@ -32,4 +33,3 @@ C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojAssemblyReference.cache

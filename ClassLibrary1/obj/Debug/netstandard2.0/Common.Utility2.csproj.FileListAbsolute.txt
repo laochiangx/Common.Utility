@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\bin\Debug\netstandard2.0\Common.Utility2.deps.json
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\bin\Debug\netstandard2.0\Common.Utility2.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\bin\Debug\netstandard2.0\Common.Utility2.pdb
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\bin\Debug\netstandard2.0\StackExchange.Redis.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.AssemblyInfoInputs.cache
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.AssemblyInfo.cs
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.csproj.CopyComplete
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\ClassLibrary1\obj\Debug\netstandard2.0\Common.Utility2.pdb
