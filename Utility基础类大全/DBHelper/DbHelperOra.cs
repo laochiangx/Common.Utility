@@ -435,8 +435,8 @@ namespace HD.DBHelper
 			}			
 		}
 
-
-		private static void PrepareCommand(OracleCommand cmd,OracleConnection conn,OracleTransaction trans, string cmdText, OracleParameter[] cmdParms) 
+        [Obsolete]
+        private static void PrepareCommand(OracleCommand cmd,OracleConnection conn,OracleTransaction trans, string cmdText, OracleParameter[] cmdParms) 
 		{
 			if (conn.State != ConnectionState.Open)
 				conn.Open();
@@ -495,15 +495,16 @@ namespace HD.DBHelper
 			}
 		}
 
-		
-		/// <summary>
-		/// 构建 OracleCommand 对象(用来返回一个结果集，而不是一个整数值)
-		/// </summary>
-		/// <param name="connection">数据库连接</param>
-		/// <param name="storedProcName">存储过程名</param>
-		/// <param name="parameters">存储过程参数</param>
-		/// <returns>OracleCommand</returns>
-		private static OracleCommand BuildQueryCommand(OracleConnection connection,string storedProcName, IDataParameter[] parameters)
+
+        /// <summary>
+        /// 构建 OracleCommand 对象(用来返回一个结果集，而不是一个整数值)
+        /// </summary>
+        /// <param name="connection">数据库连接</param>
+        /// <param name="storedProcName">存储过程名</param>
+        /// <param name="parameters">存储过程参数</param>
+        /// <returns>OracleCommand</returns>
+        [Obsolete]
+        private static OracleCommand BuildQueryCommand(OracleConnection connection,string storedProcName, IDataParameter[] parameters)
 		{			
 			OracleCommand command = new OracleCommand( storedProcName, connection );
 			command.CommandType = CommandType.StoredProcedure;
@@ -534,14 +535,15 @@ namespace HD.DBHelper
 				return result;
 			}
 		}
-		
-		/// <summary>
-		/// 创建 OracleCommand 对象实例(用来返回一个整数值)	
-		/// </summary>
-		/// <param name="storedProcName">存储过程名</param>
-		/// <param name="parameters">存储过程参数</param>
-		/// <returns>OracleCommand 对象实例</returns>
-		private static OracleCommand BuildIntCommand(OracleConnection connection,string storedProcName, IDataParameter[] parameters)
+
+        /// <summary>
+        /// 创建 OracleCommand 对象实例(用来返回一个整数值)	
+        /// </summary>
+        /// <param name="storedProcName">存储过程名</param>
+        /// <param name="parameters">存储过程参数</param>
+        /// <returns>OracleCommand 对象实例</returns>
+        [Obsolete]
+        private static OracleCommand BuildIntCommand(OracleConnection connection,string storedProcName, IDataParameter[] parameters)
 		{
 			OracleCommand command = BuildQueryCommand(connection,storedProcName, parameters );
 			command.Parameters.Add( new OracleParameter ( "ReturnValue",

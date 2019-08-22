@@ -212,7 +212,7 @@ namespace Common.Utility
             {
                 reqFTP = (FtpWebRequest)FtpWebRequest.Create(new Uri(url));
                 reqFTP.UseBinary = true;
-                reqFTP.Credentials = new NetworkCredential(ftpPassword, ftpPassword);
+                reqFTP.Credentials = new NetworkCredential(ftpUserID, ftpPassword);
                 reqFTP.Method = WebRequestMethods.Ftp.ListDirectoryDetails;
                 WebResponse response = reqFTP.GetResponse();
                 StreamReader reader = new StreamReader(response.GetResponseStream());

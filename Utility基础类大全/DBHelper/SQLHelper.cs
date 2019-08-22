@@ -1,9 +1,4 @@
-﻿//===============================================================================
-// This file is based on the Microsoft Data Access Application Block for .NET
-// For more information please go to 
-// http://msdn.microsoft.com/library/en-us/dnbda/html/daab-rm.asp
-//===============================================================================
-
+﻿
 using System;
 using System.Configuration;
 using System.Data;

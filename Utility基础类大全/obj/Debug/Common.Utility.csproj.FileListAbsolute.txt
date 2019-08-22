@@ -1,107 +1,35 @@
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\DotNet.Utilities.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\DotNet.Utilities.pdb
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Aliyun.OSS.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Common.Logging.Core.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Common.Logging.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\log4net.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Quartz.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\ThoughtWorks.QRCode.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\MSDATASRC.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\mscomctl.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\stdole.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Aliyun.OSS.xml
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Common.Logging.xml
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Common.Logging.Core.xml
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Quartz.xml
-E:\dotnetcodes\DotNet.Utilities\obj\Debug\DotNet.Utilities.dll
-E:\dotnetcodes\DotNet.Utilities\obj\Debug\DotNet.Utilities.pdb
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\ICSharpCode.SharpZipLib.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\itextsharp.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Microsoft.Office.Interop.Owc11.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\OWC10Chart.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\NPOI.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\Ionic.Zip.dll
-E:\dotnetcodes\DotNet.Utilities\bin\Debug\NPOI.xml
-E:\Common.Utility\Common.Utility\bin\Debug\DotNet.Utilities.dll
-E:\Common.Utility\Common.Utility\bin\Debug\DotNet.Utilities.pdb
-E:\Common.Utility\Common.Utility\bin\Debug\Common.Logging.Core.dll
-E:\Common.Utility\Common.Utility\bin\Debug\Common.Logging.dll
-E:\Common.Utility\Common.Utility\bin\Debug\ICSharpCode.SharpZipLib.dll
-E:\Common.Utility\Common.Utility\bin\Debug\itextsharp.dll
-E:\Common.Utility\Common.Utility\bin\Debug\Microsoft.Office.Interop.Owc11.dll
-E:\Common.Utility\Common.Utility\bin\Debug\NPOI.dll
-E:\Common.Utility\Common.Utility\bin\Debug\OWC10Chart.dll
-E:\Common.Utility\Common.Utility\bin\Debug\Quartz.dll
-E:\Common.Utility\Common.Utility\bin\Debug\MSDATASRC.dll
-E:\Common.Utility\Common.Utility\bin\Debug\mscomctl.dll
-E:\Common.Utility\Common.Utility\bin\Debug\stdole.dll
-E:\Common.Utility\Common.Utility\bin\Debug\Ionic.Zip.dll
-E:\Common.Utility\Common.Utility\bin\Debug\Aliyun.OSS.xml
-E:\Common.Utility\Common.Utility\bin\Debug\Common.Logging.xml
-E:\Common.Utility\Common.Utility\bin\Debug\Common.Logging.Core.xml
-E:\Common.Utility\Common.Utility\bin\Debug\NPOI.xml
-E:\Common.Utility\Common.Utility\bin\Debug\Quartz.xml
-E:\Common.Utility\Common.Utility\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
-E:\Common.Utility\Common.Utility\obj\Debug\DotNet.Utilities.dll
-E:\Common.Utility\Common.Utility\obj\Debug\DotNet.Utilities.pdb
-G:\新建文件夹\Common.Utility\obj\Debug\DotNet.Utilities.dll
-G:\新建文件夹\Common.Utility\obj\Debug\DotNet.Utilities.pdb
-G:\新建文件夹\Common.Utility\bin\Debug\DotNet.Utilities.dll
-G:\新建文件夹\Common.Utility\bin\Debug\DotNet.Utilities.pdb
-G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.Core.dll
-G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.dll
-G:\新建文件夹\Common.Utility\bin\Debug\ICSharpCode.SharpZipLib.dll
-G:\新建文件夹\Common.Utility\bin\Debug\itextsharp.dll
-G:\新建文件夹\Common.Utility\bin\Debug\Microsoft.Office.Interop.Owc11.dll
-G:\新建文件夹\Common.Utility\bin\Debug\NPOI.dll
-G:\新建文件夹\Common.Utility\bin\Debug\OWC10Chart.dll
-G:\新建文件夹\Common.Utility\bin\Debug\Quartz.dll
-G:\新建文件夹\Common.Utility\bin\Debug\MSDATASRC.dll
-G:\新建文件夹\Common.Utility\bin\Debug\stdole.dll
-G:\新建文件夹\Common.Utility\bin\Debug\Ionic.Zip.dll
-G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.xml
-G:\新建文件夹\Common.Utility\bin\Debug\Common.Logging.Core.xml
-G:\新建文件夹\Common.Utility\bin\Debug\NPOI.xml
-G:\新建文件夹\Common.Utility\bin\Debug\Quartz.xml
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\ICSharpCode.SharpZipLib.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\MSDATASRC.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\mscomctl.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
-D:\新建文件夹 (2)\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\ICSharpCode.SharpZipLib.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\MSDATASRC.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.xml
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
-G:\github合集\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
-G:\github合集\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll.config
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\DotNet.Utilities.pdb
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\itextsharp.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.Office.Interop.Owc11.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.OOXML.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Seagull.BarTender.Print.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\WebDriver.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.Core.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\WebDriver.xml
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CopyComplete
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
+C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb

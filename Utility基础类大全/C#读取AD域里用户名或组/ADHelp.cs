@@ -5,7 +5,7 @@ using System.DirectoryServices;
 using System.Security.Principal;
 using System.Runtime.InteropServices;
 using NPOI.POIFS.FileSystem;
-//Download by http://www.codefans.net
+using DirectoryEntry = System.DirectoryServices.DirectoryEntry;
 namespace UserDLL
 {
     sealed class ADHelper
