@@ -130,6 +130,9 @@
       <HintPath>packages\Quartz.2.4.1\lib\net40\Quartz.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RedisSomeHelper">
+      <HintPath>F:\Github\Test\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe</HintPath>
+    </Reference>
     <Reference Include="Seagull.BarTender.Print">
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Seagull.BarTender.Print.dll</HintPath>
     </Reference>
@@ -147,8 +150,7 @@
     </Reference>
     <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\StackExchange.Redis.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>F:\Github\Test\RedisSomeHelper\bin\Debug\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
