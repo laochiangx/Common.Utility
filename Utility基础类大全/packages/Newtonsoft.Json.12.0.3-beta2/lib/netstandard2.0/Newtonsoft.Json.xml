@@ -7331,6 +7331,10 @@
             <summary>
             Returns the indented JSON for this token.
             </summary>
+            <remarks>
+            <c>ToString()</c> returns a non-JSON string value for tokens with a type of <see cref="F:Newtonsoft.Json.Linq.JTokenType.String"/>.
+            If you want the JSON for all token types then you should use <see cref="M:Newtonsoft.Json.Linq.JToken.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])"/>.
+            </remarks>
             <returns>
             The indented JSON for this token.
             </returns>
@@ -7964,38 +7968,38 @@
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String)">
             <summary>
-            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JPath expression. Selects the token that matches the object path.
+            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JSONPath expression. Selects the token that matches the object path.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <returns>A <see cref="T:Newtonsoft.Json.Linq.JToken"/>, or <c>null</c>.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String,System.Boolean)">
             <summary>
-            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JPath expression. Selects the token that matches the object path.
+            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JSONPath expression. Selects the token that matches the object path.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <param name="errorWhenNoMatch">A flag to indicate whether an error should be thrown if no tokens are found when evaluating part of the expression.</param>
             <returns>A <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectTokens(System.String)">
             <summary>
-            Selects a collection of elements using a JPath expression.
+            Selects a collection of elements using a JSONPath expression.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Newtonsoft.Json.Linq.JToken"/> that contains the selected elements.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectTokens(System.String,System.Boolean)">
             <summary>
-            Selects a collection of elements using a JPath expression.
+            Selects a collection of elements using a JSONPath expression.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <param name="errorWhenNoMatch">A flag to indicate whether an error should be thrown if no tokens are found when evaluating part of the expression.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Newtonsoft.Json.Linq.JToken"/> that contains the selected elements.</returns>
@@ -8629,6 +8633,10 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
+            <remarks>
+            <c>ToString()</c> returns a non-JSON string value for tokens with a type of <see cref="F:Newtonsoft.Json.Linq.JTokenType.String"/>.
+            If you want the JSON for all token types then you should use <see cref="M:Newtonsoft.Json.Linq.JValue.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])"/>.
+            </remarks>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -9839,31 +9847,6 @@
             <param name="message">The trace message.</param>
             <param name="ex">The trace exception. This parameter is optional.</param>
         </member>
-        <member name="T:Newtonsoft.Json.Serialization.DynamicValueProvider">
-            <summary>
-            Get and set values for a <see cref="T:System.Reflection.MemberInfo"/> using dynamic methods.
-            </summary>
-        </member>
-        <member name="M:Newtonsoft.Json.Serialization.DynamicValueProvider.#ctor(System.Reflection.MemberInfo)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.DynamicValueProvider"/> class.
-            </summary>
-            <param name="memberInfo">The member info.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Serialization.DynamicValueProvider.SetValue(System.Object,System.Object)">
-            <summary>
-            Sets the value.
-            </summary>
-            <param name="target">The target to set the value on.</param>
-            <param name="value">The value to set on the target.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Serialization.DynamicValueProvider.GetValue(System.Object)">
-            <summary>
-            Gets the value.
-            </summary>
-            <param name="target">The target to get the value from.</param>
-            <returns>The value.</returns>
-        </member>
         <member name="T:Newtonsoft.Json.Serialization.ErrorContext">
             <summary>
             Provides information surrounding an error.
@@ -10695,6 +10678,50 @@
             <param name="args">Optional arguments to pass to an initializing constructor of the JsonConverter.
             If <c>null</c>, the default constructor is used.</param>
         </member>
+        <member name="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy">
+            <summary>
+            A kebab case naming strategy.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+            <param name="processDictionaryKeys">
+            A flag indicating whether dictionary keys should be processed.
+            </param>
+            <param name="overrideSpecifiedNames">
+            A flag indicating whether explicitly specified property names should be processed,
+            e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>.
+            </param>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+            <param name="processDictionaryKeys">
+            A flag indicating whether dictionary keys should be processed.
+            </param>
+            <param name="overrideSpecifiedNames">
+            A flag indicating whether explicitly specified property names should be processed,
+            e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>.
+            </param>
+            <param name="processExtensionDataNames">
+            A flag indicating whether extension data names should be processed.
+            </param>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.ResolvePropertyName(System.String)">
+            <summary>
+            Resolves the specified property name.
+            </summary>
+            <param name="name">The property name to resolve.</param>
+            <returns>The resolved property name.</returns>
+        </member>
         <member name="T:Newtonsoft.Json.Serialization.MemoryTraceWriter">
             <summary>
             Represents a trace writer that writes to memory. When the trace message limit is
@@ -11188,6 +11215,23 @@
         </member>
         <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
             <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>
+            Specifies that the method will not return if the associated Boolean parameter is passed the specified value.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute"/> class.
+            </summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
         </member>
     </members>
 </doc>

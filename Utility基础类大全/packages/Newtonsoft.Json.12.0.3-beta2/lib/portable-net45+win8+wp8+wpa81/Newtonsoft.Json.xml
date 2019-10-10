@@ -1686,77 +1686,6 @@
             If this is <c>null</c>, default serialization settings will be used.
             </param>
         </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.SerializeXmlNode(System.Xml.XmlNode)">
-            <summary>
-            Serializes the <see cref="T:System.Xml.XmlNode"/> to a JSON string.
-            </summary>
-            <param name="node">The node to serialize.</param>
-            <returns>A JSON string of the <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.SerializeXmlNode(System.Xml.XmlNode,Newtonsoft.Json.Formatting)">
-            <summary>
-            Serializes the <see cref="T:System.Xml.XmlNode"/> to a JSON string using formatting.
-            </summary>
-            <param name="node">The node to serialize.</param>
-            <param name="formatting">Indicates how the output should be formatted.</param>
-            <returns>A JSON string of the <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.SerializeXmlNode(System.Xml.XmlNode,Newtonsoft.Json.Formatting,System.Boolean)">
-            <summary>
-            Serializes the <see cref="T:System.Xml.XmlNode"/> to a JSON string using formatting and omits the root object if <paramref name="omitRootObject"/> is <c>true</c>.
-            </summary>
-            <param name="node">The node to serialize.</param>
-            <param name="formatting">Indicates how the output should be formatted.</param>
-            <param name="omitRootObject">Omits writing the root object.</param>
-            <returns>A JSON string of the <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.DeserializeXmlNode(System.String)">
-            <summary>
-            Deserializes the <see cref="T:System.Xml.XmlNode"/> from a JSON string.
-            </summary>
-            <param name="value">The JSON string.</param>
-            <returns>The deserialized <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.DeserializeXmlNode(System.String,System.String)">
-            <summary>
-            Deserializes the <see cref="T:System.Xml.XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>.
-            </summary>
-            <param name="value">The JSON string.</param>
-            <param name="deserializeRootElementName">The name of the root element to append when deserializing.</param>
-            <returns>The deserialized <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.DeserializeXmlNode(System.String,System.String,System.Boolean)">
-            <summary>
-            Deserializes the <see cref="T:System.Xml.XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>
-            and writes a Json.NET array attribute for collections.
-            </summary>
-            <param name="value">The JSON string.</param>
-            <param name="deserializeRootElementName">The name of the root element to append when deserializing.</param>
-            <param name="writeArrayAttribute">
-            A value to indicate whether to write the Json.NET array attribute.
-            This attribute helps preserve arrays when converting the written XML back to JSON.
-            </param>
-            <returns>The deserialized <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.JsonConvert.DeserializeXmlNode(System.String,System.String,System.Boolean,System.Boolean)">
-            <summary>
-            Deserializes the <see cref="T:System.Xml.XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>,
-            writes a Json.NET array attribute for collections, and encodes special characters.
-            </summary>
-            <param name="value">The JSON string.</param>
-            <param name="deserializeRootElementName">The name of the root element to append when deserializing.</param>
-            <param name="writeArrayAttribute">
-            A value to indicate whether to write the Json.NET array attribute.
-            This attribute helps preserve arrays when converting the written XML back to JSON.
-            </param>
-            <param name="encodeSpecialCharacters">
-            A value to indicate whether to encode special characters when converting JSON to XML.
-            If <c>true</c>, special characters like ':', '@', '?', '#' and '$' in JSON property names aren't used to specify
-            XML namespaces, attributes or processing directives. Instead special characters are encoded and written
-            as part of the XML element name.
-            </param>
-            <returns>The deserialized <see cref="T:System.Xml.XmlNode"/>.</returns>
-        </member>
         <member name="M:Newtonsoft.Json.JsonConvert.SerializeXNode(System.Xml.Linq.XObject)">
             <summary>
             Serializes the <see cref="T:System.Xml.Linq.XNode"/> to a JSON string.
@@ -6421,11 +6350,6 @@
             Occurs when a property value changes.
             </summary>
         </member>
-        <member name="E:Newtonsoft.Json.Linq.JObject.PropertyChanging">
-            <summary>
-            Occurs when a property value is changing.
-            </summary>
-        </member>
         <member name="M:Newtonsoft.Json.Linq.JObject.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JObject"/> class.
@@ -6636,12 +6560,6 @@
         <member name="M:Newtonsoft.Json.Linq.JObject.OnPropertyChanged(System.String)">
             <summary>
             Raises the <see cref="E:Newtonsoft.Json.Linq.JObject.PropertyChanged"/> event with the provided arguments.
-            </summary>
-            <param name="propertyName">Name of the property.</param>
-        </member>
-        <member name="M:Newtonsoft.Json.Linq.JObject.OnPropertyChanging(System.String)">
-            <summary>
-            Raises the <see cref="E:Newtonsoft.Json.Linq.JObject.PropertyChanging"/> event with the provided arguments.
             </summary>
             <param name="propertyName">Name of the property.</param>
         </member>
@@ -7090,6 +7008,10 @@
             <summary>
             Returns the indented JSON for this token.
             </summary>
+            <remarks>
+            <c>ToString()</c> returns a non-JSON string value for tokens with a type of <see cref="F:Newtonsoft.Json.Linq.JTokenType.String"/>.
+            If you want the JSON for all token types then you should use <see cref="M:Newtonsoft.Json.Linq.JToken.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])"/>.
+            </remarks>
             <returns>
             The indented JSON for this token.
             </returns>
@@ -7723,38 +7645,38 @@
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String)">
             <summary>
-            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JPath expression. Selects the token that matches the object path.
+            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JSONPath expression. Selects the token that matches the object path.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <returns>A <see cref="T:Newtonsoft.Json.Linq.JToken"/>, or <c>null</c>.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String,System.Boolean)">
             <summary>
-            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JPath expression. Selects the token that matches the object path.
+            Selects a <see cref="T:Newtonsoft.Json.Linq.JToken"/> using a JSONPath expression. Selects the token that matches the object path.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <param name="errorWhenNoMatch">A flag to indicate whether an error should be thrown if no tokens are found when evaluating part of the expression.</param>
             <returns>A <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectTokens(System.String)">
             <summary>
-            Selects a collection of elements using a JPath expression.
+            Selects a collection of elements using a JSONPath expression.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Newtonsoft.Json.Linq.JToken"/> that contains the selected elements.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Linq.JToken.SelectTokens(System.String,System.Boolean)">
             <summary>
-            Selects a collection of elements using a JPath expression.
+            Selects a collection of elements using a JSONPath expression.
             </summary>
             <param name="path">
-            A <see cref="T:System.String"/> that contains a JPath expression.
+            A <see cref="T:System.String"/> that contains a JSONPath expression.
             </param>
             <param name="errorWhenNoMatch">A flag to indicate whether an error should be thrown if no tokens are found when evaluating part of the expression.</param>
             <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:Newtonsoft.Json.Linq.JToken"/> that contains the selected elements.</returns>
@@ -8388,6 +8310,10 @@
             <summary>
             Returns a <see cref="T:System.String"/> that represents this instance.
             </summary>
+            <remarks>
+            <c>ToString()</c> returns a non-JSON string value for tokens with a type of <see cref="F:Newtonsoft.Json.Linq.JTokenType.String"/>.
+            If you want the JSON for all token types then you should use <see cref="M:Newtonsoft.Json.Linq.JValue.WriteTo(Newtonsoft.Json.JsonWriter,Newtonsoft.Json.JsonConverter[])"/>.
+            </remarks>
             <returns>
             A <see cref="T:System.String"/> that represents this instance.
             </returns>
@@ -8503,7 +8429,7 @@
         </member>
         <member name="F:Newtonsoft.Json.MemberSerialization.OptOut">
             <summary>
-            All public members are serialized by default. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="T:System.NonSerializedAttribute"/>.
+            All public members are serialized by default. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.
             This is the default member serialization mode.
             </summary>
         </member>
@@ -8515,8 +8441,8 @@
         </member>
         <member name="F:Newtonsoft.Json.MemberSerialization.Fields">
             <summary>
-            All public and private fields are serialized. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="T:System.NonSerializedAttribute"/>.
-            This member serialization mode can also be set by marking the class with <see cref="T:System.SerializableAttribute"/>
+            All public and private fields are serialized. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.
+            This member serialization mode can also be set by marking the class with <see cref="!:SerializableAttribute"/>
             and setting IgnoreSerializableAttribute on <see cref="T:Newtonsoft.Json.Serialization.DefaultContractResolver"/> to <c>false</c>.
             </summary>
         </member>
@@ -9347,22 +9273,6 @@
             	<c>true</c> if serialized compiler generated members; otherwise, <c>false</c>.
             </value>
         </member>
-        <member name="P:Newtonsoft.Json.Serialization.DefaultContractResolver.IgnoreSerializableInterface">
-            <summary>
-            Gets or sets a value indicating whether to ignore the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface when serializing and deserializing types.
-            </summary>
-            <value>
-            	<c>true</c> if the <see cref="T:System.Runtime.Serialization.ISerializable"/> interface will be ignored when serializing and deserializing types; otherwise, <c>false</c>.
-            </value>
-        </member>
-        <member name="P:Newtonsoft.Json.Serialization.DefaultContractResolver.IgnoreSerializableAttribute">
-            <summary>
-            Gets or sets a value indicating whether to ignore the <see cref="T:System.SerializableAttribute"/> attribute when serializing and deserializing types.
-            </summary>
-            <value>
-            	<c>true</c> if the <see cref="T:System.SerializableAttribute"/> attribute will be ignored when serializing and deserializing types; otherwise, <c>false</c>.
-            </value>
-        </member>
         <member name="P:Newtonsoft.Json.Serialization.DefaultContractResolver.IgnoreIsSpecifiedMembers">
             <summary>
             Gets or sets a value indicating whether to ignore IsSpecified members when serializing and deserializing types.
@@ -9461,13 +9371,6 @@
             </summary>
             <param name="objectType">Type of the object.</param>
             <returns>A <see cref="T:Newtonsoft.Json.Serialization.JsonLinqContract"/> for the given type.</returns>
-        </member>
-        <member name="M:Newtonsoft.Json.Serialization.DefaultContractResolver.CreateISerializableContract(System.Type)">
-            <summary>
-            Creates a <see cref="T:Newtonsoft.Json.Serialization.JsonISerializableContract"/> for the given type.
-            </summary>
-            <param name="objectType">Type of the object.</param>
-            <returns>A <see cref="T:Newtonsoft.Json.Serialization.JsonISerializableContract"/> for the given type.</returns>
         </member>
         <member name="M:Newtonsoft.Json.Serialization.DefaultContractResolver.CreateDynamicContract(System.Type)">
             <summary>
@@ -10042,23 +9945,6 @@
             </summary>
             <param name="underlyingType">The underlying type for the contract.</param>
         </member>
-        <member name="T:Newtonsoft.Json.Serialization.JsonISerializableContract">
-            <summary>
-            Contract details for a <see cref="T:System.Type"/> used by the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
-            </summary>
-        </member>
-        <member name="P:Newtonsoft.Json.Serialization.JsonISerializableContract.ISerializableCreator">
-            <summary>
-            Gets or sets the <see cref="T:System.Runtime.Serialization.ISerializable"/> object constructor.
-            </summary>
-            <value>The <see cref="T:System.Runtime.Serialization.ISerializable"/> object constructor.</value>
-        </member>
-        <member name="M:Newtonsoft.Json.Serialization.JsonISerializableContract.#ctor(System.Type)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.JsonISerializableContract"/> class.
-            </summary>
-            <param name="underlyingType">The underlying type for the contract.</param>
-        </member>
         <member name="T:Newtonsoft.Json.Serialization.JsonLinqContract">
             <summary>
             Contract details for a <see cref="T:System.Type"/> used by the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.
@@ -10411,6 +10297,50 @@
             <param name="converterType">The <see cref="T:Newtonsoft.Json.JsonConverter"/> type to create.</param>
             <param name="args">Optional arguments to pass to an initializing constructor of the JsonConverter.
             If <c>null</c>, the default constructor is used.</param>
+        </member>
+        <member name="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy">
+            <summary>
+            A kebab case naming strategy.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor(System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+            <param name="processDictionaryKeys">
+            A flag indicating whether dictionary keys should be processed.
+            </param>
+            <param name="overrideSpecifiedNames">
+            A flag indicating whether explicitly specified property names should be processed,
+            e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>.
+            </param>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor(System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+            <param name="processDictionaryKeys">
+            A flag indicating whether dictionary keys should be processed.
+            </param>
+            <param name="overrideSpecifiedNames">
+            A flag indicating whether explicitly specified property names should be processed,
+            e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>.
+            </param>
+            <param name="processExtensionDataNames">
+            A flag indicating whether extension data names should be processed.
+            </param>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy"/> class.
+            </summary>
+        </member>
+        <member name="M:Newtonsoft.Json.Serialization.KebabCaseNamingStrategy.ResolvePropertyName(System.String)">
+            <summary>
+            Resolves the specified property name.
+            </summary>
+            <param name="name">The property name to resolve.</param>
+            <returns>The resolved property name.</returns>
         </member>
         <member name="T:Newtonsoft.Json.Serialization.MemoryTraceWriter">
             <summary>
@@ -10998,6 +10928,23 @@
         </member>
         <member name="T:System.Diagnostics.CodeAnalysis.AllowNullAttribute">
             <summary>Specifies that null is allowed as an input even if the corresponding type disallows it.</summary>
+        </member>
+        <member name="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute">
+            <summary>
+            Specifies that the method will not return if the associated Boolean parameter is passed the specified value.
+            </summary>
+        </member>
+        <member name="M:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute"/> class.
+            </summary>
+            <param name="parameterValue">
+            The condition parameter value. Code after the method will be considered unreachable by diagnostics if the argument to
+            the associated parameter matches this value.
+            </param>
+        </member>
+        <member name="P:System.Diagnostics.CodeAnalysis.DoesNotReturnIfAttribute.ParameterValue">
+            <summary>Gets the condition parameter value.</summary>
         </member>
     </members>
 </doc>
