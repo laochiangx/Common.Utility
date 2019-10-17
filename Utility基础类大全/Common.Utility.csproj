@@ -173,9 +173,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Pagkage\ThoughtWorks.QRCode.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Selenium.WebDriver.3.141.0\lib\net40\WebDriver.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C#读取AD域里用户名或组\ADHelp.cs" />

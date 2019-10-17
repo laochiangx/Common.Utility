@@ -4,7 +4,6 @@ using System.Data;
 using System.Data.OracleClient;
 using System.Collections;
 using System.Collections.Generic;
-using OpenQA.Selenium.Remote;
 
 namespace HD.DBHelper
 {

@@ -21,7 +21,6 @@ C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\OWC10Chart.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Seagull.BarTender.Print.dll
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\WebDriver.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\stdole.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Ionic.Zip.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Common.Logging.xml
@@ -29,7 +28,6 @@ C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\NPOI.xml
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\Quartz.xml
-C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\bin\Debug\WebDriver.xml
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\Common.Utility.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.dll
 C:\Users\Administrator\source\repos\Jimmey-Jiang\Common.Utility\Utility基础类大全\obj\Debug\DotNet.Utilities.pdb
