@@ -5,12 +5,12 @@ using System.Configuration;
 namespace Common.Utility
 {
 	/// <summary>
-	/// web.config������
+	/// web.config操作类
 	/// </summary>
 	public sealed class ConfigHelper
 	{
 		/// <summary>
-		/// �õ�AppSettings�е������ַ�����Ϣ
+		/// 得到AppSettings中的配置字符串信息
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -35,7 +35,7 @@ namespace Common.Utility
 		}
 
 		/// <summary>
-		/// �õ�AppSettings�е�����Bool��Ϣ
+		/// 得到AppSettings中的配置Bool信息
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -57,7 +57,7 @@ namespace Common.Utility
 			return result;
 		}
 		/// <summary>
-		/// �õ�AppSettings�е�����Decimal��Ϣ
+		/// 得到AppSettings中的配置Decimal信息
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -80,7 +80,7 @@ namespace Common.Utility
 			return result;
 		}
 		/// <summary>
-		/// �õ�AppSettings�е�����int��Ϣ
+		/// 得到AppSettings中的配置int信息
 		/// </summary>
 		/// <param name="key"></param>
 		/// <returns></returns>
@@ -102,5 +102,71 @@ namespace Common.Utility
 
 			return result;
 		}
-	}
+
+        #region 添加　AppConfig
+        /// <summary>
+        /// 设置AppConfig
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="val">值</param>
+        public static void AddAppConfig(string key, string val)
+        {
+            ConfigurationManager.AppSettings.Add(key, val);
+        }
+        #endregion
+        
+        #region 更新　AppConfig
+        /// <summary>
+        /// 设置AppConfig
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="val">值</param>
+        public static void SetAppConfig(string key,string val)
+        {           
+            ConfigurationManager.AppSettings.Set(key, val);
+            string CacheKey = "AppSettings-" + key;
+          //  DotNet.Common.DataCache.SetCache(CacheKey, val, DateTime.Now.AddMinutes(180), TimeSpan.Zero);
+        }
+        #endregion
+
+        #region 移除　AppConfig
+        /// <summary>
+        /// Remove AppConfig
+        /// </summary>
+        /// <param name="key">键</param>
+        /// <param name="val">值</param>
+        public static void RemoveAppConfig(string key)
+        {
+            ConfigurationManager.AppSettings.Remove(key);
+        }
+        #endregion
+
+        #region 得到AppSettings中的配置字符串信息
+        /// <summary>
+        /// 得到AppSettings中的配置字符串信息
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+       
+        #endregion
+
+        #region 得到AppSettings中的配置字符串信息 没有缓存
+        /// <summary>
+        /// 得到AppSettings中的配置字符串信息 没有缓存
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static string GetNoCacheConfig(string key)
+        {            
+            return ConfigurationManager.AppSettings[key].ToString();
+        }
+
+        #endregion
+
+
+
+
+
+    }
+
 }
