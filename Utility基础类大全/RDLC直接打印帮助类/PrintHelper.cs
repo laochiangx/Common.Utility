@@ -1,20 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.IO;
-using Microsoft.Reporting.WebForms;
 using System.Drawing.Printing;
 using System.Drawing.Imaging;
 using System.Text;
 using System.Data;
+using Microsoft.Reporting.WebForms;
+
+
+
+
+
 /// <summary>
 /// 打印帮助类
 /// </summary>
 public class PrintHelper
 {
+    //用来记录当前打印到第几页了 
     private int m_currentPageIndex;
     private IList<Stream> m_streams;
+    private int pos;
 
     /// <summary>
     /// 报表直接打印
@@ -65,12 +70,6 @@ public class PrintHelper
         }
     }
 
-    private Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek)
-    {
-        Stream stream = new FileStream(name + DateTime.Now.Millisecond + "." + fileNameExtension, FileMode.Create);
-        m_streams.Add(stream);
-        return stream;
-    }
     private void Print(string printerName)
     {
         if (m_streams == null || m_streams.Count == 0) return;
@@ -90,32 +89,25 @@ public class PrintHelper
         if (!printDoc.PrinterSettings.IsValid)
         {
             string msg = string.Format("找不到打印机：{0}", printerName);
-            LogUtil.Log(msg);
+           // LogUtil.Log(msg);
             return;
         }
         printDoc.PrintPage += new PrintPageEventHandler(PrintPage);
         printDoc.Print();
     }
 
-    private void PrintPage(object sender, PrintPageEventArgs ev)
-    {
-        Metafile pageImage = new Metafile(m_streams[m_currentPageIndex]);
-        ev.Graphics.DrawImage(pageImage, 0, 0, 827, 1169);//像素
-        m_currentPageIndex++;
-        ev.HasMorePages = (m_currentPageIndex < m_streams.Count);
-    }
     //初始化报表信息
     private void SetReportInfo(string reportPath, string sourceName, DataTable dataSource, bool isFengPi)
     {
         if (!File.Exists(reportPath))
         {
-            MessageBox.Show("报表文件:" + reportPath + " 不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           // MessageBox.Show("报表文件:" + reportPath + " 不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
 
         if (dataSource == null || dataSource.Rows.Count == 0)
         {
-            MessageBox.Show("没有找到案卷号为:" + txtArchiveNum.Text.Trim() + "的相关目录信息", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          //  MessageBox.Show("没有找到案卷号为:" + txtArchiveNum.Text.Trim() + "的相关目录信息", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         pos = 1;
@@ -150,9 +142,14 @@ public class PrintHelper
         report1.Render("Image", deviceInfo, CreateStream, out warnings);
     }
 
+    private string GetArchiveTypeName()
+    {
+        throw new NotImplementedException();
+    }
+
     //声明一个Stream对象的列表用来保存报表的输出数据 
     //LocalReport对象的Render方法会将报表按页输出为多个Stream对象。
- //   private List<Stream> m_streams;
+    //   private List<Stream> m_streams;
     //用来提供Stream对象的函数，用于LocalReport对象的Render方法的第三个参数。
     private Stream CreateStream(string name, string fileNameExtension, Encoding encoding, string mimeType, bool willSeek)
 
@@ -164,8 +161,8 @@ public class PrintHelper
         return stream;
     }
 
-    //用来记录当前打印到第几页了 
-    private int m_currentPageIndex;
+  
+
 
     #region 打印报表
     private void Print()
@@ -181,7 +178,7 @@ public class PrintHelper
         //判断指定的打印机是否可用 
         if (!printDoc.PrinterSettings.IsValid)
         {
-            MessageBox.Show("没有找到打印机!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //MessageBox.Show("没有找到打印机!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
             return;
         }
         pos = 5;
@@ -219,9 +216,9 @@ public class PrintHelper
     //打印封皮
     private void btPrint_Click(object sender, EventArgs e)
     {
-        string reportPath = Application.StartupPath + "\\Files\\ReportEnvelop.rdlc";
-        SetReportInfo(reportPath, "DataSet1", GetDataSource(true), true);
-        Print();
+        //string reportPath = Application.StartupPath + "\\Files\\ReportEnvelop.rdlc";
+        //SetReportInfo(reportPath, "DataSet1", GetDataSource(true), true);
+        //Print();
 
     }
 }
