@@ -1,0 +1,17 @@
+﻿
+1
+public void FF(object state)
+{
+   lock(obj)
+   {
+    .....
+	}
+}
+
+
+ 
+ 2
+public void  FFTask(object state)
+{
+    ManagedTreadPool.QueueUserWorkItem(new WaitCallback(FF),state)
+}
