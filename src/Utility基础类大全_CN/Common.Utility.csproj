@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{643D406D-38E5-4A6E-8308-E48B87A1B69B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotNet.Utilities</RootNamespace>
+    <AssemblyName>DotNet.Utilities</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ADODB, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Common.Utility\Utility基础类大全\bin\Debug\ADODB.dll</HintPath>
+    </Reference>
+    <Reference Include="Aliyun.OSS">
+      <HintPath>..\Pagkage\ali-oss\Aliyun.OSS.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Excel, Version=1.5.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.1.2.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\Pagkage\log4net\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Owc11, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Owc11.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.3.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MongoDB.Bson, Version=1.0.0.4098, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.0.0.4098, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.3-beta2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\NPOI.2.3.0\lib\net40\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.3.0\lib\net40\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.3.0\lib\net40\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.3.0.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>packages\NPOI.2.3.0\lib\net40\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="OWC10Chart, Version=1.0.2074.16784, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\OWC10Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz, Version=2.4.1.0, Culture=neutral, PublicKeyToken=f6b8c98a402cc8a4, processorArchitecture=MSIL">
+      <HintPath>packages\Quartz.2.4.1\lib\net40\Quartz.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RedisSomeHelper">
+      <HintPath>F:\Github\Test\RedisSomeHelper\bin\Debug\RedisSomeHelper.exe</HintPath>
+    </Reference>
+    <Reference Include="Seagull.BarTender.Print">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1358.0\lib\net40\Seagull.BarTender.Print.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c219ff1ca8c2ce46, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\Github\Test\RedisSomeHelper\bin\Debug\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Data.SQLite, Version=1.0.98.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.QRCode, Version=1.0.2774.19990, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Pagkage\ThoughtWorks.QRCode.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="C#读取AD域里用户名或组\ADHelp.cs" />
+    <Compile Include="CSVHelper\CSVHelper.cs" />
+    <Compile Include="DBHelper\CommandInfo.cs" />
+    <Compile Include="DBHelper\DbHelperMySQL.cs" />
+    <Compile Include="DBHelper\DbHelperOleDb.cs" />
+    <Compile Include="DBHelper\DbHelperOra.cs" />
+    <Compile Include="DBHelper\DbHelperSQL.cs" />
+    <Compile Include="DBHelper\DbHelperSQLite.cs" />
+    <Compile Include="DBHelper\DbHelperSQLP.cs" />
+    <Compile Include="DBHelper\DESEncrypt.cs" />
+    <Compile Include="DBHelper\OracleHelper.cs" />
+    <Compile Include="DBHelper\PubConstant.cs" />
+    <Compile Include="DBHelper\SQLHelper.cs" />
+    <Compile Include="MongoDBHelper\MongoDBHelper.cs" />
+    <Compile Include="MongoDBHelper\PagerInfo.cs" />
+    <Compile Include="RDLC直接打印帮助类\BartenderHelper.cs" />
+    <Compile Include="RDLC直接打印帮助类\ConfigLoad.cs" />
+    <Compile Include="RedisHelper\RedisSomeHelper.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="其他\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="其他\Utility.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="加密解密\EncryptionMD5.cs" />
+    <Compile Include="加密解密\VariableName.cs" />
+    <Compile Include="数据展示控件绑定数据类\BindDataControl.cs" />
+    <Compile Include="其他\Captcha.cs" />
+    <Compile Include="Chart图形\Assistant.cs" />
+    <Compile Include="Chart图形\OWCChart11.cs" />
+    <Compile Include="cmd\RunCmd.cs" />
+    <Compile Include="CSV文件转换\CsvHelper.cs" />
+    <Compile Include="DataTable转实体\DataTableExtensions.cs" />
+    <Compile Include="DataTable转实体\ListExtensions.cs" />
+    <Compile Include="DecimalUtility及中文大写数字\DecimalUtility.cs" />
+    <Compile Include="科学计数，数学\FormulaExpress.cs" />
+    <Compile Include="其他\GridViewHelper.cs" />
+    <Compile Include="Html操作类\HtmlHelper.cs" />
+    <Compile Include="Html操作类\JavaScriptHelper.cs" />
+    <Compile Include="INI文件读写类\INIFile.cs" />
+    <Compile Include="IP辅助类\IpHelper.cs" />
+    <Compile Include="Json\ConvertJson.cs" />
+    <Compile Include="Mime\MediaTypes.cs" />
+    <Compile Include="Mime\MimeEntity.cs" />
+    <Compile Include="Mime\MimeHeaders.cs" />
+    <Compile Include="Mime\MimeReader.cs" />
+    <Compile Include="Mime\Pop3Commands.cs" />
+    <Compile Include="Mime\QuotedPrintableEncoding.cs" />
+    <Compile Include="Net\IpHelper.cs" />
+    <Compile Include="Net\NetHelper.cs" />
+    <Compile Include="Net\WebClientHelper.cs" />
+    <Compile Include="NPOI\NPOIHelper.cs" />
+    <Compile Include="Path\WebSitePathHelper.cs" />
+    <Compile Include="PDF\PDFHelper.cs" />
+    <Compile Include="其他\PSD2swfHelper.cs" />
+    <Compile Include="QueryString 地址栏参数\QueryString.cs" />
+    <Compile Include="ResourceManager\AppMessage.cs" />
+    <Compile Include="ResourceManager\ResourceManager.cs" />
+    <Compile Include="ResourceManager\ResourceManagerWrapper.cs" />
+    <Compile Include="ResourceManager\Resources.cs" />
+    <Compile Include="RMB\RMB.cs" />
+    <Compile Include="SQL语句拦截器\BaseConfig.cs" />
+    <Compile Include="SQL语句拦截器\DbDistributor.cs" />
+    <Compile Include="SQL语句拦截器\DbGroupConfiguration.cs" />
+    <Compile Include="SQL语句拦截器\DbNodeContext.cs" />
+    <Compile Include="SQL语句拦截器\DefaultWeight.cs" />
+    <Compile Include="SQL语句拦截器\FileSerialize.cs" />
+    <Compile Include="SQL语句拦截器\SqlInterceptor.cs" />
+    <Compile Include="SQL语句拦截器\WeightObject.cs" />
+    <Compile Include="系统操作相关的公共类\SysHelper.cs" />
+    <Compile Include="共用工具类\Tools.cs" />
+    <Compile Include="URL的操作类\UrlOper.cs" />
+    <Compile Include="VerifyCode\VerifyCodeHelper.cs" />
+    <Compile Include="VerifyCode\VerifyCodeRand.cs" />
+    <Compile Include="网站路径操作类\WebSitePathHelper.cs" />
+    <Compile Include="分词辅助类\SegList.cs" />
+    <Compile Include="分页\PageHelper.cs" />
+    <Compile Include="压缩解压缩\SharpZip.cs" />
+    <Compile Include="各种验证帮助类\ValidatorHelper.cs" />
+    <Compile Include="图片操作类\PicDeal.cs" />
+    <Compile Include="图片验证码\ValidateImg.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="处理多媒体的公共类\MediaHandler.cs" />
+    <Compile Include="处理枚举类\RenumDropList.cs" />
+    <Compile Include="对象转换处理\ObjectConversion.cs" />
+    <Compile Include="序列化\Serialize.cs" />
+    <Compile Include="序列化\SerializeHelper.cs" />
+    <Compile Include="异步线程\ManagedThreadPool.cs" />
+    <Compile Include="弹出消息类\MessageBox.cs" />
+    <Compile Include="弹出消息类\ShowMessage.cs" />
+    <Compile Include="日历\CNDate.cs" />
+    <Compile Include="日志\Log.cs" />
+    <Compile Include="时间操作类\DateFormat.cs" />
+    <Compile Include="时间操作类\TimeHelper.cs" />
+    <Compile Include="时间操作类\TimeParser.cs" />
+    <Compile Include="条形码帮助类\BarCodeHelper.cs" />
+    <Compile Include="视频帮助类\VideoHelper.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="检测是否有Sql危险字符\IsSafeSqlString.cs" />
+    <Compile Include="注册表操作类\RegisterHelper.cs" />
+    <Compile Include="网络\HttpHelper.cs" />
+    <Compile Include="JSON操作\ConvertJson.cs" />
+    <Compile Include="JS操作\JsHelper.cs" />
+    <Compile Include="SqlHelper\SqlHelper.cs" />
+    <Compile Include="XML操作类\XmlHelper.cs" />
+    <Compile Include="XML操作类\XMLProcess.cs" />
+    <Compile Include="二维码操作类\QRcode.cs" />
+    <Compile Include="加密解密\DESEncrypt.cs" />
+    <Compile Include="加密解密\Encrypt.cs" />
+    <Compile Include="加密解密\HashEncode.cs" />
+    <Compile Include="加密解密\MySecurity.cs" />
+    <Compile Include="加密解密\RSACryption.cs" />
+    <Compile Include="图片\ImageClass.cs" />
+    <Compile Include="图片\ImageDown.cs" />
+    <Compile Include="图片\ImageUpload.cs" />
+    <Compile Include="字符串\StringHelper.cs" />
+    <Compile Include="文件操作类\DirFile.cs" />
+    <Compile Include="文件操作类\FileOperate.cs" />
+    <Compile Include="文件操作类\INIFile.cs" />
+    <Compile Include="时间戳\TimeHelper.cs" />
+    <Compile Include="条形码\BarCodeToHTML.cs" />
+    <Compile Include="正则表达式\RegexHelper.cs" />
+    <Compile Include="汉字转拼音\EcanConvertToCh.cs" />
+    <Compile Include="汉字转拼音\PinYin.cs" />
+    <Compile Include="类型转换\ConvertHelper.cs" />
+    <Compile Include="缓存\CacheHelper.cs" />
+    <Compile Include="Cookie&amp;Session\CookieHelper.cs" />
+    <Compile Include="Cookie&amp;Session\SessionHelper.cs" />
+    <Compile Include="Cookie&amp;Session\SessionHelper2.cs" />
+    <Compile Include="加密解密\DEncrypt.cs" />
+    <Compile Include="FTP操作类\FTPClient.cs" />
+    <Compile Include="FTP操作类\FTPHelper.cs" />
+    <Compile Include="FTP操作类\FTPOperater.cs" />
+    <Compile Include="网络\IpHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="其他\SerializeHelper.cs" />
+    <Compile Include="缓存\DataCache.cs" />
+    <Compile Include="网站安全\WebSafe.cs" />
+    <Compile Include="网络\NetHelper.cs" />
+    <Compile Include="视频转换类\VideoConvert.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="计划任务\IntervalTask.cs" />
+    <Compile Include="计划任务\Quartz.NET\Job.cs" />
+    <Compile Include="计划任务\Quartz.NET\TestJob.cs" />
+    <Compile Include="计划任务\TimerInfo.cs" />
+    <Compile Include="邮件\ConnectCommand.cs" />
+    <Compile Include="邮件\ConnectResponse.cs" />
+    <Compile Include="邮件\DeleCommand.cs" />
+    <Compile Include="邮件\ListCommand.cs" />
+    <Compile Include="邮件\ListResponse.cs" />
+    <Compile Include="邮件\MailMessageEx.cs" />
+    <Compile Include="邮件\NoopCommand.cs" />
+    <Compile Include="邮件\PassCommand.cs" />
+    <Compile Include="邮件\Pop3Client.cs" />
+    <Compile Include="邮件\Pop3Command.cs" />
+    <Compile Include="邮件\Pop3Commands.cs" />
+    <Compile Include="邮件\Pop3Exception.cs" />
+    <Compile Include="邮件\Pop3ListItem.cs" />
+    <Compile Include="邮件\Pop3Response.cs" />
+    <Compile Include="邮件\Pop3Responses.cs" />
+    <Compile Include="邮件\Pop3State.cs" />
+    <Compile Include="邮件\QuitCommand.cs" />
+    <Compile Include="邮件\RetrCommand.cs" />
+    <Compile Include="邮件\RetrResponse.cs" />
+    <Compile Include="邮件\RsetCommand.cs" />
+    <Compile Include="邮件\Stat.cs" />
+    <Compile Include="邮件\StatCommand.cs" />
+    <Compile Include="邮件\StatResponse.cs" />
+    <Compile Include="邮件\TopCommand.cs" />
+    <Compile Include="邮件\UserCommand.cs" />
+    <Compile Include="邮件\MailHelper.cs" />
+    <Compile Include="邮件\MailPoper.cs" />
+    <Compile Include="邮件\MailSender.cs" />
+    <Compile Include="邮件\SmtpServerHelper.cs" />
+    <Compile Include="配置文件操作类\ConfigHelper.cs" />
+    <Compile Include="阿里云\Live\AliyunLive.cs" />
+    <Compile Include="阿里云\OSS\Storage.cs" />
+    <Compile Include="随机数类\BaseRandom.cs" />
+    <Compile Include="随机数类\RandomHelper.cs" />
+    <Compile Include="随机数类\RandomOperate.cs" />
+    <Compile Include="页面辅助类\HTMLHelper.cs" />
+    <Compile Include="页面辅助类\HttpProc.cs" />
+    <Compile Include="页面辅助类\JavaScriptPlus.cs" />
+    <Compile Include="页面辅助类\PageHelper.cs" />
+    <Compile Include="验证码\CAPTCHA.cs" />
+    <Compile Include="上传下载\DownLoadHelper.cs" />
+    <Compile Include="上传下载\FileDown.cs" />
+    <Compile Include="上传下载\FileUp.cs" />
+    <Compile Include="上传下载\UpLoadFiles.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Excel操作类\DataToExcel.cs" />
+    <Compile Include="Excel操作类\ExcelHelper.cs" />
+    <Compile Include="Excel操作类\ExportExcel.cs" />
+    <Compile Include="Excel操作类\GridViewExport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Excel操作类\excel.txt" />
+    <Content Include="FTP操作类\edtFTPnet.dll" />
+    <Content Include="FTP操作类\FTP使用说明.txt" />
+    <Content Include="H5-微信\AutoPayMusic.html" />
+    <Content Include="Javascript\CheckFunction.js" />
+    <Content Include="Javascript\CommonJS.js" />
+    <Content Include="Lib\COM.Excel.dll" />
+    <Content Include="Lib\Excel.dll" />
+    <Content Include="Lib\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Lib\itextsharp.dll" />
+    <Content Include="Lib\LTP.Accounts.dll" />
+    <Content Include="Lib\LTP.Accounts.txt" />
+    <Content Include="Lib\LtpPageControl.dll" />
+    <Content Include="Lib\Microsoft.Office.Interop.Owc11.dll" />
+    <Content Include="Lib\Microsoft.Web.UI.WebControls.dll" />
+    <Content Include="Lib\NPOI\.net 2.0\Ionic.Zip.dll" />
+    <Content Include="Lib\NPOI\.net 2.0\NPOI.dll" />
+    <Content Include="Lib\NPOI\.net 2.0\NPOI.XML" />
+    <Content Include="Lib\NPOI\.net 4.0\Ionic.Zip.dll" />
+    <Content Include="Lib\NPOI\.net 4.0\NPOI.dll" />
+    <Content Include="Lib\NPOI\.net 4.0\NPOI.XML" />
+    <Content Include="Lib\NPOI\Ionic_Utils_Zip_license.txt" />
+    <Content Include="Lib\NPOI\License.txt" />
+    <Content Include="Lib\NPOI\Read Me.txt" />
+    <Content Include="Lib\NPOI\Release Notes.txt" />
+    <Content Include="Lib\OpenSmtp.dll" />
+    <Content Include="Lib\OWC10Chart.dll" />
+    <Content Include="Lib\PinYin\ChnCharInfo.dll" />
+    <Content Include="packages\Common.Logging.3.3.1\lib\net35\Common.Logging.dll" />
+    <Content Include="packages\Common.Logging.3.3.1\lib\net35\Common.Logging.xml" />
+    <Content Include="packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll" />
+    <Content Include="packages\Common.Logging.3.3.1\lib\net40\Common.Logging.xml" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\net35\Common.Logging.Core.dll" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\net35\Common.Logging.Core.xml" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.xml" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\portable-win+net40+sl40+wp7\Common.Logging.Core.dll" />
+    <Content Include="packages\Common.Logging.Core.3.3.1\lib\portable-win+net40+sl40+wp7\Common.Logging.Core.XML" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net40\zh-Hans\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\lib\net45\zh-Hans\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\about_EntityFramework.help.txt" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.dll" />
+    <Content Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PowerShell.Utility.dll" />
+    <Content Include="packages\EntityFramework.zh-Hans.5.0.0\lib\net40\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="packages\EntityFramework.zh-Hans.5.0.0\lib\net40\zh-Hans\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.zh-Hans.5.0.0\lib\net45\zh-Hans\EntityFramework.resources.dll" />
+    <Content Include="packages\EntityFramework.zh-Hans.5.0.0\lib\net45\zh-Hans\EntityFramework.xml" />
+    <Content Include="packages\jQuery.1.8.2\Content\Scripts\jquery-1.8.2-vsdoc.js" />
+    <Content Include="packages\jQuery.1.8.2\Content\Scripts\jquery-1.8.2.js" />
+    <Content Include="packages\jQuery.1.8.2\Content\Scripts\jquery-1.8.2.min.js" />
+    <Content Include="packages\jQuery.1.8.2\Tools\jquery-1.8.2.intellisense.js" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery-ui.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.all.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.base.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.button.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.core.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="packages\jQuery.UI.Combined.1.8.24\Content\Scripts\jquery-ui-1.8.24.min.js" />
+    <Content Include="packages\jQuery.Validation.1.10.0\Content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="packages\jQuery.Validation.1.10.0\Content\Scripts\jquery.validate.js" />
+    <Content Include="packages\jQuery.Validation.1.10.0\Content\Scripts\jquery.validate.min.js" />
+    <Content Include="packages\knockoutjs.2.2.0\Content\Scripts\knockout-2.2.0.debug.js" />
+    <Content Include="packages\knockoutjs.2.2.0\Content\Scripts\knockout-2.2.0.js" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.xml" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\zh-Hans\System.Web.Mvc.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\zh-Hans\System.Web.Mvc.xml" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Mvc.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Mvc.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Mvc.xml" />
+    <Content Include="packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll" />
+    <Content Include="packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\zh-Hans\System.Web.Providers.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Providers.Core.1.2\readme.html" />
+    <Content Include="packages\Microsoft.AspNet.Providers.Core.zh-Hans.1.2\lib\net40\zh-Hans\System.Web.Providers.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\zh-Hans\System.Web.Razor.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\zh-Hans\system.web.razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.Razor.zh-Hans.2.0.20715.0\lib\net40\zh-Hans\System.Web.Razor.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Razor.zh-Hans.2.0.20715.0\lib\net40\zh-Hans\system.web.razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\zh-Hans\System.Web.Optimization.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.zh-Hans.1.0.0\lib\net40\zh-Hans\System.Web.Optimization.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\zh-Hans\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\zh-Hans\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Net.Http.Formatting.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Client.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Net.Http.Formatting.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Core.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.Odata.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\zh-Hans\System.Web.Http.OData.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\zh-Hans\System.Web.Http.OData.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.zh-Hans.4.0.0\lib\net40\zh-Hans\System.Web.Http.OData.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.OData.zh-Hans.4.0.0\lib\net40\zh-Hans\System.Web.Http.OData.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\System.Web.Http.Tracing.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\zh-Hans\System.Web.Http.Tracing.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\lib\net40\zh-Hans\System.Web.Http.Tracing.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\ReadMe.txt" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.zh-Hans.4.0.0\lib\net40\zh-Hans\System.Web.Http.Tracing.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.Tracing.zh-Hans.4.0.0\lib\net40\zh-Hans\System.Web.Http.Tracing.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.WebHost.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.WebHost.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebApi.WebHost.zh-Hans.4.0.20710.0\lib\net40\zh-Hans\System.Web.Http.WebHost.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\System.Web.Helpers.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\system.web.helpers.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.deployment.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Web.Helpers.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\system.web.helpers.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.Deployment.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.deployment.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.Razor.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.razor.xml" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Web.WebPages.resources.dll" />
+    <Content Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\system.web.webpages.xml" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\de\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\es\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\fr\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\it\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\ja\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\ko\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.xml" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\ru\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\zh-Hans\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\net40\zh-Hant\Microsoft.Data.Edm.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\de\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\es\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\fr\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\it\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\ja\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\ko\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\Microsoft.Data.Edm.SL.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\Microsoft.Data.Edm.SL.xml" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\ru\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\zh-Hans\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.Edm.5.2.0\lib\sl4\zh-Hant\Microsoft.Data.Edm.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\de\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\es\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\fr\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\it\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\ja\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\ko\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.xml" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\ru\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\zh-Hans\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\net40\zh-Hant\Microsoft.Data.OData.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\de\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\es\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\fr\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\it\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\ja\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\ko\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\Microsoft.Data.OData.SL.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\Microsoft.Data.OData.SL.xml" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\ru\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\zh-Hans\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.Data.OData.5.2.0\lib\sl4\zh-Hant\Microsoft.Data.OData.SL.resources.dll" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30116.0\Content\Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30116.0\Content\Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Validation.2.0.30116.0\Content\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="packages\Microsoft.jQuery.Unobtrusive.Validation.2.0.30116.0\Content\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.xml" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.xml" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.WebRequest.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.WebRequest.xml" />
+    <Content Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.xml" />
+    <Content Include="packages\Microsoft.Net.Http.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Http.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.WebRequest.resources.dll" />
+    <Content Include="packages\Microsoft.Net.Http.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.WebRequest.xml" />
+    <Content Include="packages\Microsoft.Net.Http.zh-Hans.2.0.20710.0\lib\net40\zh-Hans\System.Net.Http.xml" />
+    <Content Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="packages\Modernizr.2.6.2\Content\Scripts\modernizr-2.6.2.js" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net20\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net20\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net35\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net35\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\portable-net40+sl4+wp7+win8\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl3-wp\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl3-wp\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl4-windowsphone71\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl4-windowsphone71\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl4\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\sl4\Newtonsoft.Json.xml" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\winrt45\Newtonsoft.Json.dll" />
+    <Content Include="packages\Newtonsoft.Json.4.5.11\lib\winrt45\Newtonsoft.Json.xml" />
+    <Content Include="packages\Quartz.2.4.1\lib\net35-client\Quartz.dll" />
+    <Content Include="packages\Quartz.2.4.1\lib\net35-client\Quartz.xml" />
+    <Content Include="packages\Quartz.2.4.1\lib\net35\Quartz.dll" />
+    <Content Include="packages\Quartz.2.4.1\lib\net35\Quartz.xml" />
+    <Content Include="packages\Quartz.2.4.1\lib\net40-client\Quartz.dll" />
+    <Content Include="packages\Quartz.2.4.1\lib\net40-client\Quartz.xml" />
+    <Content Include="packages\Quartz.2.4.1\lib\net40\Quartz.dll" />
+    <Content Include="packages\Quartz.2.4.1\lib\net40\Quartz.xml" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\de\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\es\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\fr\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\it\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\ja\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\ko\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\ru\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\System.Spatial.xml" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\zh-Hans\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\net40\zh-Hant\System.Spatial.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\de\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\es\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\fr\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\it\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\ja\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\ko\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\ru\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\System.Spatial.SL.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\System.Spatial.SL.xml" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\zh-Hans\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\System.Spatial.5.2.0\lib\sl4\zh-Hant\System.Spatial.SL.resources.dll" />
+    <Content Include="packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll" />
+    <Content Include="packages\WebGrease.1.3.0\lib\WebGrease.dll" />
+    <Content Include="ResourceManager\Sample.xml" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="异步线程\线程使用说明.txt" />
+    <Content Include="日志\日志使用说明.txt" />
+    <Content Include="网站安全\使用说明.txt" />
+    <Content Include="计划任务\Quartz.NET\quartz_jobs.xml" />
+    <Content Include="计划任务\Quartz.NET\Qzuartz使用说明.txt" />
+    <Content Include="计划任务\计划任务使用说明.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="packages\Common.Logging.3.3.1\Common.Logging.3.3.1.nupkg" />
+    <None Include="packages\Common.Logging.Core.3.3.1\Common.Logging.Core.3.3.1.nupkg" />
+    <None Include="packages\EntityFramework.5.0.0\Content\App.config.transform" />
+    <None Include="packages\EntityFramework.5.0.0\Content\Web.config.transform" />
+    <None Include="packages\EntityFramework.5.0.0\EntityFramework.5.0.0.nupkg" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.PS3.psd1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.psd1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\EntityFramework.psm1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\init.ps1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\install.ps1" />
+    <None Include="packages\EntityFramework.5.0.0\tools\Redirect.config" />
+    <None Include="packages\EntityFramework.5.0.0\tools\Redirect.VS11.config" />
+    <None Include="packages\EntityFramework.zh-Hans.5.0.0\EntityFramework.zh-Hans.5.0.0.nupkg" />
+    <None Include="packages\jQuery.1.8.2\jQuery.1.8.2.nupkg" />
+    <None Include="packages\jQuery.1.8.2\Tools\common.ps1" />
+    <None Include="packages\jQuery.1.8.2\Tools\install.ps1" />
+    <None Include="packages\jQuery.1.8.2\Tools\uninstall.ps1" />
+    <None Include="packages\jQuery.UI.Combined.1.8.24\jQuery.UI.Combined.1.8.24.nupkg" />
+    <None Include="packages\jQuery.UI.Combined.1.8.24\Tools\common.ps1" />
+    <None Include="packages\jQuery.UI.Combined.1.8.24\Tools\install.ps1" />
+    <None Include="packages\jQuery.UI.Combined.1.8.24\Tools\uninstall.ps1" />
+    <None Include="packages\jQuery.Validation.1.10.0\jQuery.Validation.1.10.0.nupkg" />
+    <None Include="packages\knockoutjs.2.2.0\knockoutjs.2.2.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Mvc.4.0.20710.0\Microsoft.AspNet.Mvc.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Mvc.zh-Hans.4.0.20710.0\Microsoft.AspNet.Mvc.zh-Hans.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Providers.Core.1.2\Microsoft.AspNet.Providers.Core.1.2.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Providers.Core.zh-Hans.1.2\Microsoft.AspNet.Providers.Core.zh-Hans.1.2.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Providers.LocalDB.1.1\content\web.config.transform" />
+    <None Include="packages\Microsoft.AspNet.Providers.LocalDB.1.1\Microsoft.AspNet.Providers.LocalDB.1.1.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Providers.LocalDB.1.1\tools\Install.ps1" />
+    <None Include="packages\Microsoft.AspNet.Razor.2.0.20715.0\Microsoft.AspNet.Razor.2.0.20715.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Razor.zh-Hans.2.0.20715.0\Microsoft.AspNet.Razor.zh-Hans.2.0.20715.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Web.Optimization.1.0.0\Microsoft.AspNet.Web.Optimization.1.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.Web.Optimization.zh-Hans.1.0.0\Microsoft.AspNet.Web.Optimization.zh-Hans.1.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.4.0.20710.0\Microsoft.AspNet.WebApi.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\Microsoft.AspNet.WebApi.Client.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Client.zh-Hans.4.0.20710.0\Microsoft.AspNet.WebApi.Client.zh-Hans.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\content\web.config.transform" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\Microsoft.AspNet.WebApi.Core.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Core.zh-Hans.4.0.20710.0\Microsoft.AspNet.WebApi.Core.zh-Hans.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\ApiDescriptionExtensions.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\App_Start\HelpPageConfig.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Controllers\HelpController.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\HelpPage.css.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\HelpPageAreaRegistration.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\HelpPageConfigurationExtensions.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Models\HelpPageApiModel.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\ImageSample.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\InvalidSample.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\ObjectGenerator.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\SampleDirection.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\SampleGeneration\TextSample.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\Api.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Help\Index.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Shared\_Layout.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\Web.config" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\Views\_ViewStart.cshtml.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\content\Areas\HelpPage\XmlDocumentationProvider.cs.pp" />
+    <None Include="packages\Microsoft.AspNet.WebApi.HelpPage.4.0.0\Microsoft.AspNet.WebApi.HelpPage.4.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.OData.4.0.0\Microsoft.AspNet.WebApi.OData.4.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.OData.zh-Hans.4.0.0\Microsoft.AspNet.WebApi.OData.zh-Hans.4.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Tracing.4.0.0\Microsoft.AspNet.WebApi.Tracing.4.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.Tracing.zh-Hans.4.0.0\Microsoft.AspNet.WebApi.Tracing.zh-Hans.4.0.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebApi.WebHost.zh-Hans.4.0.20710.0\Microsoft.AspNet.WebApi.WebHost.zh-Hans.4.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebPages.2.0.20710.0\Microsoft.AspNet.WebPages.2.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0\Microsoft.AspNet.WebPages.zh-Hans.2.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.Data.Edm.5.2.0\Microsoft.Data.Edm.5.2.0.nupkg" />
+    <None Include="packages\Microsoft.Data.OData.5.2.0\Microsoft.Data.OData.5.2.0.nupkg" />
+    <None Include="packages\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30116.0\Microsoft.jQuery.Unobtrusive.Ajax.2.0.30116.0.nupkg" />
+    <None Include="packages\Microsoft.jQuery.Unobtrusive.Validation.2.0.30116.0\Microsoft.jQuery.Unobtrusive.Validation.2.0.30116.0.nupkg" />
+    <None Include="packages\Microsoft.Net.Http.2.0.20710.0\lib\net45\_._" />
+    <None Include="packages\Microsoft.Net.Http.2.0.20710.0\Microsoft.Net.Http.2.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.Net.Http.zh-Hans.2.0.20710.0\Microsoft.Net.Http.zh-Hans.2.0.20710.0.nupkg" />
+    <None Include="packages\Microsoft.Web.Infrastructure.1.0.0.0\Microsoft.Web.Infrastructure.1.0.0.0.nupkg" />
+    <None Include="packages\Modernizr.2.6.2\Modernizr.2.6.2.nupkg" />
+    <None Include="packages\Modernizr.2.6.2\Tools\common.ps1" />
+    <None Include="packages\Modernizr.2.6.2\Tools\install.ps1" />
+    <None Include="packages\Modernizr.2.6.2\Tools\uninstall.ps1" />
+    <None Include="packages\Newtonsoft.Json.4.5.11\Newtonsoft.Json.4.5.11.nupkg" />
+    <None Include="packages\Quartz.2.4.1\content\job_scheduling_data_2_0.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages\Quartz.2.4.1\Quartz.2.4.1.nupkg" />
+    <None Include="packages\repositories.config" />
+    <None Include="packages\System.Spatial.5.2.0\System.Spatial.5.2.0.nupkg" />
+    <None Include="packages\WebGrease.1.3.0\WebGrease.1.3.0.nupkg" />
+    <None Include="帮助文档\Helper帮助文档.chm" />
+    <None Include="日志\log4net.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

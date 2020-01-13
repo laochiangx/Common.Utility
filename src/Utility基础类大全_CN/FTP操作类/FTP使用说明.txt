@@ -1,0 +1,35 @@
+﻿ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+
+ 说明:
+ 推荐使用 edtFTPnet.dll
+ 免费版本下载 http://www.enterprisedt.com/products/edtftpnet/overview.html
+ 文档 http://www.enterprisedt.com/products/edtftpnet/doc/manual/index.html
+
+
+ 实例:
+ using (var conn = new FTPConnection
+            {
+                ServerAddress = ftpserver.Server,
+                ServerDirectory = "web",
+                UserName = ftpserver.User,
+                Password = ftpserver.Pwd,
+                 ServerPort=int.Parse(ftpserver.Port),
+                CommandEncoding = Encoding.GetEncoding("GBK")
+            })
+            {
+                try
+                {
+                    conn.Connect();
+                    string ftpdir = string.Format("/images/product/{0}/{1}/{2}/", DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                    if (!conn.DirectoryExists(ftpdir))
+                        conn.CreateDirectory(ftpdir);
+                    conn.ChangeWorkingDirectory(ftpdir);
+                    conn.UploadFile(Server.MapPath(dir) + newfilename, newfilename); //上传原图
+                    string thumbnailFileName = System.IO.Path.GetFileName(gdsImg.Thumbnail); //缩略图文件名
+                    conn.UploadFile(Server.MapPath(dir) + thumbnailFileName, thumbnailFileName);
+                }
+                catch (FtpException e)
+                {
+                    //记录日志   Console.WriteLine(String.Format("FTP Error: {0} {1}", e.ErrorCode, e.Message));
+                }
+            }

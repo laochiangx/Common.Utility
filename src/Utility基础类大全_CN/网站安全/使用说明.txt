@@ -1,0 +1,55 @@
+﻿通用aspx防护代码
+-----------------使用方法------------------------------------------------------------------
+1.把App_Code目录里的WebSafe.cs文件拷贝到当前的App_Code目录即可。
+
+2.修改Global.asax文件
+直接调用
+
+     void Application_BeginRequest(object sender, EventArgs e)
+    {
+      string q="<div style='position:fixed;top:0px;width:100%;height:100%;background-color:white;color:green;font-weight:bold;border-bottom:5px solid #999;'><br>您的提交带有不合法参数,谢谢合作!<br><br>了解更多请点击:<a href='http://www.kuiyu.net'>奎宇工作室</a></div>";
+
+
+
+            if (Request.Cookies != null)
+            {
+                if (WebSafe.CookieData())
+                {
+                    Response.Write("您提交的Cookie数据有恶意字符！");
+                    Response.End();
+                
+                }
+
+           
+            }
+
+            if (Request.UrlReferrer != null)
+            {
+                if (WebSafe.referer())
+                {
+                    Response.Write("您提交的Referrer数据有恶意字符！");
+                    Response.End();
+                }
+            }
+
+            if (Request.RequestType.ToUpper() == "POST")
+            {
+                if (WebSafe.PostData())
+                {
+
+                    Response.Write("您提交的Post数据有恶意字符！");
+                    Response.End();
+                }
+            }
+            if (Request.RequestType.ToUpper() == "GET")
+            {
+                if (WebSafe.GetData())
+                {
+                    Response.Write("您提交的Get数据有恶意字符！");
+                    Response.End();
+                }
+            }
+
+         
+    }
+拷贝到当前的Global.asax文件里保存。

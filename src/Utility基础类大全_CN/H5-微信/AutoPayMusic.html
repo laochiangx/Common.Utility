@@ -1,0 +1,56 @@
+﻿<!--源码己托管:http://git.oschina.net/kuiyu/dotnetcodes-->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span>自动播放音乐代码</span>
+    <audio style="display: none; height: 0" id="bg-music" preload="auto" src="http://www.cityphotos.cn/ezine/44/2356b352-1269-4f88-a5ac-e156d8adef88.mp3" loop="loop"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function audioAutoPlay() {
+                var audio = document.getElementById('bg-music');
+                audio.play();
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    audio.play();
+                }, false);
+            }
+            audioAutoPlay();
+        });
+
+        // 音乐播放
+        function autoPlayMusic() {
+            // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+            function musicInBrowserHandler() {
+                musicPlay(true);
+                document.body.removeEventListener('touchstart', musicInBrowserHandler);
+            }
+            document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+            // 自动播放音乐效果，解决微信自动播放问题
+            function musicInWeixinHandler() {
+                musicPlay(true);
+                document.addEventListener("WeixinJSBridgeReady", function () {
+                    musicPlay(true);
+                }, false);
+                document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+            }
+            document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+        }
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#bg-music');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+    </script>
+</body>
+</html>

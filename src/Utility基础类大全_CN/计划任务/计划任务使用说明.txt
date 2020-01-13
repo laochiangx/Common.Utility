@@ -1,0 +1,54 @@
+﻿ 源码己托管:http://git.oschina.net/kuiyu/dotnetcodes
+
+ 说明:
+ asp.net项目中所用到的计划任务代码,可以定时执行任务
+
+ 1.在asp.net 项目中添加App.cs这个类
+
+    public class App
+	{
+		public static int Counter { get; set; }
+
+		public static void Init()
+		{
+			var random = new Random();
+
+			var task = IntervalTask.CreateTask(() =>
+			{
+				if (IntervalTask.Current.ShuttingDown)
+					{
+						//如果任务被重复执行
+						return;
+					}
+				//在这编写自己要执行的业务
+				 
+			});
+
+			//时间间隔
+			task.SetInterval(5000);
+		}
+
+		public static void End()
+		{
+			IntervalTask.Current.Dispose();
+		}
+	}
+
+
+	2.在Global.asax.cs中
+	    protected void Application_Start()
+		{
+		App.Init();
+		}
+
+		protected void Application_End()
+		{
+			App.End();
+		}
+
+
+3.设置应用程序池超时时间
+闲置超时时间改为0
+
+	也可以参考托管在github的实例
+	https://github.com/b9chris/ASP.Net-Long-Running-Interval-Task
