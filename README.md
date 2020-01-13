@@ -24,7 +24,10 @@ ADHelper,AliyunLive,BarCodeHelper,BarCodeToHTML,BartenderHelper,BindDataControl,
 ![20171011.png](http://upload-images.jianshu.io/upload_images/6855212-fd64cd5f294f1967.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-**Sandcastle Documentation
+Sandcastle Documentation
+
+https://www.cnblogs.com/anyushengcms/p/7682501.html
+
 ![H819EQUYFVA~WXK6YAQ1%6Q.png](http://upload-images.jianshu.io/upload_images/6855212-6cf5a7a2a4a75c89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 里面大致包含了下面这个类，并且在不断的收集和整理中。
